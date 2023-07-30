@@ -13,10 +13,8 @@ def create_shapes(event):
         shape = canvas.create_oval(x - 5, y - 5, x + 5, y + 5, fill="red")
         shapes.append(("circle", shape))
         print(f"Punkt Koordinaten: ({x}, {y})")
-        
     elif event.num == 2:  # Mittlerer Mausbutton
         canvas.line_start = (x, y)
-
 
 def draw_line(event):
     if hasattr(canvas, 'line_start'):
@@ -24,7 +22,6 @@ def draw_line(event):
         canvas.delete("current_line")
         canvas.create_line(canvas.line_start[0], canvas.line_start[1], x, y, fill="green", width=6, tags="current_line")
         label.config(text=f"Maus Koordinaten: ({event.x}, {event.y})")
-
 
 def finish_line(event):
     if hasattr(canvas, 'line_start'):
@@ -35,7 +32,7 @@ def finish_line(event):
         line_coordinates = (canvas.line_start[0], canvas.line_start[1], x, y)
         line_coordinates_list.append(line_coordinates)
         del canvas.line_start
-
+        print("Eine Linie Wurde gezeichnet!")
 
 def delete_last_shape(event):
     if len(shapes) >= 1 and len(line_coordinates_list) >= 1:
@@ -46,15 +43,21 @@ def delete_last_shape(event):
         shape_type, shape = shapes.pop(0)
         if shape_type == "circle":
             canvas.delete(shape)
+            print("der letzte Kreis wurde gelöscht!")
         elif shape_type == "line":
             canvas.delete(shape)
             line_coordinates_list.pop(0)
+            print("die letzte Linie wurde gelöscht!")
+
+object_coordinates_c = {}
+object_coordinates_l = {}
 
 
 def calculate_paths_thread():
     # Algorithmus für das Path Finding System
     path_order = [i for i in range(len(line_coordinates_list))]
     path_found = False
+    max_iterations = 1000  # Maximale Anzahl von Iterationen, um einen gültigen Pfad zu finden
 
     # Generiere eine eindeutige ID für jedes Objekt
     object_coordinates_c = {}
@@ -63,14 +66,14 @@ def calculate_paths_thread():
             object_id = f"Punkte_ID{i + 1}"
             coords = canvas.coords(shape[1])
             object_coordinates_c[object_id] = (coords[0], coords[1])
+            print("es wurde eine ID zugewiesen an einen Kreis zugewiesen")
 
-    object_coordinates_l = {}
     for i, shape in enumerate(shapes):
         if shape[0] == "line":
             object_id = f"Line_ID{i + 1}"
             coords = canvas.coords(shape[1])
             object_coordinates_l[object_id] = (coords[0], coords[1])
-
+            print("es wurde eine ID zugewiesen an einen Linie zugewiesen")
     # Speichere die IDs und Koordinaten in einer Datei
     with open("objects.fll", "w") as file:
         for object_id_1, coords_1 in object_coordinates_c.items():
@@ -80,23 +83,32 @@ def calculate_paths_thread():
             for object_id_2, coords_2 in object_coordinates_l.items():
                 start_x, start_y, end_x, end_y = line_coordinates_1
                 file.write(f"{object_id_2}: ({start_x}, {start_y}); ({end_x}, {end_y})\n")
+                print("Es wurde in die objekt.fll ausgegeben")
 
     # Simuliere die Strecken in der Reihenfolge
-    while not path_found:
+    iteration_count = 0
+    while not path_found and iteration_count < max_iterations:
         current_path = []
         for order in path_order:
             line_coordinates = line_coordinates_list[order]
             start_x, start_y, end_x, end_y = line_coordinates
-            # Path überprüfung einfügen
+            print("Hier wird eine sache gemacht_1")
+
+            # Führe eine Debugging-Anweisung aus, um zu überprüfen, welche Linien untersucht werden
+            print(f"Untersuche Linie {order + 1}: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y})")
+
+            # Path-Überprüfung einfügen und Debugging-Anweisungen
             if is_path_possible(start_x, start_y, end_x, end_y):
                 current_path.append(line_coordinates)
+                print("Hier wird geprüft ob ein Weg possible ist")
             else:
+                print(f"Linie {order + 1} kann nicht in den Pfad aufgenommen werden.")
                 break
 
         # Wenn alle Strecken möglich sind, wurde ein gültiger Pfad gefunden
         if len(current_path) == len(path_order):
             path_found = True
-            print("Gueltiger Pfad gefunden:")
+            print("Gültiger Pfad gefunden:")
             timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             with open("log.fll", "a") as file:
                 file.write(f"\n\n--- Protokoll vom {timestamp} ---\n")
@@ -120,9 +132,45 @@ def calculate_paths_thread():
 
         # Permutation der Reihenfolge für die nächste Iteration
         next_permutation(path_order)
+        iteration_count += 1
 
-    if not path_found:
+    if path_found:
+        print("Gueltiger Pfad gefunden:")
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        with open("log.fll", "a") as file:
+            # Der Rest des Codes bleibt gleich ...
+            generate_diagram(current_path, path_order)
+            generate_table(shapes, line_coordinates_list)
+
+    else:
         print("Kein gültiger Pfad gefunden!")
+
+
+def generate_table(shapes, line_coordinates_list):
+    # Erstelle eine Tabelle für die verschiedenen Kombinationen der Punkte und Längen
+    table_data = []
+    for i, shape in enumerate(shapes):
+        if shape[0] == "circle":
+            object_id = f"Punkte_ID{i + 1}"
+            coords = canvas.coords(shape[1])
+            x, y = coords[0], coords[1]
+            row = (object_id, f"({x}, {y})", "")
+            table_data.append(row)
+
+    for i, shape in enumerate(shapes):
+        if shape[0] == "line":
+            object_id = f"Line_ID{i + 1}"
+            coords = canvas.coords(shape[1])
+            start_x, start_y, end_x, end_y = coords
+            length = calculate_length(start_x, start_y, end_x, end_y)
+            row = (object_id, f"({start_x}, {start_y})", f"({end_x}, {end_y})", f"{length:.2f}")
+            table_data.append(row)
+
+    # Speichere die Tabelle in einer Datei
+    with open("table.csv", "w") as file:
+        file.write("Objekt ID, Koordinate Anfang, Koordinate Ende, Laenge\n")
+        for row in table_data:
+            file.write(",".join(row) + "\n")
 
 
 def create_line_network():
@@ -139,36 +187,47 @@ def create_line_network():
                 if point[0] == "circle":
                     point_x, point_y = canvas.coords(point[1])[0], canvas.coords(point[1])[1]
                     if point_x >= min(start_x, end_x) and point_x <= max(start_x, end_x) and point_y >= min(start_y, end_y) and point_y <= max(start_y, end_y):
-                        print(f"Berührter Punkt: ({point_x}, {point_y})")
-                        label_2.config(text=f"Berührungspunkte auf den Linien: ({point_x}), ({point_y})")
+                        print(f"Beruehrter Punkt: ({point_x}, {point_y})")
+                        label_2.config(text=f"Beruehrungspunkte auf den Linien: ({point_x}), ({point_y})")
 
+    # Führe den Algorithmus in einem separaten Thread aus
+    print("jetzt werden die threats gestartet")
     thread = threading.Thread(target=calculate_paths_thread)
     thread.start()
-
+    print("die Threats sind jetzt abgeschlossen")
 
 def is_path_possible(start_x, start_y, end_x, end_y):
-    # Hier wird die Überprüfung der Strecke implementieren
+    # Here, we will check if the line intersects with circles' bounding areas
     for line_coordinates in line_coordinates_list:
-        line_start_x, line_start_y, line_end_x, line_end_y = line_coordinates
-        if lines_intersect(start_x, start_y, end_x, end_y, line_start_x, line_start_y, line_end_x, line_end_y):
-            # wenn die Punkte eine Linie berühren soll abgespeichert werden auf welcher Linie welcher Punkt Liegt
-            # das dadurch die Längen besser kalibrieren kann wie z.b. create line network = is path posible
-            for line_coordinates in line_coordinates_list:
-                start_x, start_y, end_x, end_y = line_coordinates
-                for point in shapes:
-                    if point[0] == "circle":
-                        point_x, point_y = canvas.coords(point[1])[0], canvas.coords(point[1])[1]
-                        if point_x >= min(start_x, end_x) and point_x <= max(start_x, end_x) and point_y >= min(start_y, end_y) and point_y <= max(start_y, end_y):
-                            print(f"Berührter Punkt: ({point_x}, {point_y})")
-                            with open("objects-fll", "a") as WRITE:
-                                WRITE.write(f"Beruehrter Punkt: ({point_x}, {point_y}) Linien ID: [ {line_coordinates()}]\n") # hier mus noch die Linien ID abgedpeichert werden!
-                            return True
-    return False
+        line_start_x1, line_start_y1, line_end_x1, line_end_y1 = line_coordinates
+        if lines_intersect(start_x, start_y, end_x, end_y, line_start_x1, line_start_y1, line_end_x1, line_end_y1):
+            # If the line intersects with another line, we return False
+            return False
 
+    for shape in shapes:
+        if shape[0] == "circle":
+            circle_center_x, circle_center_y = canvas.coords(shape[1])[0], canvas.coords(shape[1])[1]
+            radius = 50  # Set the radius as per your requirement
+
+            # Calculate the distance from the start and end points of the line to the center of the circle
+            distance_start = ((start_x - circle_center_x) ** 2 + (start_y - circle_center_y) ** 2) ** 0.5
+            distance_end = ((end_x - circle_center_x) ** 2 + (end_y - circle_center_y) ** 2) ** 0.5
+
+            # Check if the start and end points are within the circle's bounding area
+            if distance_start <= radius and distance_end <= radius:
+                # The line intersects with the circle's bounding area, so it's possible
+                # Save the line information to a file if needed
+                with open("test_speicher.fll", "a") as WRITE:
+                    WRITE.write(f"Line from ({start_x}, {start_y}) to ({end_x}, {end_y}) intersects with circle ({circle_center_x}, {circle_center_y})\n")
+                return True
+
+    # If the line does not intersect with any circle's bounding area, it's possible
+    return True
 
 def calculate_length(start_x, start_y, end_x, end_y):
     # Hier kannst du die Länge der Strecke berechnen
     # Beispiel-Implementierung: Euklidischer Abstand
+    print("jetzt wurde die laenge gespeichert!")
     dx = end_x - start_x
     dy = end_y - start_y
     return ((dx ** 2) + (dy ** 2)) ** 0.5
@@ -195,6 +254,7 @@ def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
 
     # Überprüfung, ob der Schnittpunkt innerhalb des definierten Bereichs liegt
     if 0 <= t1 <= 1 and 0 <= t2 <= 1:
+        print("hier wird geprüft ob die linien sich durch queren")
         return True  # Linien schneiden sich
     else:
         return False  # Linien schneiden sich nicht
@@ -255,10 +315,6 @@ def generate_diagram(path, path_order):
     diagram.save("diagram.png")
     print("Diagramm erzeugt und als 'diagram.png' gespeichert.")
 
-'''
-def print_main():
-    print(element_list())
-'''
 
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
@@ -297,7 +353,7 @@ label.pack(side=tk.TOP, fill=tk.X)
 label_1 = tk.Label(root, text="Anfangs-Koordinate: (0, 0), End-Koordinate: (0, 0)")
 label_1.pack()
 
-label_2 = tk.Label(root, text="Berührungspunkte auf den Linien: (0, 0)")
+label_2 = tk.Label(root, text="Beruehrungspunkte auf den Linien: (0, 0)")
 label_2.pack()
 
 canvas.bind("<Motion>", update_mouse_coordinates)
