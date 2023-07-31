@@ -154,7 +154,7 @@ def generate_table(shapes, line_coordinates_list):
             object_id = f"Punkte_ID{i + 1}"
             coords = canvas.coords(shape[1])
             x, y = coords[0], coords[1]
-            row = (object_id, f"({x}, {y})", "")
+            row = (object_id, f"({x}; {y})", "")
             table_data.append(row)
 
     for i, shape in enumerate(shapes):
@@ -163,7 +163,7 @@ def generate_table(shapes, line_coordinates_list):
             coords = canvas.coords(shape[1])
             start_x, start_y, end_x, end_y = coords
             length = calculate_length(start_x, start_y, end_x, end_y)
-            row = (object_id, f"({start_x}, {start_y})", f"({end_x}, {end_y})", f"{length:.2f}")
+            row = (object_id, f"({start_x}; {start_y})", f"({end_x}; {end_y})", f"{length:.2f}")
             table_data.append(row)
 
     # Speichere die Tabelle in einer Datei

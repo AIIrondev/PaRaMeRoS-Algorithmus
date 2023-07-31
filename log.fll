@@ -411,3 +411,37 @@ Punkte_ID4: (405.0, 300.0)
 Line_ID1: (407.0, 305.0)
 Line_ID2: (636.0, 288.0)
 Gesamtlaenge: 463.1774227319851
+
+--- Protokoll vom 2023-07-31 11:35:11 ---
+Strecke: Anfangs-Koordinate: (393, 146), End-Koordinate: (480, 270), Laenge: 151.47607071745688
+Strecke: Anfangs-Koordinate: (478, 269), End-Koordinate: (741, 190), Laenge: 274.60881267723363
+Strecke: Anfangs-Koordinate: (395, 148), End-Koordinate: (738, 191), Laenge: 345.6848275524976
+Punkte_ID4: (734.0, 186.0)
+Punkte_ID5: (474.0, 263.0)
+Punkte_ID6: (390.0, 144.0)
+Line_ID1: (393.0, 146.0)
+Line_ID2: (478.0, 269.0)
+Line_ID3: (395.0, 148.0)
+Gesamtlaenge: 771.7697109471881
+
+--- Protokoll vom 2023-07-31 11:44:38 ---
+Strecke: Anfangs-Koordinate: (418, 198), End-Koordinate: (720, 194), Laenge: 302.026488904533
+Strecke: Anfangs-Koordinate: (419, 196), End-Koordinate: (625, 322), Laenge: 241.4787775354182
+Punkte_ID2: (708.0, 189.0)
+Punkte_ID4: (616.0, 315.0)
+Punkte_ID5: (419.0, 193.0)
+Line_ID1: (418.0, 198.0)
+Line_ID3: (419.0, 196.0)
+Gesamtlaenge: 543.5052664399511
+
+--- Protokoll vom 2023-07-31 11:52:47 ---
+Strecke: Anfangs-Koordinate: (363, 280), End-Koordinate: (754, 258), Laenge: 391.61843674679056
+Strecke: Anfangs-Koordinate: (754, 258), End-Koordinate: (465, 144), Laenge: 310.67185260335384
+Strecke: Anfangs-Koordinate: (466, 143), End-Koordinate: (365, 279), Laenge: 169.4018890095385
+Punkte_ID4: (360.0, 274.0)
+Punkte_ID5: (462.0, 140.0)
+Punkte_ID6: (744.0, 253.0)
+Line_ID1: (363.0, 280.0)
+Line_ID2: (754.0, 258.0)
+Line_ID3: (466.0, 143.0)
+Gesamtlaenge: 871.6921783596829
