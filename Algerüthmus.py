@@ -52,12 +52,11 @@ def delete_last_shape(event):
 object_coordinates_c = {}
 object_coordinates_l = {}
 
-
 def calculate_paths_thread():
     # Algorithmus für das Path Finding System
     path_order = [i for i in range(len(line_coordinates_list))]
     path_found = False
-    max_iterations = 1000  # Maximale Anzahl von Iterationen, um einen gültigen Pfad zu finden
+    max_iterations = 10000  # Maximale Anzahl von Iterationen, um einen gültigen Pfad zu finden
 
     # Generiere eine eindeutige ID für jedes Objekt
     object_coordinates_c = {}
@@ -100,7 +99,7 @@ def calculate_paths_thread():
             # Path-Überprüfung einfügen und Debugging-Anweisungen
             if is_path_possible(start_x, start_y, end_x, end_y):
                 current_path.append(line_coordinates)
-                print("Hier wird geprüft ob ein Weg possible ist")
+                print("Hier wird geprueft ob ein Weg possible ist")
             else:
                 print(f"Linie {order + 1} kann nicht in den Pfad aufgenommen werden.")
                 break
@@ -108,7 +107,7 @@ def calculate_paths_thread():
         # Wenn alle Strecken möglich sind, wurde ein gültiger Pfad gefunden
         if len(current_path) == len(path_order):
             path_found = True
-            print("Gültiger Pfad gefunden:")
+            print("Gueltiger Pfad gefunden:")
             timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             with open("log.fll", "a") as file:
                 file.write(f"\n\n--- Protokoll vom {timestamp} ---\n")
@@ -138,7 +137,6 @@ def calculate_paths_thread():
         print("Gueltiger Pfad gefunden:")
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         with open("log.fll", "a") as file:
-            # Der Rest des Codes bleibt gleich ...
             generate_diagram(current_path, path_order)
             generate_table(shapes, line_coordinates_list)
 
@@ -166,7 +164,7 @@ def generate_table(shapes, line_coordinates_list):
             row = (object_id, f"({start_x}; {start_y})", f"({end_x}; {end_y})", f"{length:.2f}")
             table_data.append(row)
 
-    # Speichere die Tabelle in einer Datei
+    # Speichere die Tabelle in einer Datei für die Dokumentation
     with open("table.csv", "w") as file:
         file.write("Objekt ID, Koordinate Anfang, Koordinate Ende, Laenge\n")
         for row in table_data:
@@ -201,8 +199,8 @@ def is_path_possible(start_x, start_y, end_x, end_y):
     for line_coordinates in line_coordinates_list:
         line_start_x1, line_start_y1, line_end_x1, line_end_y1 = line_coordinates
         if lines_intersect(start_x, start_y, end_x, end_y, line_start_x1, line_start_y1, line_end_x1, line_end_y1):
-            # If the line intersects with another line, we return False
-            return False
+            # If die Linien gekreuzen, return True
+            return True
 
     for shape in shapes:
         if shape[0] == "circle":
