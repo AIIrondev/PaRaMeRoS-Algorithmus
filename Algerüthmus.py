@@ -339,7 +339,7 @@ canvas.bind("<ButtonRelease-2>", finish_line)
 canvas.bind("z", delete_last_shape)
 root.bind("b", lambda event: create_line_network())
 
-image_path = "FLL_2022_Map.png"
+image_path = "FLL_2023-24_Map.png"
 image = Image.open(image_path)
 photo = ImageTk.PhotoImage(image)
 canvas.config(width=image.width, height=image.height)
