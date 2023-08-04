@@ -32,7 +32,7 @@ def finish_line(event):
         line_coordinates = (canvas.line_start[0], canvas.line_start[1], x, y)
         line_coordinates_list.append(line_coordinates)
         del canvas.line_start
-        print("Eine Linie Wurde gezeichnet!")
+        print("Eine Linie wurde gezeichnet!")
 
 def delete_last_shape(event):
     if len(shapes) >= 1 and len(line_coordinates_list) >= 1:
@@ -43,11 +43,11 @@ def delete_last_shape(event):
         shape_type, shape = shapes.pop(0)
         if shape_type == "circle":
             canvas.delete(shape)
-            print("der letzte Kreis wurde gelöscht!")
+            print("Der letzte Kreis wurde gelöscht!")
         elif shape_type == "line":
             canvas.delete(shape)
             line_coordinates_list.pop(0)
-            print("die letzte Linie wurde gelöscht!")
+            print("Die letzte Linie wurde gelöscht!")
 
 object_coordinates_c = {}
 object_coordinates_l = {}
@@ -73,16 +73,6 @@ def calculate_paths_thread():
             coords = canvas.coords(shape[1])
             object_coordinates_l[object_id] = (coords[0], coords[1])
             print("es wurde eine ID zugewiesen an einen Linie zugewiesen")
-    # Speichere die IDs und Koordinaten in einer Datei
-    with open("objects.fll", "w") as file:
-        for object_id_1, coords_1 in object_coordinates_c.items():
-            x_1, y_1 = coords_1
-            file.write(f"{object_id_1}: ({x_1}, {y_1})\n")
-        for line_coordinates_1 in line_coordinates_list:
-            for object_id_2, coords_2 in object_coordinates_l.items():
-                start_x, start_y, end_x, end_y = line_coordinates_1
-                file.write(f"{object_id_2}: ({start_x}, {start_y}); ({end_x}, {end_y})\n")
-                print("Es wurde in die objekt.fll ausgegeben")
 
     # Simuliere die Strecken in der Reihenfolge
     iteration_count = 0

@@ -451,3 +451,31 @@ Strecke: Anfangs-Koordinate: (410, 245), End-Koordinate: (768, 233), Laenge: 358
 Punkte_ID2: (406.0, 239.0)
 Line_ID1: (410.0, 245.0)
 Gesamtlaenge: 358.2010608582839
+
+--- Protokoll vom 2023-08-03 17:48:56 ---
+Punkte_ID1: (468.0, -4.0)
+Gesamtlaenge: 0
+
+--- Protokoll vom 2023-08-03 17:48:56 ---
+Punkte_ID1: (468.0, -4.0)
+Gesamtlaenge: 0
+
+--- Protokoll vom 2023-08-03 17:48:56 ---
+Punkte_ID1: (468.0, -4.0)
+Gesamtlaenge: 0
+
+--- Protokoll vom 2023-08-03 17:48:57 ---
+Punkte_ID1: (468.0, -4.0)
+Gesamtlaenge: 0
+
+--- Protokoll vom 2023-08-03 17:49:21 ---
+Strecke: Anfangs-Koordinate: (157, 170), End-Koordinate: (524, 183), Laenge: 367.2301730522698
+Strecke: Anfangs-Koordinate: (524, 183), End-Koordinate: (474, 2), Laenge: 187.77912557044246
+Strecke: Anfangs-Koordinate: (474, 2), End-Koordinate: (156, 169), Laenge: 359.18379696194535
+Punkte_ID1: (468.0, -4.0)
+Punkte_ID2: (153.0, 164.0)
+Punkte_ID3: (517.0, 176.0)
+Line_ID4: (157.0, 170.0)
+Line_ID5: (524.0, 183.0)
+Line_ID6: (474.0, 2.0)
+Gesamtlaenge: 914.1930955846576
