@@ -35,18 +35,13 @@ def finish_line(event):
         print("Eine Linie wurde gezeichnet!")
 
 def delete_last_shape(event):
-    if len(shapes) >= 1 and len(line_coordinates_list) >= 1:
+    if shapes and line_coordinates_list:
         shape_type, shape = shapes.pop()
         line_coordinates_list.pop()
         canvas.delete(shape)
-    if shapes:
-        shape_type, shape = shapes.pop(0)
         if shape_type == "circle":
-            canvas.delete(shape)
             print("Der letzte Kreis wurde gelöscht!")
         elif shape_type == "line":
-            canvas.delete(shape)
-            line_coordinates_list.pop(0)
             print("Die letzte Linie wurde gelöscht!")
 
 object_coordinates_c = {}
@@ -133,7 +128,6 @@ def calculate_paths_thread():
     else:
         print("Kein gültiger Pfad gefunden!")
 
-
 def generate_table(shapes, line_coordinates_list):
     # Erstelle eine Tabelle für die verschiedenen Kombinationen der Punkte und Längen
     table_data = []
@@ -159,7 +153,6 @@ def generate_table(shapes, line_coordinates_list):
         file.write("Objekt ID, Koordinate Anfang, Koordinate Ende, Laenge\n")
         for row in table_data:
             file.write(",".join(row) + "\n")
-
 
 def create_line_network():
     if line_coordinates_list:
@@ -220,7 +213,6 @@ def calculate_length(start_x, start_y, end_x, end_y):
     dy = end_y - start_y
     return ((dx ** 2) + (dy ** 2)) ** 0.5
 
-
 def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
     # Überprüft, ob sich zwei Linien schneiden
     # Rückgabe True, wenn sich die Linien schneiden, andernfalls False
@@ -247,7 +239,6 @@ def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
     else:
         return False  # Linien schneiden sich nicht
 
-
 def next_permutation(arr):
     # Findet die nächste Permutation des Arrays 'arr' (lexikographische Ordnung)
     # Implementierung des Algorithmus von Narayana Pandita
@@ -261,11 +252,10 @@ def next_permutation(arr):
         arr[i], arr[j] = arr[j], arr[i]
     arr[i + 1:] = reversed(arr[i + 1:])
 
-
 def generate_diagram(path, path_order):
     # Hier kannst du die Diagrammerzeugung implementieren
     # Beispiel: Zufällige Farben für Linien und Kreise
-    diagram = Image.new("RGB", (1500, 1200), "white")
+    diagram = Image.new("RGB", (705, 420), "white")
     draw = ImageDraw.Draw(diagram)
 
     # Beschriftungen der Objekte
@@ -303,7 +293,6 @@ def generate_diagram(path, path_order):
     diagram.save("diagram.png")
     print("Diagramm erzeugt und als 'diagram.png' gespeichert.")
 
-
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
 
@@ -326,7 +315,7 @@ canvas.bind("<Button-2>", create_shapes)
 canvas.bind("<Button-3>", create_shapes)
 canvas.bind("<B2-Motion>", draw_line)
 canvas.bind("<ButtonRelease-2>", finish_line)
-canvas.bind("z", delete_last_shape)
+root.bind("z", delete_last_shape)
 root.bind("b", lambda event: create_line_network())
 
 image_path = "FLL_2023-24_Map.png"
