@@ -1,3 +1,4 @@
+import csv
 from queue import PriorityQueue
 
 class Graph:
@@ -32,28 +33,23 @@ class Graph:
                             D[neighbor] = new_cost
         return D
 
-# hier erstelle ich die graphs
+# Read the graph data from the CSV file
+data = []
+with open("Dijkstra_data.csv", "r") as file:
+    reader = csv.reader(file)
+    next(reader)  # Skip the header
+    for row in reader:
+        data.append(tuple(map(int, row)))
+
+# Create a list of graphs
 graphs = []
 for i in range(9):
     g = Graph(9)
-    g.add_edge(0, 1, 4)
-    g.add_edge(0, 6, 7)
-    g.add_edge(1, 6, 11)
-    g.add_edge(1, 7, 20)
-    g.add_edge(1, 2, 9)
-    g.add_edge(2, 3, 6)
-    g.add_edge(2, 4, 2)
-    g.add_edge(3, 4, 10)
-    g.add_edge(3, 5, 5)
-    g.add_edge(4, 5, 15)
-    g.add_edge(4, 7, 1)
-    g.add_edge(4, 8, 5)
-    g.add_edge(5, 8, 12)
-    g.add_edge(6, 7, 1)
-    g.add_edge(7, 8, 3)
+    for row in data:
+        g.add_edge(row[0], row[1], row[2])
     graphs.append(g)
 
-# hier wird für alles berechnet was für eine entfernung es hat
+# Calculate and print the shortest distances for each starting vertex
 for i, g in enumerate(graphs):
     D = g.dijkstra(i)
     for vertex in range(len(D)):

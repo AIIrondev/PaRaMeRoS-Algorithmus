@@ -5,7 +5,7 @@ import random
 import datetime
 from PIL import ImageDraw
 import time
-
+import csv
 
 def create_shapes(event):
     x, y = event.x, event.y
@@ -129,30 +129,38 @@ def calculate_paths_thread():
         print("Kein gültiger Pfad gefunden!")
 
 def generate_table(shapes, line_coordinates_list):
-    # Erstelle eine Tabelle für die verschiedenen Kombinationen der Punkte und Längen
-    table_data = []
+    with open("table.csv", "w", newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["Objekt ID", "Koordinate Anfang", "Koordinate Ende", "Laenge"])
     for i, shape in enumerate(shapes):
         if shape[0] == "circle":
             object_id = f"Punkte_ID{i + 1}"
             coords = canvas.coords(shape[1])
             x, y = coords[0], coords[1]
-            row = (object_id, f"({x}; {y})", "")
-            table_data.append(row)
-
+            row = [object_id, f"({x}; {y})", "", ""]
+            writer.writerow(row)
+    
     for i, shape in enumerate(shapes):
         if shape[0] == "line":
             object_id = f"Line_ID{i + 1}"
             coords = canvas.coords(shape[1])
             start_x, start_y, end_x, end_y = coords
             length = calculate_length(start_x, start_y, end_x, end_y)
-            row = (object_id, f"({start_x}; {start_y})", f"({end_x}; {end_y})", f"{length:.2f}")
-            table_data.append(row)
+            row = [object_id, f"({start_x}; {start_y})", f"({end_x}; {end_y})", f"{length:.2f}"]
+            writer.writerow(row)
 
-    # Speichere die Tabelle in einer Datei für die Dokumentation
-    with open("table.csv", "w") as file:
-        file.write("Objekt ID, Koordinate Anfang, Koordinate Ende, Laenge\n")
-        for row in table_data:
-            file.write(",".join(row) + "\n")
+    with open("Dijkstra_data.csv", "w", newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(["source", "target", "weight"])
+        for i, shape in enumerate(shapes):
+            if shape[0] == "line":
+                coords = canvas.coords(shape[1])
+                start_x, start_y, end_x, end_y = coords
+                length = calculate_length(start_x, start_y, end_x, end_y)
+                writer.writerow(f"({start_x}; {start_y})", f"({end_x}; {end_y})", f"{length:.2f}")
+
+    with open("log.fll", "a") as file:
+        file.write("Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!")
 
 def create_line_network():
     if line_coordinates_list:

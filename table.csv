@@ -1,7 +1,7 @@
-Objekt ID, Koordinate Anfang, Koordinate Ende, Laenge
-Punkte_ID4,(80.0; 75.0),
-Punkte_ID5,(271.0; 52.0),
-Punkte_ID6,(181.0; 165.0),
-Line_ID1,(84.0; 80.0),(186.0; 170.0),136.03
-Line_ID2,(186.0; 170.0),(279.0; 57.0),146.35
-Line_ID3,(279.0; 57.0),(86.0; 79.0),194.25
+Objekt ID,Koordinate Anfang,Koordinate Ende,Laenge
+Punkte_ID4,(355.0; 201.0),,
+Punkte_ID5,(339.0; 363.0),,
+Punkte_ID6,(281.0; 326.0),,
+Line_ID1,(360.0; 199.0),(346.0; 369.0),170.58
+Line_ID2,(345.0; 369.0),(285.0; 333.0),69.97
+Line_ID3,(285.0; 333.0),(358.0; 203.0),149.09
