@@ -4,7 +4,6 @@ import threading
 import random
 import datetime
 from PIL import ImageDraw
-import time
 import csv
 
 def create_shapes(event):
@@ -139,7 +138,7 @@ def generate_table(shapes, line_coordinates_list):
             x, y = coords[0], coords[1]
             row = [object_id, f"({x}; {y})", "", ""]
             writer.writerow(row)
-    
+
     for i, shape in enumerate(shapes):
         if shape[0] == "line":
             object_id = f"Line_ID{i + 1}"
@@ -301,6 +300,21 @@ def generate_diagram(path, path_order):
     diagram.save("diagram.png")
     print("Diagramm erzeugt und als 'diagram.png' gespeichert.")
 
+def create_button():
+    # hier muss eine Automatisierung der Button creator gemacht werden für alle Linien und Punkte diese müssen in der richtigen Reihenfolge aufgelistet werden nähmlich zwei reihen Punkte und eine Reihe Linien
+    print("debug 1")
+
+def linien_creator(shapes, line_coordinates_list):
+    # def für richtige Verbindung zwischen den Punkten anhand der Linien für die 
+    for i, shape in enumerate(shapes):
+        if shape[0] == "line":
+            coords = canvas.coords(shape[1])
+            start_x, start_y, end_x, end_y = coords
+            length = calculate_length(start_x, start_y, end_x, end_y)
+            label_4.config(text=f"Linien Verbindung 1: ( , ) Leange: ({length})")
+        else:
+            print("debug 2")
+
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
 
@@ -345,5 +359,22 @@ canvas.bind("<Motion>", update_mouse_coordinates)
 
 render_button = tk.Button(root, text="Path Finding", command=create_line_network)
 render_button.pack()
+
+label_3 = tk.Label(root, text="Liste der Linien")
+label_3.pack()
+
+label_4 =tk.Label(root, text="Linien Verbindung 1: (0,0) Leange: (0)")
+
+render_button_1 = tk.Button(root, text="Punkt 1", command=linien_creator)
+render_button_1.pack()
+
+render_button_2 = tk.Button(root, text="Punkt 2", command=linien_creator)
+render_button_2.pack()
+
+render_button_3 = tk.Button(root, text="Punkt 3", command=linien_creator)
+render_button_3.pack()
+
+render_fild = tk.Entry(root)
+render_fild.pack()
 
 root.mainloop()
