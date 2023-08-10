@@ -327,9 +327,6 @@ def linien_creator(shape_index):
     else:
         print(f"Keine Linie gefunden für Shape {shape_index + 1}")
 
-def remove_focus():
-    render_fild.focus_set()
-
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
 
@@ -353,7 +350,7 @@ canvas.bind("<Button-3>", create_shapes)
 canvas.bind("<B2-Motion>", draw_line)
 canvas.bind("<ButtonRelease-2>", finish_line)
 root.bind("z", delete_last_shape)
-root.bind("l", lambda event: [remove_focus(), create_buttons_for_shapes()])
+root.bind("l", lambda event: [create_buttons_for_shapes()])
 root.bind("b", lambda event: create_line_network())
 
 image_path = "FLL_2023-24_Map.png"
@@ -381,7 +378,7 @@ label_3.pack()
 
 label_4 =tk.Label(root, text="Linien Verbindung 1: (0,0) Leange: (0)")
 
-render_button_1 = tk.Button(root, text="Auflistung der Linien", command=[remove_focus(), create_buttons_for_shapes()])
+render_button_1 = tk.Button(root, text="Auflistung der Linien", command=create_buttons_for_shapes)
 render_button_1.pack()
 
 render_fild = tk.Entry(root)
