@@ -657,3 +657,66 @@ Line_ID1: (81.0, 78.0)
 Line_ID2: (186.0, 171.0)
 Line_ID3: (39.0, 169.0)
 Gesamtlaenge: 386.57517424179866
+
+--- Protokoll vom 2023-08-10 22:10:09 ---
+Strecke: Anfangs-Koordinate: (83, 78), End-Koordinate: (186, 167), Laenge: 136.12494260788506
+Strecke: Anfangs-Koordinate: (186, 167), End-Koordinate: (279, 54), Laenge: 146.3488981851247
+Strecke: Anfangs-Koordinate: (279, 54), End-Koordinate: (85, 81), Laenge: 195.86985475054604
+Strecke: Anfangs-Koordinate: (85, 81), End-Koordinate: (43, 167), Laenge: 95.70788891204319
+Strecke: Anfangs-Koordinate: (43, 167), End-Koordinate: (185, 165), Laenge: 142.01408380861386
+Strecke: Anfangs-Koordinate: (185, 165), End-Koordinate: (350, 181), Laenge: 165.77394246382633
+Strecke: Anfangs-Koordinate: (350, 181), End-Koordinate: (275, 51), Laenge: 150.08331019803634
+Strecke: Anfangs-Koordinate: (278, 55), End-Koordinate: (472, 57), Laenge: 194.0103090044444
+Strecke: Anfangs-Koordinate: (472, 57), End-Koordinate: (348, 177), Laenge: 172.55723688098394
+Strecke: Anfangs-Koordinate: (348, 177), End-Koordinate: (482, 199), Laenge: 135.79396157414365
+Strecke: Anfangs-Koordinate: (482, 199), End-Koordinate: (474, 56), Laenge: 143.22360140703069
+Strecke: Anfangs-Koordinate: (474, 56), End-Koordinate: (632, 65), Laenge: 158.25612152457168
+Strecke: Anfangs-Koordinate: (632, 65), End-Koordinate: (517, 174), Laenge: 158.44872987815333
+Strecke: Anfangs-Koordinate: (517, 174), End-Koordinate: (482, 195), Laenge: 40.8166632639171
+Strecke: Anfangs-Koordinate: (476, 59), End-Koordinate: (518, 171), Laenge: 119.61605243444544
+Strecke: Anfangs-Koordinate: (518, 171), End-Koordinate: (643, 349), Laenge: 217.50632174720806
+Strecke: Anfangs-Koordinate: (643, 349), End-Koordinate: (629, 66), Laenge: 283.346078144731
+Strecke: Anfangs-Koordinate: (642, 347), End-Koordinate: (484, 373), Laenge: 160.12495120998477
+Strecke: Anfangs-Koordinate: (484, 373), End-Koordinate: (486, 210), Laenge: 163.01226947687098
+Strecke: Anfangs-Koordinate: (486, 210), End-Koordinate: (521, 173), Laenge: 50.93132631298737
+Strecke: Anfangs-Koordinate: (482, 212), End-Koordinate: (258, 335), Laenge: 255.54842985234717
+Strecke: Anfangs-Koordinate: (258, 335), End-Koordinate: (64, 370), Laenge: 197.1319355152787
+Punkte_ID25: (60.0, 363.0)
+Punkte_ID26: (39.0, 158.0)
+Punkte_ID27: (178.0, 162.0)
+Punkte_ID28: (79.0, 75.0)
+Punkte_ID29: (271.0, 51.0)
+Punkte_ID30: (342.0, 171.0)
+Punkte_ID31: (471.0, 50.0)
+Punkte_ID32: (477.0, 189.0)
+Punkte_ID33: (480.0, 207.0)
+Punkte_ID34: (516.0, 169.0)
+Punkte_ID35: (623.0, 60.0)
+Punkte_ID36: (480.0, 368.0)
+Punkte_ID37: (637.0, 340.0)
+Punkte_ID38: (255.0, 327.0)
+Line_ID1: (83.0, 78.0)
+Line_ID2: (186.0, 167.0)
+Line_ID3: (279.0, 54.0)
+Line_ID4: (85.0, 81.0)
+Line_ID5: (43.0, 167.0)
+Line_ID6: (185.0, 165.0)
+Line_ID7: (350.0, 181.0)
+Line_ID8: (278.0, 55.0)
+Line_ID9: (472.0, 57.0)
+Line_ID10: (348.0, 177.0)
+Line_ID11: (482.0, 199.0)
+Line_ID12: (474.0, 56.0)
+Line_ID13: (632.0, 65.0)
+Line_ID14: (517.0, 174.0)
+Line_ID15: (476.0, 59.0)
+Line_ID16: (518.0, 171.0)
+Line_ID17: (643.0, 349.0)
+Line_ID18: (642.0, 347.0)
+Line_ID19: (484.0, 373.0)
+Line_ID20: (486.0, 210.0)
+Line_ID21: (482.0, 212.0)
+Line_ID22: (258.0, 335.0)
+Line_ID23: (64.0, 370.0)
+Line_ID24: (182.0, 167.0)
+Gesamtlaenge: 3482.246909153174

@@ -156,7 +156,7 @@ def generate_table(shapes, line_coordinates_list):
                 coords = canvas.coords(shape[1])
                 start_x, start_y, end_x, end_y = coords
                 length = calculate_length(start_x, start_y, end_x, end_y)
-                writer.writerow(f"({start_x}; {start_y})", f"({end_x}; {end_y})", f"{length:.2f}")
+#                writer.writerow(f"({start_x}; {start_y})", f"({end_x}; {end_y})", f"{length:.2f}")
 
     with open("log.fll", "a") as file:
         file.write("Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!")
@@ -311,11 +311,12 @@ def create_button(shape_type, index):
 def create_buttons_for_shapes():
     button_frame = tk.Frame(root)
     button_frame.pack()
-
+    canvas.create_window(0, 0, anchor="nw", window=button_frame)
     for i, shape in enumerate(shapes):
         shape_type, _ = shape
         button = create_button(shape_type, i)
         button.pack(fill=tk.BOTH, padx=5, pady=5)
+    canvas.config(scrollregion=canvas.bbox("all"))
 
 def display_function_explanations():
     explanation_text = """
