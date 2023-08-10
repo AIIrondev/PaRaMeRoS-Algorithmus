@@ -131,22 +131,22 @@ def generate_table(shapes, line_coordinates_list):
     with open("table.csv", "w", newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Objekt ID", "Koordinate Anfang", "Koordinate Ende", "Laenge"])
-    for i, shape in enumerate(shapes):
-        if shape[0] == "circle":
-            object_id = f"Punkte_ID{i + 1}"
-            coords = canvas.coords(shape[1])
-            x, y = coords[0], coords[1]
-            row = [object_id, f"({x}; {y})", "", ""]
-            writer.writerow(row)
+        for i, shape in enumerate(shapes):
+            if shape[0] == "circle":
+                object_id = f"Punkte_ID{i + 1}"
+                coords = canvas.coords(shape[1])
+                x, y = coords[0], coords[1]
+                row = [object_id, f"({x}; {y})", "", ""]
+                writer.writerow(row)
 
-    for i, shape in enumerate(shapes):
-        if shape[0] == "line":
-            object_id = f"Line_ID{i + 1}"
-            coords = canvas.coords(shape[1])
-            start_x, start_y, end_x, end_y = coords
-            length = calculate_length(start_x, start_y, end_x, end_y)
-            row = [object_id, f"({start_x}; {start_y})", f"({end_x}; {end_y})", f"{length:.2f}"]
-            writer.writerow(row)
+        for i, shape in enumerate(shapes):
+            if shape[0] == "line":
+                object_id = f"Line_ID{i + 1}"
+                coords = canvas.coords(shape[1])
+                start_x, start_y, end_x, end_y = coords
+                length = calculate_length(start_x, start_y, end_x, end_y)
+                row = [object_id, f"({start_x}; {start_y})", f"({end_x}; {end_y})", f"{length:.2f}"]
+                writer.writerow(row)
 
     with open("Dijkstra_data.csv", "w", newline='') as file:
         writer = csv.writer(file)
@@ -355,7 +355,7 @@ def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
 
 root = tk.Tk()
-root.title("FLL PaRaMeRoS AI")
+root.title("FLL PaRaMeRoS Algeruethmus")
 
 logo_path = "LOGO.jpeg"
 logo = ImageTk.PhotoImage(Image.open(logo_path))
