@@ -633,3 +633,15 @@ Gesamtlaenge: 379.9513197489808
 --- Protokoll vom 2023-08-10 17:49:01 ---
 Punkte_ID1: (267.0, 233.0)
 Gesamtlaenge: 0
+
+--- Protokoll vom 2023-08-10 20:31:12 ---
+Strecke: Anfangs-Koordinate: (351, 183), End-Koordinate: (281, 57), Laenge: 144.138821973818
+Strecke: Anfangs-Koordinate: (281, 57), End-Koordinate: (80, 80), Laenge: 202.3116407921205
+Strecke: Anfangs-Koordinate: (80, 80), End-Koordinate: (351, 182), Laenge: 289.56001105124994
+Punkte_ID4: (343.0, 175.0)
+Punkte_ID5: (274.0, 52.0)
+Punkte_ID6: (80.0, 75.0)
+Line_ID1: (351.0, 183.0)
+Line_ID2: (281.0, 57.0)
+Line_ID3: (80.0, 80.0)
+Gesamtlaenge: 636.0104738171884

@@ -125,7 +125,7 @@ def calculate_paths_thread():
             generate_table(shapes, line_coordinates_list)
 
     else:
-        print("Kein gültiger Pfad gefunden!")
+        print("Kein gueltiger Pfad gefunden!")
 
 def generate_table(shapes, line_coordinates_list):
     with open("table.csv", "w", newline='') as file:
@@ -168,7 +168,7 @@ def create_line_network():
             start_x, start_y, end_x, end_y = line_coordinates
             print(f"Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y})")
             label_1.config(text=f"Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y})")
-        print("Berührungspunkte der Linien:")
+        print("Beruehrungspunkte der Linien:")
         for line_coordinates in line_coordinates_list:
             start_x, start_y, end_x, end_y = line_coordinates
             for point in shapes:
@@ -241,7 +241,7 @@ def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
 
     # Überprüfung, ob der Schnittpunkt innerhalb des definierten Bereichs liegt
     if 0 <= t1 <= 1 and 0 <= t2 <= 1:
-        print("hier wird geprüft ob die linien sich durch queren")
+        print("hier wird geprueft ob die linien sich durch queren")
         return True  # Linien schneiden sich
     else:
         return False  # Linien schneiden sich nicht
@@ -303,18 +303,42 @@ def generate_diagram(path, path_order):
 def create_button(shape_type, index):
     if shape_type == "circle":
         button_text = f"Kreis {index + 1}"
-        return tk.Button(root, text=button_text, command=lambda: linien_creator(index))
+        return tk.Button(root, text=button_text, command=lambda index=index: linien_creator(index))
     elif shape_type == "line":
         button_text = f"Linie {index + 1}"
-        return tk.Button(root, text=button_text, command=lambda: linien_creator(index))
+        return tk.Button(root, text=button_text, command=lambda index=index: linien_creator(index))
 
 def create_buttons_for_shapes():
+    button_frame = tk.Frame(root)
+    button_frame.pack()
+
     for i, shape in enumerate(shapes):
         shape_type, _ = shape
         button = create_button(shape_type, i)
-        row_index = i // 2 
-        col_index = i % 2  
-        button.grid(row=row_index, column=col_index, padx=5, pady=5)
+        button.pack(fill=tk.BOTH, padx=5, pady=5)
+
+def display_function_explanations():
+    explanation_text = """
+    Hier sind die Erklärungen für die verschiedenen Funktionen:
+
+    - Linksklick / Rechtsklick: Fügt einen roten Punkt (Kreis) an der Mausposition hinzu.
+    - Mittelklick: Markiert den Startpunkt einer Linie.
+    - Ziehen bei Mittelklick: Zeichnet eine temporäre grüne Linie.
+    - Loslassen nach Mittelklick: Zeichnet eine grüne Linie und speichert sie.
+    - Taste 'z': Löscht die zuletzt gezeichnete Form (Kreis oder Linie).
+    - Taste 'l': Erzeugt Schaltflächen für die vorhandenen Formen.
+    - Taste 'b': Führt den Path Finding Algorithmus aus.
+
+    Die Schaltfläche 'Path Finding' führt den Algorithmus aus, um gültige Pfade zu berechnen.
+    Die Schaltfläche 'Auflistung der Linien' zeigt Schaltflächen für jede Linie und jeden Kreis an.
+    Die Schaltfläche 'Neue Verbindung erstellen' erstellt eine neue Verbindung mit ausgewähltem Index.
+    """
+    current_text = explanation_label.cget("text")
+    if current_text == explanation_text:
+        explanation_label.config(text="")
+    else:
+        explanation_label.config(text=explanation_text)
+
 
 def linien_creator(shape_index):
     shape = shapes[shape_index]
@@ -325,11 +349,10 @@ def linien_creator(shape_index):
         length = calculate_length(start_x, start_y, end_x, end_y)
         label_4.config(text=f"Linien Verbindung {shape_index + 1}: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}")
     else:
-        print(f"Keine Linie gefunden für Shape {shape_index + 1}")
+        print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
 
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
-
 
 root = tk.Tk()
 root.title("FLL PaRaMeRoS AI")
@@ -339,7 +362,7 @@ logo = ImageTk.PhotoImage(Image.open(logo_path))
 root.iconphoto(True, logo)
 
 canvas = tk.Canvas(root)
-canvas.pack()
+canvas.pack(fill=tk.BOTH, expand=True)
 
 shapes = []
 line_coordinates_list = []
@@ -353,10 +376,15 @@ root.bind("z", delete_last_shape)
 root.bind("l", lambda event: [create_buttons_for_shapes()])
 root.bind("b", lambda event: create_line_network())
 
+render_button_3 = tk.Button(root, text="?", command=display_function_explanations)
+render_button_3.pack()
+
+explanation_label = tk.Label(root, text="", justify=tk.LEFT)
+explanation_label.pack()
+
 image_path = "FLL_2023-24_Map.png"
 image = Image.open(image_path)
 photo = ImageTk.PhotoImage(image)
-canvas.config(width=image.width, height=image.height)
 canvas.create_image(0, 0, anchor="nw", image=photo)
 
 label = tk.Label(root, text="Maus Koordinaten: (0, 0)", bd=1, relief=tk.SUNKEN, anchor=tk.W)
@@ -376,10 +404,14 @@ render_button.pack()
 label_3 = tk.Label(root, text="Liste der Linien")
 label_3.pack()
 
-label_4 =tk.Label(root, text="Linien Verbindung 1: (0,0) Leange: (0)")
+label_4 = tk.Label(root, text="Linien Verbindung 1: (0,0) Leange: (0)")
+label_4.pack()
 
 render_button_1 = tk.Button(root, text="Auflistung der Linien", command=create_buttons_for_shapes)
 render_button_1.pack()
+
+render_button_2 = tk.Button(root, text="Neue Verbindung creiren")
+render_button_2.pack()
 
 render_fild = tk.Entry(root)
 render_fild.pack()
