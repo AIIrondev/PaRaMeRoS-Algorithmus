@@ -52,7 +52,6 @@ def calculate_paths_thread():
     path_found = False
     max_iterations = 10000  # Maximale Anzahl von Iterationen, um einen gültigen Pfad zu finden
 
-    # Generiere eine eindeutige ID für jedes Objekt
     object_coordinates_c = {}
     for i, shape in enumerate(shapes):
         if shape[0] == "circle":
@@ -68,7 +67,6 @@ def calculate_paths_thread():
             object_coordinates_l[object_id] = (coords[0], coords[1])
             print("es wurde eine ID zugewiesen an einen Linie zugewiesen")
 
-    # Simuliere die Strecken in der Reihenfolge
     iteration_count = 0
     while not path_found and iteration_count < max_iterations:
         current_path = []
@@ -76,11 +74,8 @@ def calculate_paths_thread():
             line_coordinates = line_coordinates_list[order]
             start_x, start_y, end_x, end_y = line_coordinates
             print("Hier wird eine sache gemacht_1")
-
-            # Führe eine Debugging-Anweisung aus, um zu überprüfen, welche Linien untersucht werden
             print(f"Untersuche Linie {order + 1}: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y})")
 
-            # Path-Überprüfung einfügen und Debugging-Anweisungen
             if is_path_possible(start_x, start_y, end_x, end_y):
                 current_path.append(line_coordinates)
                 print("Hier wird geprueft ob ein Weg possible ist")
@@ -88,7 +83,6 @@ def calculate_paths_thread():
                 print(f"Linie {order + 1} kann nicht in den Pfad aufgenommen werden.")
                 break
 
-        # Wenn alle Strecken möglich sind, wurde ein gültiger Pfad gefunden
         if len(current_path) == len(path_order):
             path_found = True
             print("Gueltiger Pfad gefunden:")
@@ -113,7 +107,6 @@ def calculate_paths_thread():
 
             generate_diagram(current_path, path_order)
 
-        # Permutation der Reihenfolge für die nächste Iteration
         next_permutation(path_order)
         iteration_count += 1
 
@@ -178,14 +171,12 @@ def create_line_network():
                         print(f"Beruehrter Punkt: ({point_x}, {point_y})")
                         label_2.config(text=f"Beruehrungspunkte auf den Linien: ({point_x}), ({point_y})")
 
-    # Führe den Algorithmus in einem separaten Thread aus
     print("jetzt werden die threats gestartet")
     thread = threading.Thread(target=calculate_paths_thread)
     thread.start()
     print("die Threats sind jetzt abgeschlossen")
 
 def is_path_possible(start_x, start_y, end_x, end_y):
-    # Here, we will check if the line intersects with circles' bounding areas
     for line_coordinates in line_coordinates_list:
         line_start_x1, line_start_y1, line_end_x1, line_end_y1 = line_coordinates
         if lines_intersect(start_x, start_y, end_x, end_y, line_start_x1, line_start_y1, line_end_x1, line_end_y1):
@@ -196,50 +187,35 @@ def is_path_possible(start_x, start_y, end_x, end_y):
         if shape[0] == "circle":
             circle_center_x, circle_center_y = canvas.coords(shape[1])[0], canvas.coords(shape[1])[1]
             radius = 50  # Set the radius as per your requirement
-
-            # Calculate the distance from the start and end points of the line to the center of the circle
             distance_start = ((start_x - circle_center_x) ** 2 + (start_y - circle_center_y) ** 2) ** 0.5
             distance_end = ((end_x - circle_center_x) ** 2 + (end_y - circle_center_y) ** 2) ** 0.5
 
-            # Check if the start and end points are within the circle's bounding area
             if distance_start <= radius and distance_end <= radius:
-                # The line intersects with the circle's bounding area, so it's possible
-                # Save the line information to a file if needed
                 with open("test_speicher.fll", "a") as WRITE:
                     WRITE.write(f"Line from ({start_x}, {start_y}) to ({end_x}, {end_y}) intersects with circle ({circle_center_x}, {circle_center_y})\n")
                 return True
 
-    # If the line does not intersect with any circle's bounding area, it's possible
     return True
 
 def calculate_length(start_x, start_y, end_x, end_y):
-    # Hier kannst du die Länge der Strecke berechnen
-    # Beispiel-Implementierung: Euklidischer Abstand
     print("jetzt wurde die laenge gespeichert!")
     dx = end_x - start_x
     dy = end_y - start_y
     return ((dx ** 2) + (dy ** 2)) ** 0.5
 
 def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
-    # Überprüft, ob sich zwei Linien schneiden
-    # Rückgabe True, wenn sich die Linien schneiden, andernfalls False
-
-    # Berechnung der Richtungsvektoren der Linien
     dx1 = x2 - x1
     dy1 = y2 - y1
     dx2 = x4 - x3
     dy2 = y4 - y3
 
-    # Berechnung des determinantenbasierten Kollisionsalgorithmus
     denominator = dx1 * dy2 - dx2 * dy1
     if denominator == 0:
         return False  # Linien sind parallel oder identisch
 
-    # Berechnung der Parameter für den Schnittpunkt
     t1 = ((x1 - x3) * dy2 - (y1 - y3) * dx2) / denominator
     t2 = ((x1 - x3) * dy1 - (y1 - y3) * dx1) / denominator
 
-    # Überprüfung, ob der Schnittpunkt innerhalb des definierten Bereichs liegt
     if 0 <= t1 <= 1 and 0 <= t2 <= 1:
         print("hier wird geprueft ob die linien sich durch queren")
         return True  # Linien schneiden sich
@@ -247,8 +223,6 @@ def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
         return False  # Linien schneiden sich nicht
 
 def next_permutation(arr):
-    # Findet die nächste Permutation des Arrays 'arr' (lexikographische Ordnung)
-    # Implementierung des Algorithmus von Narayana Pandita
     i = len(arr) - 2
     while i >= 0 and arr[i] >= arr[i + 1]:
         i -= 1
@@ -260,12 +234,9 @@ def next_permutation(arr):
     arr[i + 1:] = reversed(arr[i + 1:])
 
 def generate_diagram(path, path_order):
-    # Hier kannst du die Diagrammerzeugung implementieren
-    # Beispiel: Zufällige Farben für Linien und Kreise
     diagram = Image.new("RGB", (705, 420), "white")
     draw = ImageDraw.Draw(diagram)
 
-    # Beschriftungen der Objekte
     for i, shape in enumerate(shapes):
         if shape[0] == "circle":
             object_id = f"Object{i + 1}"
@@ -273,7 +244,6 @@ def generate_diagram(path, path_order):
             x, y = coords[0], coords[1]
             draw.text((x, y), object_id, fill="black")
 
-    # Zeichne den Baum
     level_height = 60
     level_padding = 40
     node_radius = 8
@@ -285,13 +255,11 @@ def generate_diagram(path, path_order):
         draw.line([(start_x, start_y), (end_x, end_y)], fill=color, width=6)
         leaf_nodes.append((order, (start_x, start_y)))
 
-    # Zeichne die Blattknoten
     for leaf_node in leaf_nodes:
         order, (x, y) = leaf_node
         color = (random.randint(0, 255), random.randint(0, 255), random.randint(0, 255))
         draw.ellipse([(x - node_radius, y - node_radius), (x + node_radius, y + node_radius)], fill=color)
 
-    # Zeichne die Verbindungslinien zwischen den Knoten
     for i in range(len(leaf_nodes) - 1):
         order1, (x1, y1) = leaf_nodes[i]
         order2, (x2, y2) = leaf_nodes[i + 1]
