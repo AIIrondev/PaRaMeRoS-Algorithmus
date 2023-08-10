@@ -300,20 +300,35 @@ def generate_diagram(path, path_order):
     diagram.save("diagram.png")
     print("Diagramm erzeugt und als 'diagram.png' gespeichert.")
 
-def create_button():
-    # hier muss eine Automatisierung der Button creator gemacht werden für alle Linien und Punkte diese müssen in der richtigen Reihenfolge aufgelistet werden nähmlich zwei reihen Punkte und eine Reihe Linien
-    print("debug 1")
+def create_button(shape_type, index):
+    if shape_type == "circle":
+        button_text = f"Kreis {index + 1}"
+        return tk.Button(root, text=button_text, command=lambda: linien_creator(index))
+    elif shape_type == "line":
+        button_text = f"Linie {index + 1}"
+        return tk.Button(root, text=button_text, command=lambda: linien_creator(index))
 
-def linien_creator(shapes, line_coordinates_list):
-    # def für richtige Verbindung zwischen den Punkten anhand der Linien für die 
+def create_buttons_for_shapes():
     for i, shape in enumerate(shapes):
-        if shape[0] == "line":
-            coords = canvas.coords(shape[1])
-            start_x, start_y, end_x, end_y = coords
-            length = calculate_length(start_x, start_y, end_x, end_y)
-            label_4.config(text=f"Linien Verbindung 1: ( , ) Leange: ({length})")
-        else:
-            print("debug 2")
+        shape_type, _ = shape
+        button = create_button(shape_type, i)
+        row_index = i // 2 
+        col_index = i % 2  
+        button.grid(row=row_index, column=col_index, padx=5, pady=5)
+
+def linien_creator(shape_index):
+    shape = shapes[shape_index]
+    shape_type, coords = shape
+
+    if shape_type == "line":
+        start_x, start_y, end_x, end_y = canvas.coords(coords)
+        length = calculate_length(start_x, start_y, end_x, end_y)
+        label_4.config(text=f"Linien Verbindung {shape_index + 1}: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}")
+    else:
+        print(f"Keine Linie gefunden für Shape {shape_index + 1}")
+
+def remove_focus():
+    render_fild.focus_set()
 
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
@@ -338,6 +353,7 @@ canvas.bind("<Button-3>", create_shapes)
 canvas.bind("<B2-Motion>", draw_line)
 canvas.bind("<ButtonRelease-2>", finish_line)
 root.bind("z", delete_last_shape)
+root.bind("l", lambda event: [remove_focus(), create_buttons_for_shapes()])
 root.bind("b", lambda event: create_line_network())
 
 image_path = "FLL_2023-24_Map.png"
@@ -365,14 +381,8 @@ label_3.pack()
 
 label_4 =tk.Label(root, text="Linien Verbindung 1: (0,0) Leange: (0)")
 
-render_button_1 = tk.Button(root, text="Punkt 1", command=linien_creator)
+render_button_1 = tk.Button(root, text="Auflistung der Linien", command=[remove_focus(), create_buttons_for_shapes()])
 render_button_1.pack()
-
-render_button_2 = tk.Button(root, text="Punkt 2", command=linien_creator)
-render_button_2.pack()
-
-render_button_3 = tk.Button(root, text="Punkt 3", command=linien_creator)
-render_button_3.pack()
 
 render_fild = tk.Entry(root)
 render_fild.pack()
