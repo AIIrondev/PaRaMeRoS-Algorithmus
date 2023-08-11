@@ -342,6 +342,8 @@ logo_path = "LOGO.jpeg"
 logo = ImageTk.PhotoImage(Image.open(logo_path))
 root.iconphoto(True, logo)
 
+root.geometry("700x650") # Größe des Fensters Festlegen
+
 canvas = tk.Canvas(root)
 canvas.pack(fill=tk.BOTH, expand=True)
 
