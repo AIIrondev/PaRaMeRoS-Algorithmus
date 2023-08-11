@@ -288,7 +288,7 @@ def create_buttons_for_shapes():
 
 def display_function_explanations():
     explanation_text = """
-    Hier sind die Erklärungen für die verschiedenen Funktionen:
+    Hier sind die Erklärungen für die verschiedenen Funktionen des Algeruethmus Programms:
 
     - Linksklick / Rechtsklick: Fügt einen roten Punkt (Kreis) an der Mausposition hinzu.
     - Mittelklick: Markiert den Startpunkt einer Linie.
@@ -298,6 +298,7 @@ def display_function_explanations():
     - Taste 'l': Erzeugt Schaltflächen für die vorhandenen Formen.
     - Taste 'b': Führt den Path Finding Algorithmus aus.
 
+    Dieses Programm sollte Ausschließlich von Personen verwendet werden, die im FLL Team PaRaMeRoS sind.
     Die Schaltfläche 'Path Finding' führt den Algorithmus aus, um gültige Pfade zu berechnen.
     Die Schaltfläche 'Auflistung der Linien' zeigt Schaltflächen für jede Linie und jeden Kreis an.
     Die Schaltfläche 'Neue Verbindung erstellen' erstellt eine neue Verbindung mit ausgewähltem Index.
@@ -312,13 +313,15 @@ def display_function_explanations():
 def linien_creator(shape_index):
     shape = shapes[shape_index]
     shape_type, coords = shape
-
     if shape_type == "line":
         start_x, start_y, end_x, end_y = canvas.coords(coords)
         length = calculate_length(start_x, start_y, end_x, end_y)
         label_4.config(text=f"Linien Verbindung {shape_index + 1}: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}")
     else:
         print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
+
+def length_calculator():
+    print("hier wird die laenge berechnet")
 
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
