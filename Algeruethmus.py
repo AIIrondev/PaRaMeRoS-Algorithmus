@@ -332,7 +332,7 @@ def linien_creator(shape_index):
         label_4.config(text=f"Linien Verbindung {shape_index + 1}: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}")
     else:
         print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
-
+'''
 def verbindung_creiren():
     if create_button_for_shapes_var == True:
         explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien"
@@ -347,7 +347,7 @@ def verbindung_creiren():
                     print("Punkt, valid")
                 elif shape == "Linie":
                     print("Linie, unvalid")
-
+'''
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
 
@@ -408,10 +408,10 @@ label_4.pack()
 
 render_button_1 = tk.Button(root, text="Auflistung der Linien", command=create_buttons_for_shapes)
 render_button_1.pack()
-
+'''
 render_button_2 = tk.Button(root, text="Neue Verbindung creiren", command=verbindung_creiren)
 render_button_2.pack()
-
+'''
 render_fild = tk.Entry(root)
 render_fild.pack()
 
