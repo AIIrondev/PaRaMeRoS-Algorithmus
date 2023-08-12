@@ -6,6 +6,7 @@ from ortools.constraint_solver import pywrapcp
 def create_data_model():
     data = {}
     data["locations"] = [
+      # hier müssen die errechneten Daten aus dem Dijkstra-Algorithmus eingefügt werden um eine finale Route zu erhalten
       (288, 149), (288, 129), (270, 133), (256, 141), (256, 157), (246, 157),
       (236, 169), (228, 169), (228, 161), (220, 169), (212, 169), (204, 169),
       (196, 169), (188, 169), (196, 161), (188, 145), (172, 145), (164, 145),
@@ -54,13 +55,13 @@ def create_data_model():
       (196, 145), (204, 145), (212, 145), (220, 145), (228, 145), (236, 145),
       (246, 141), (252, 125), (260, 129), (280, 133)
     ]
-    data["num_vehicles"] = 1
-    data["depot"] = 0
+    data["num_vehicles"] = 1 # das ist die Anzahl der Fahrzeuge die verwendet werden kann welches wir aber nicht brauchen da wir nur eine Route haben
+    data["depot"] = 0 # hier wird der Startpunkt festgelegt (0 = Startpunkt"depot")
     return data
 
 
 def compute_euclidean_distance_matrix(locations):
-    """Creates callback to return distance between points."""
+    # hier wird die Distanz zwischen den einzelnen Punkten berechnet
     distances = {}
     for from_counter, from_node in enumerate(locations):
         distances[from_counter] = {}
@@ -75,7 +76,7 @@ def compute_euclidean_distance_matrix(locations):
 
 
 def print_solution(manager, routing, solution):
-    """Prints solution on console."""
+# hier werden die Ergebnisse ausgegeben
     print(f"Objective: {solution.ObjectiveValue()}")
     index = routing.Start(0)
     plan_output = "Route:\n"
@@ -91,6 +92,7 @@ def print_solution(manager, routing, solution):
 
 
 def main():
+    #hier wird das Modell erstellt
     data = create_data_model()
 
     manager = pywrapcp.RoutingIndexManager(

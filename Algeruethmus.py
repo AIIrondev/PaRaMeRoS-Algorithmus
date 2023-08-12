@@ -279,19 +279,18 @@ def create_button(shape_type, index):
 def create_buttons_for_shapes():
     button_frame = tk.Frame(root)
     canvas.create_window(0, 0, anchor="nw", window=button_frame)
-
+    
+    for i, shape in enumerate(shapes):
+        shape_type, _ = shape
+        button = create_button(shape_type, i)
+        button.pack(fill=tk.BOTH, padx=5, pady=5) 
+        
     v_scrollbar = tk.Scrollbar(root, orient="vertical", command=canvas.yview)
     v_scrollbar.pack(side="right", fill="y")
     canvas.configure(yscrollcommand=v_scrollbar.set)
 
     canvas.pack(fill=tk.BOTH, expand=True)
     
-    for i, shape in enumerate(shapes):
-        shape_type, _ = shape
-        button = create_button(shape_type, i)
-        button_frame.columnconfigure(i, weight=1)  # Gleichmäßige Spaltenbreiten
-        button.grid(row=0, column=i, padx=5, pady=5)  # Grid-Layout für Schaltflächen
-        
     canvas.create_window(0, 0, anchor="nw", window=button_frame)
     canvas.config(scrollregion=canvas.bbox("all"))
 
