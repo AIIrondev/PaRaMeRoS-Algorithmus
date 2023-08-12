@@ -6,6 +6,8 @@ import datetime
 from PIL import ImageDraw
 import csv
 
+create_button_for_shapes_var = False
+
 def create_shapes(event):
     x, y = event.x, event.y
     if event.num in (1, 3):  # Linker oder rechter Mausbutton
@@ -313,8 +315,7 @@ def display_function_explanations():
     Dieses Programm sollte Ausschließlich von Personen verwendet werden, die im FLL Team PaRaMeRoS sind.
     Die Schaltfläche 'Path Finding' führt den Algorithmus aus, um gültige Pfade zu berechnen.
     Die Schaltfläche 'Auflistung der Linien' zeigt Schaltflächen für jede Linie und jeden Kreis an.
-    Die Schaltfläche 'Neue Verbindung erstellen' erstellt eine neue Verbindung mit ausgewähltem Index.
-    Die Schaltfläche 'Verbindung_creiren' erstellt eine Verbindung zwischen zwei Punkten.
+    Die Schaltfläche 'Neue Verbindung creiren' erstellt eine Verbindung zwischen zwei Punkten.
     """
     current_text = explanation_label.cget("text")
     if current_text == explanation_text:
@@ -331,6 +332,21 @@ def linien_creator(shape_index):
         label_4.config(text=f"Linien Verbindung {shape_index + 1}: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}")
     else:
         print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
+
+def verbindung_creiren():
+    if create_button_for_shapes_var == True:
+        explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien"
+
+        current_text_for_shapes = explanation_label.cget("text")
+        if current_text_for_shapes == explanation_text_for_shape:
+            explanation_label.config(text="")
+        else :
+            explanation_label.config(text=explanation_text_for_shape)
+            for i, shape in enumerate(shapes):
+                if shape == "Punkt":
+                    print("Punkt, valid")
+                elif shape == "Linie":
+                    print("Linie, unvalid")
 
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
@@ -393,7 +409,7 @@ label_4.pack()
 render_button_1 = tk.Button(root, text="Auflistung der Linien", command=create_buttons_for_shapes)
 render_button_1.pack()
 
-render_button_2 = tk.Button(root, text="Neue Verbindung creiren")
+render_button_2 = tk.Button(root, text="Neue Verbindung creiren", command=verbindung_creiren)
 render_button_2.pack()
 
 render_fild = tk.Entry(root)

@@ -18,10 +18,10 @@ def verbindung_creiren():
         if current_text_for_shapes == explanation_text_for_shape:
             explanation_label.config(text="")
         else :
-        explanation_label.config(text=explanation_text_for_shape)
-        for i, shape in enumerate(shapes):
-            if shape == "Punkt":
-                print("Punkt, valid")
-            elif shape == "Linie":
-                print("Linie, unvalid")
+            explanation_label.config(text=explanation_text_for_shape)
+            for i, shape in enumerate(shapes):
+                if shape == "Punkt":
+                    print("Punkt, valid")
+                elif shape == "Linie":
+                    print("Linie, unvalid")
 '''
