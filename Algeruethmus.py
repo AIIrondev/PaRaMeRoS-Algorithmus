@@ -277,6 +277,8 @@ def create_button(shape_type, index):
         return tk.Button(root, text=button_text, command=lambda index=index: linien_creator(index))
 
 def create_buttons_for_shapes():
+    global button_list
+    button_list = [] # Global variable umwandeln
     button_frame = tk.Frame(root)
     canvas.create_window(0, 0, anchor="nw", window=button_frame)
     
@@ -284,6 +286,7 @@ def create_buttons_for_shapes():
         shape_type, _ = shape
         button = create_button(shape_type, i)
         button.pack(fill=tk.BOTH, padx=5, pady=5) 
+        button_list.append(button)
         
     v_scrollbar = tk.Scrollbar(root, orient="vertical", command=canvas.yview)
     v_scrollbar.pack(side="right", fill="y")
@@ -293,6 +296,7 @@ def create_buttons_for_shapes():
     
     canvas.create_window(0, 0, anchor="nw", window=button_frame)
     canvas.config(scrollregion=canvas.bbox("all"))
+    create_button_for_shape_var = True
 
 def display_function_explanations():
     explanation_text = """
@@ -310,13 +314,13 @@ def display_function_explanations():
     Die Schaltfläche 'Path Finding' führt den Algorithmus aus, um gültige Pfade zu berechnen.
     Die Schaltfläche 'Auflistung der Linien' zeigt Schaltflächen für jede Linie und jeden Kreis an.
     Die Schaltfläche 'Neue Verbindung erstellen' erstellt eine neue Verbindung mit ausgewähltem Index.
+    Die Schaltfläche 'Verbindung_creiren' erstellt eine Verbindung zwischen zwei Punkten.
     """
     current_text = explanation_label.cget("text")
     if current_text == explanation_text:
         explanation_label.config(text="")
     else:
         explanation_label.config(text=explanation_text)
-
 
 def linien_creator(shape_index):
     shape = shapes[shape_index]
@@ -327,9 +331,6 @@ def linien_creator(shape_index):
         label_4.config(text=f"Linien Verbindung {shape_index + 1}: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}")
     else:
         print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
-
-def length_calculator():
-    print("hier wird die laenge berechnet")
 
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
