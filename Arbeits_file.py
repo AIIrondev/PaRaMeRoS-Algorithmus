@@ -1,6 +1,6 @@
 '''
 Ablauf:
-def Verbindung_creiren():
+def Verbindung_kreieren():
     1. Schritt: if create_button_for_shape wurde gepressed:
     2. Schritt: wenn 1.Schritt == True dann Displayen das wir Punkt über Linien zu punkt verbindungen erstellen kann ausßerdem wird ein Button erstzellt der gedrückt wird wenn eine Strecke erstellt wurde
     3. Schritt: auflisten wenn ein Button gedrückt der Valid ist (Punkt, Linien, Punkt)
@@ -10,7 +10,7 @@ def Verbindung_creiren():
 
 '''
 Code:
-def verbindung_creiren():
+def verbindung_kreieren():
     if create_button_for_shape_var == True:
         explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien"
 
@@ -25,8 +25,7 @@ def verbindung_creiren():
                 elif shape == "Linie":
                     print("Linie, unvalid")
 '''
-'''
-def verbindung_creiren():
+'''def verbindung_kreieren():
     if create_button_for_shape_var:
         explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien"
 
@@ -60,4 +59,5 @@ def verbindung_creiren():
                 print("Verbindungen wurden in 'verbindungen.txt' gespeichert")
             else:
                 print("Keine Verbindungen zum Speichern vorhanden")
+
 '''

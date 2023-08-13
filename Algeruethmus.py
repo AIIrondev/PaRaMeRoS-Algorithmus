@@ -315,7 +315,7 @@ def display_function_explanations():
     Dieses Programm sollte Ausschließlich von Personen verwendet werden, die im FLL Team PaRaMeRoS sind.
     Die Schaltfläche 'Path Finding' führt den Algorithmus aus, um gültige Pfade zu berechnen.
     Die Schaltfläche 'Auflistung der Linien' zeigt Schaltflächen für jede Linie und jeden Kreis an.
-    Die Schaltfläche 'Neue Verbindung creiren' erstellt eine Verbindung zwischen zwei Punkten.
+    Die Schaltfläche 'Neue Verbindung kreieren' erstellt eine Verbindung zwischen zwei Punkten.
     """
     current_text = explanation_label.cget("text")
     if current_text == explanation_text:
@@ -333,7 +333,7 @@ def linien_creator(shape_index):
     else:
         print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
 '''
-def verbindung_creiren():
+def verbindung_kreieren():
     if create_button_for_shape_var:
         explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien"
 
@@ -429,7 +429,7 @@ label_4.pack()
 render_button_1 = tk.Button(root, text="Auflistung der Linien", command=create_buttons_for_shapes)
 render_button_1.pack()
 '''
-render_button_2 = tk.Button(root, text="Neue Verbindung creiren", command=verbindung_creiren)
+render_button_2 = tk.Button(root, text="Neue Verbindung kreieren", command=verbindung_kreieren)
 render_button_2.pack()
 '''
 render_fild = tk.Entry(root)
