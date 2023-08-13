@@ -6,8 +6,6 @@ import datetime
 from PIL import ImageDraw
 import csv
 
-create_button_for_shapes_var = False
-
 def create_shapes(event):
     x, y = event.x, event.y
     if event.num in (1, 3):  # Linker oder rechter Mausbutton
@@ -332,8 +330,9 @@ def linien_creator(shape_index):
         label_4.config(text=f"Linien Verbindung {shape_index + 1}: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}")
     else:
         print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
-'''
+
 def verbindung_kreieren():
+    button_frame = tk.Frame(root)
     if create_button_for_shape_var:
         explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien"
 
@@ -367,7 +366,7 @@ def verbindung_kreieren():
                 print("Verbindungen wurden in 'verbindungen.txt' gespeichert")
             else:
                 print("Keine Verbindungen zum Speichern vorhanden")
-'''
+
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
 
@@ -383,6 +382,7 @@ root.geometry("700x650") # Größe des Fensters Festlegen
 canvas = tk.Canvas(root)
 canvas.pack(fill=tk.BOTH, expand=True)
 
+create_button_for_shape_var = False
 shapes = []
 line_coordinates_list = []
 
@@ -428,10 +428,10 @@ label_4.pack()
 
 render_button_1 = tk.Button(root, text="Auflistung der Linien", command=create_buttons_for_shapes)
 render_button_1.pack()
-'''
+
 render_button_2 = tk.Button(root, text="Neue Verbindung kreieren", command=verbindung_kreieren)
 render_button_2.pack()
-'''
+
 render_fild = tk.Entry(root)
 render_fild.pack()
 
