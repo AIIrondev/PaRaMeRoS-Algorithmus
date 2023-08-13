@@ -334,19 +334,39 @@ def linien_creator(shape_index):
         print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
 '''
 def verbindung_creiren():
-    if create_button_for_shapes_var == True:
+    if create_button_for_shape_var:
         explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien"
 
         current_text_for_shapes = explanation_label.cget("text")
         if current_text_for_shapes == explanation_text_for_shape:
             explanation_label.config(text="")
-        else :
+        else:
             explanation_label.config(text=explanation_text_for_shape)
+            
+            # Schritt 4: Verbindung erstellen und speichern
+            line_connections = []
             for i, shape in enumerate(shapes):
-                if shape == "Punkt":
-                    print("Punkt, valid")
-                elif shape == "Linie":
-                    print("Linie, unvalid")
+                shape_type, _ = shape
+                if shape_type == "circle":
+                    button_text = f"Kreis {i + 1}"
+                    button = create_button(shape_type, i, button_text)
+                    button_frame.columnconfigure(i, weight=1)
+                    button.pack(fill=tk.BOTH, padx=5, pady=5)
+                    button.config(command=lambda i=i: save_connection(i))
+            
+            def save_connection(circle_id):
+                line_id = int(render_fild.get())
+                line_connections.append((circle_id + 1, line_id))
+                print(f"Verbindung zwischen Kreis {circle_id + 1} und Linie {line_id}")
+            
+            # Schritt 5: Liste in Datei speichern
+            if line_connections:
+                with open("verbindungen.txt", "w") as file:
+                    for circle_id, line_id in line_connections:
+                        file.write(f"Kreis {circle_id} ist verbunden mit Linie {line_id}\n")
+                print("Verbindungen wurden in 'verbindungen.txt' gespeichert")
+            else:
+                print("Keine Verbindungen zum Speichern vorhanden")
 '''
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
