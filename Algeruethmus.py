@@ -364,7 +364,7 @@ def verbindung_kreieren():
             if line_connections:
                 with open("verbindungen.csv", "w", newline='') as file:
                     csv_writer = csv.writer(file)
-                    csv_writer.writerow(["Quelle", "Ziel", "Länge"])
+                    csv_writer.writerow(["source", "target", "weight"])
                     for circle_id, line_id, line_length in line_connections:
                         csv_writer.writerow([circle_id, line_id, line_length])
                 print("Verbindungen wurden in 'verbindungen.csv' gespeichert")
