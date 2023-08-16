@@ -358,12 +358,14 @@ def verbindung_kreieren():
                 line_connections.append((circle_id + 1, line_id))
                 print(f"Verbindung zwischen Kreis {circle_id + 1} und Linie {line_id}")
             
-            # Schritt 5: Liste in Datei speichern
+            # Schritt 5: Liste in CSV-Datei speichern
             if line_connections:
-                with open("verbindungen.txt", "w") as file:
+                with open("verbindungen.csv", "w", newline='') as file:
+                    csv_writer = csv.writer(file)
+                    csv_writer.writerow(["Kreis ID", "Linie ID"])
                     for circle_id, line_id in line_connections:
-                        file.write(f"Kreis {circle_id} ist verbunden mit Linie {line_id}\n")
-                print("Verbindungen wurden in 'verbindungen.txt' gespeichert")
+                        csv_writer.writerow([circle_id, line_id])
+                print("Verbindungen wurden in 'verbindungen.csv' gespeichert")
             else:
                 print("Keine Verbindungen zum Speichern vorhanden")
 
