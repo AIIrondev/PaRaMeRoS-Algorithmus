@@ -344,6 +344,7 @@ def verbindung_kreieren():
             
             # Schritt 4: Verbindung erstellen und speichern
             line_connections = []
+            line_length = None
             for i, shape in enumerate(shapes):
                 shape_type, _ = shape
                 if shape_type == "circle":
@@ -352,22 +353,33 @@ def verbindung_kreieren():
                     button_frame.columnconfigure(i, weight=1)
                     button.pack(fill=tk.BOTH, padx=5, pady=5)
                     button.config(command=lambda i=i: save_connection(i))
+                    line_length = calculate_length_of_line(i)
             
             def save_connection(circle_id):
                 line_id = int(render_fild.get())
-                line_connections.append((circle_id + 1, line_id))
-                print(f"Verbindung zwischen Kreis {circle_id + 1} und Linie {line_id}")
+                line_connections.append((circle_id + 1, line_id, line_length))
+                print(f"Verbindung zwischen Kreis {circle_id + 1} und Linie {line_id} mit Länge {line_length}")
             
             # Schritt 5: Liste in CSV-Datei speichern
             if line_connections:
                 with open("verbindungen.csv", "w", newline='') as file:
                     csv_writer = csv.writer(file)
-                    csv_writer.writerow(["Kreis ID", "Linie ID"])
-                    for circle_id, line_id in line_connections:
-                        csv_writer.writerow([circle_id, line_id])
+                    csv_writer.writerow(["Quelle", "Ziel", "Länge"])
+                    for circle_id, line_id, line_length in line_connections:
+                        csv_writer.writerow([circle_id, line_id, line_length])
                 print("Verbindungen wurden in 'verbindungen.csv' gespeichert")
             else:
                 print("Keine Verbindungen zum Speichern vorhanden")
+
+def calculate_length_of_line(circle_id):
+    # Hier implementieren Sie den Code, um die Länge der Linie vor dem aktuellen Kreis zu berechnen
+    total_length = 0
+    for i in range(circle_id):
+        start_x, start_y, end_x, end_y = line_coordinates_list[i]
+        length = calculate_length(start_x, start_y, end_x, end_y)
+        total_length += length
+    return total_length
+
 
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
