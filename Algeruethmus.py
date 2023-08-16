@@ -380,7 +380,6 @@ def calculate_length_of_line(circle_id):
         total_length += length
     return total_length
 
-
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
 
