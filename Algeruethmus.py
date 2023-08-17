@@ -360,7 +360,7 @@ def verbindung_kreieren():
                 line_connections.append((circle_id + 1, line_id, line_length))
                 print(f"Verbindung zwischen Kreis {circle_id + 1} und Linie {line_id} mit Länge {line_length}")
             
-            # Liste in CSV-Datei speichern
+            # Liste in CSV-Datei speichern (Quelle, Ziel, Gewicht)/ (source, target, weight)
             if line_connections:
                 with open("verbindungen.csv", "w", newline='') as file:
                     csv_writer = csv.writer(file)
