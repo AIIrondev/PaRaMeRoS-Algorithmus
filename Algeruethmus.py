@@ -342,7 +342,7 @@ def verbindung_kreieren():
         else:
             explanation_label.config(text=explanation_text_for_shape)
             
-            # Schritt 4: Verbindung erstellen und speichern
+            # Verbindung erstellen und speichern
             line_connections = []
             line_length = None
             for i, shape in enumerate(shapes):
@@ -360,7 +360,7 @@ def verbindung_kreieren():
                 line_connections.append((circle_id + 1, line_id, line_length))
                 print(f"Verbindung zwischen Kreis {circle_id + 1} und Linie {line_id} mit Länge {line_length}")
             
-            # Schritt 5: Liste in CSV-Datei speichern
+            # Liste in CSV-Datei speichern
             if line_connections:
                 with open("verbindungen.csv", "w", newline='') as file:
                     csv_writer = csv.writer(file)
