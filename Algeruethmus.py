@@ -372,7 +372,6 @@ def verbindung_kreieren():
                 print("Keine Verbindungen zum Speichern vorhanden")
 
 def calculate_length_of_line(circle_id):
-    # Hier implementieren Sie den Code, um die Länge der Linie vor dem aktuellen Kreis zu berechnen
     total_length = 0
     for i in range(circle_id):
         start_x, start_y, end_x, end_y = line_coordinates_list[i]
