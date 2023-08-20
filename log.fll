@@ -949,3 +949,65 @@ Line_ID1: (79.0, 77.0)
 Line_ID2: (186.0, 167.0)
 Line_ID3: (35.0, 169.0)
 Gesamtlaenge: 399.95476588056283Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!
+
+--- Protokoll vom 2023-08-20 21:17:45 ---
+Strecke: Anfangs-Koordinate: (80, 75), End-Koordinate: (187, 171), Laenge: 143.75326083258076
+Strecke: Anfangs-Koordinate: (187, 171), End-Koordinate: (36, 173), Laenge: 151.0132444522665
+Strecke: Anfangs-Koordinate: (36, 173), End-Koordinate: (82, 79), Laenge: 104.65180361560904
+Punkte_ID4: (77.0, 74.0)
+Punkte_ID5: (178.0, 164.0)
+Punkte_ID6: (33.0, 166.0)
+Line_ID1: (80.0, 75.0)
+Line_ID2: (187.0, 171.0)
+Line_ID3: (36.0, 173.0)
+Gesamtlaenge: 399.4183089004563Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!
+
+--- Protokoll vom 2023-08-20 21:19:09 ---
+Strecke: Anfangs-Koordinate: (84, 79), End-Koordinate: (183, 172), Laenge: 135.83077707206124
+Strecke: Anfangs-Koordinate: (184, 172), End-Koordinate: (282, 55), Laenge: 152.620444239951
+Strecke: Anfangs-Koordinate: (282, 55), End-Koordinate: (351, 187), Laenge: 148.94629904767692
+Strecke: Anfangs-Koordinate: (350, 182), End-Koordinate: (184, 172), Laenge: 166.30093204789924
+Strecke: Anfangs-Koordinate: (85, 80), End-Koordinate: (280, 57), Laenge: 196.3517252279694
+Punkte_ID6: (275.0, 52.0)
+Punkte_ID7: (180.0, 165.0)
+Punkte_ID8: (82.0, 75.0)
+Punkte_ID9: (340.0, 176.0)
+Line_ID1: (84.0, 79.0)
+Line_ID2: (184.0, 172.0)
+Line_ID3: (282.0, 55.0)
+Line_ID4: (350.0, 182.0)
+Line_ID5: (85.0, 80.0)
+Gesamtlaenge: 800.0501776355578Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!
+
+--- Protokoll vom 2023-08-20 21:20:25 ---
+Strecke: Anfangs-Koordinate: (82, 78), End-Koordinate: (184, 169), Laenge: 136.69308687713507
+Strecke: Anfangs-Koordinate: (184, 168), End-Koordinate: (348, 191), Laenge: 165.60495161679194
+Strecke: Anfangs-Koordinate: (348, 191), End-Koordinate: (281, 54), Laenge: 152.50573759698355
+Strecke: Anfangs-Koordinate: (281, 54), End-Koordinate: (474, 56), Laenge: 193.01036241611484
+Strecke: Anfangs-Koordinate: (474, 56), End-Koordinate: (480, 202), Laenge: 146.12323566086263
+Strecke: Anfangs-Koordinate: (480, 202), End-Koordinate: (281, 54), Laenge: 248.0020161208372
+Strecke: Anfangs-Koordinate: (345, 188), End-Koordinate: (476, 201), Laenge: 131.64345787011217
+Strecke: Anfangs-Koordinate: (83, 75), End-Koordinate: (288, 56), Laenge: 205.87860500790265
+Strecke: Anfangs-Koordinate: (87, 78), End-Koordinate: (478, 198), Laenge: 409.0
+Strecke: Anfangs-Koordinate: (473, 52), End-Koordinate: (179, 171), Laenge: 317.1703012578574
+Strecke: Anfangs-Koordinate: (187, 172), End-Koordinate: (284, 59), Laenge: 148.92279879185725
+Strecke: Anfangs-Koordinate: (86, 76), End-Koordinate: (343, 184), Laenge: 278.7705149401565
+Punkte_ID13: (180.0, 166.0)
+Punkte_ID14: (78.0, 71.0)
+Punkte_ID15: (278.0, 52.0)
+Punkte_ID16: (340.0, 176.0)
+Punkte_ID17: (473.0, 193.0)
+Punkte_ID18: (468.0, 50.0)
+Line_ID1: (82.0, 78.0)
+Line_ID2: (184.0, 168.0)
+Line_ID3: (348.0, 191.0)
+Line_ID4: (281.0, 54.0)
+Line_ID5: (474.0, 56.0)
+Line_ID6: (480.0, 202.0)
+Line_ID7: (345.0, 188.0)
+Line_ID8: (83.0, 75.0)
+Line_ID9: (87.0, 78.0)
+Line_ID10: (473.0, 52.0)
+Line_ID11: (187.0, 172.0)
+Line_ID12: (86.0, 76.0)
+Gesamtlaenge: 2533.325068156611Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!
