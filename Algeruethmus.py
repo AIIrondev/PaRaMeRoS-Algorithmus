@@ -367,7 +367,7 @@ def verbindung_kreieren():
                     csv_writer.writerow(["source", "target", "weight"])
                     for circle_id, line_id, line_length in line_connections:
                         csv_writer.writerow([circle_id, line_id, line_length])
-                print("Verbindungen wurden in 'verbindungen.csv' gespeichert")
+                print("Verbindungen wurden in 'Dijkstra_data.csv' gespeichert")
             else:
                 print("Keine Verbindungen zum Speichern vorhanden")
 
