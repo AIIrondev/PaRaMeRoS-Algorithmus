@@ -331,6 +331,7 @@ def linien_creator(shape_index):
     else:
         print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
 
+# wie  kann ich den folgenden Code umbauen das er  if Punkt button pressd speicher ID in liste danach können so viele Linien Button ausgewählt werden von welchen alle länge zusammen gerechnet werden wenn ein weiterer Punkt Button gedrückt welcher auch mit ID abgespeichert wird. Dies kann immer weitere Listen eintrage machen und wiederholt werden bis 
 def verbindung_kreieren():
     button_frame = tk.Frame(root)
     if create_button_for_shape_var:
