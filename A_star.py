@@ -2,7 +2,6 @@ import math
 from ortools.constraint_solver import routing_enums_pb2
 from ortools.constraint_solver import pywrapcp
 
-
 def create_data_model():
     data = {}
     data["locations"] = [
@@ -121,7 +120,6 @@ def main():
 
     if solution:
         print_solution(manager, routing, solution)
-
 
 if __name__ == "__main__":
     main()
