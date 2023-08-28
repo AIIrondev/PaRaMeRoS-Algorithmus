@@ -1011,3 +1011,18 @@ Line_ID10: (473.0, 52.0)
 Line_ID11: (187.0, 172.0)
 Line_ID12: (86.0, 76.0)
 Gesamtlaenge: 2533.325068156611Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!
+
+--- Protokoll vom 2023-08-28 11:22:36 ---
+Gesamtlaenge: 0Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!
+
+--- Protokoll vom 2023-08-28 11:23:02 ---
+Strecke: Anfangs-Koordinate: (83, 80), End-Koordinate: (186, 169), Laenge: 136.12494260788506
+Strecke: Anfangs-Koordinate: (186, 169), End-Koordinate: (39, 168), Laenge: 147.00340132119393
+Strecke: Anfangs-Koordinate: (39, 168), End-Koordinate: (84, 80), Laenge: 98.8382517044894
+Punkte_ID4: (80.0, 77.0)
+Punkte_ID5: (179.0, 164.0)
+Punkte_ID6: (36.0, 164.0)
+Line_ID1: (83.0, 80.0)
+Line_ID2: (186.0, 169.0)
+Line_ID3: (39.0, 168.0)
+Gesamtlaenge: 381.9665956335684Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!
