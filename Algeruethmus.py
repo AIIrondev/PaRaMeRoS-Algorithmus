@@ -331,7 +331,8 @@ def linien_creator(shape_index):
     else:
         print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
 
-# wie   kann ich den folgenden Code umbauen das er  if Punkt button pressd speicher ID in liste danach können so viele Linien Button ausgewählt werden von welchen alle länge zusammen gerechnet werden wenn ein weiterer Punkt Button gedrückt welcher auch mit ID abgespeichert wird. Dies kann immer weitere Listen eintrage machen und wiederholt werden bis 
+# wie kann ich den folgenden Code umbauen ,dass er if Punkt button pressed speicher ID in liste danach können so viele Linien Button ausgewählt werden von welchen alle länge zusammen gerechnet werden wenn ein weiterer Punkt Button gedrückt welcher auch mit ID abgespeichert wird. Dies kann immer weitere Listen eintrage machen und wiederholt werden bis
+'''
 def verbindung_kreieren():
     button_frame = tk.Frame(root)
     if create_button_for_shape_var:
@@ -371,6 +372,31 @@ def verbindung_kreieren():
                 print("Verbindungen wurden in 'Dijkstra_data.csv' gespeichert")
             else:
                 print("Keine Verbindungen zum Speichern vorhanden")
+'''
+def verbindung_kreieren():
+    button_frame = tk.Frame(root)
+    explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien"
+
+    current_text_for_shapes = explanation_label.cget("text")
+    if current_text_for_shapes == explanation_text_for_shape:
+        explanation_label.config(text="")
+    else:
+        explanation_label.config(text=explanation_text_for_shape)
+#   while set_running:
+#        if button from quit is Pressed:
+#            break
+#        if button from Point is Pressed:
+#           while Lines_adding:
+#               if button from linien is Pressed:
+#                   get laength and add to total_laength
+#                   get ID save to first button create new List in list(all weig points)
+#               elif button from Points is Pressed:
+#                   print( total_laength)
+#                   with open(".csv", a) as file:
+#                       file.write(ID from first button, ID vom End button,total_laenght)
+#                   Lines_adding = False
+#                   break
+    pass
 
 def calculate_length_of_line(circle_id):
     total_length = 0
