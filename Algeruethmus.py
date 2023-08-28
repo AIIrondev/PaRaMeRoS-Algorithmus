@@ -387,7 +387,7 @@ def verbindung_kreieren():
 #            break
 #        if button from Point is Pressed:
 #           while Lines_adding:
-#               if button from linien is Pressed:
+#               if button from linien is Pressed :
 #                   get laength and add to total_laength
 #                   get ID save to first button create new List in list(all weig points)
 #               elif button from Points is Pressed:
