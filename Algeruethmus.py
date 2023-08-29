@@ -383,8 +383,8 @@ def verbindung_kreieren():
     else:
         explanation_label.config(text=explanation_text_for_shape)
 #   while set_running:
-#        if button from quit is Pressed:
-#            break
+#        if button quit is Pressed:
+#            break the while Schleife
 #        if button from Point is Pressed:
 #           while Lines_adding:
 #               if button from linien is Pressed:
