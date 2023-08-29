@@ -375,7 +375,7 @@ def verbindung_kreieren():
 '''
 def verbindung_kreieren():
     button_frame = tk.Frame(root)
-    explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien"
+    explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien in dem sie die Buttons in der Reihenfolge drücken"
 
     current_text_for_shapes = explanation_label.cget("text")
     if current_text_for_shapes == explanation_text_for_shape:
