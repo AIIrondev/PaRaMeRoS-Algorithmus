@@ -5,6 +5,7 @@ import random
 import datetime
 from PIL import ImageDraw
 import csv
+import logging
 
 def create_shapes(event):
     x, y = event.x, event.y
@@ -47,6 +48,7 @@ object_coordinates_c = {}
 object_coordinates_l = {}
 
 def calculate_paths_thread():
+    logging.DEBUG("calculate_path_thread wurde gestartet")
     # Algorithmus für das Path Finding System
     path_order = [i for i in range(len(line_coordinates_list))]
     path_found = False
@@ -96,14 +98,18 @@ def calculate_paths_thread():
                     total_length += length
                     file.write(
                         f"Strecke: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}\n")
+                    logging.INFO(f"Strecke: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}")
                 for object_id, coords in object_coordinates_c.items():
                     x, y = coords
                     file.write(f"{object_id}: ({x}, {y})\n")
+                    logging.INFO(f"{object_id}: ({x}, {y})")
                     element_list = (f"{object_id}: ({x}, {y})")
                 for object_id, coords in object_coordinates_l.items():
                     x, y = coords
                     file.write(f"{object_id}: ({x}, {y})\n")
+                    logging.INFO(f"{object_id}: ({x}, {y})\n")
                 file.write(f"Gesamtlaenge: {total_length}")
+                logging.INFO(f"Gesamtlaenge: {total_length}")
 
             generate_diagram(current_path, path_order)
 
@@ -121,6 +127,7 @@ def calculate_paths_thread():
         print("Kein gueltiger Pfad gefunden!")
 
 def generate_table(shapes, line_coordinates_list):
+    logging.INFO("Daten wurden in Table.csv und in Dijkstra_data.csv abgespeichert")
     with open("table.csv", "w", newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Objekt ID", "Koordinate Anfang", "Koordinate Ende", "Laenge"])
@@ -172,16 +179,19 @@ def create_line_network():
                         label_2.config(text=f"Beruehrungspunkte auf den Linien: ({point_x}), ({point_y})")
 
     print("jetzt werden die threats gestartet")
+    logging.WARNING("Die Threads wurden gestartet")
     thread = threading.Thread(target=calculate_paths_thread)
     thread.start()
+    logging.INFO("Die Threads wurden erfolgreich abgeschlossen")
     print("die Threats sind jetzt abgeschlossen")
 
 def is_path_possible(start_x, start_y, end_x, end_y):
+    logging.DEBUG("is_path_possible wurde ausgeführt")
     for line_coordinates in line_coordinates_list:
         line_start_x1, line_start_y1, line_end_x1, line_end_y1 = line_coordinates
         if lines_intersect(start_x, start_y, end_x, end_y, line_start_x1, line_start_y1, line_end_x1, line_end_y1):
             # If die Linien gekreuzen, return True
-            return True
+            pass
 
     for shape in shapes:
         if shape[0] == "circle":
@@ -193,17 +203,18 @@ def is_path_possible(start_x, start_y, end_x, end_y):
             if distance_start <= radius and distance_end <= radius:
                 with open("test_speicher.fll", "a") as WRITE:
                     WRITE.write(f"Line from ({start_x}, {start_y}) to ({end_x}, {end_y}) intersects with circle ({circle_center_x}, {circle_center_y})\n")
-                return True
-
+                pass
     return True
 
 def calculate_length(start_x, start_y, end_x, end_y):
+    logging.DEBUG("Es wurde calculate_length ausgeführt")
     print("jetzt wurde die laenge gespeichert!")
     dx = end_x - start_x
     dy = end_y - start_y
     return ((dx ** 2) + (dy ** 2)) ** 0.5
 
 def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
+    logging.DEBUG("Es wurde lines_intersect ausgeführt")
     dx1 = x2 - x1
     dy1 = y2 - y1
     dx2 = x4 - x3
@@ -223,6 +234,7 @@ def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
         return False  # Linien schneiden sich nicht
 
 def next_permutation(arr):
+    logging.DEBUG("next_permutation")
     i = len(arr) - 2
     while i >= 0 and arr[i] >= arr[i + 1]:
         i -= 1
@@ -234,6 +246,8 @@ def next_permutation(arr):
     arr[i + 1:] = reversed(arr[i + 1:])
 
 def generate_diagram(path, path_order):
+    # hier müssen noch folgende Diagramme erstellt werden: Zeit pro Aufgabe, länge pro Aufgaben, Dijkstra Alg., A_star Alg.
+    logging.INFO("Die Diagramme wurden gespeichert und zum senden Freigegeben")
     diagram = Image.new("RGB", (705, 420), "white")
     draw = ImageDraw.Draw(diagram)
 
@@ -269,6 +283,7 @@ def generate_diagram(path, path_order):
     print("Diagramm erzeugt und als 'diagram.png' gespeichert.")
 
 def create_button(shape_type, index):
+    logging.DEBUG("Es wurden Buttons erzeugt")
     if shape_type == "circle":
         button_text = f"Kreis {index + 1}"
         return tk.Button(root, text=button_text, command=lambda index=index: linien_creator(index))
@@ -277,6 +292,7 @@ def create_button(shape_type, index):
         return tk.Button(root, text=button_text, command=lambda index=index: linien_creator(index))
 
 def create_buttons_for_shapes():
+    logging.DEBUG("Es wurde create_buttons_for_shapes ausgeführt")
     global button_list
     button_list = [] # Global variable umwandeln
     button_frame = tk.Frame(root)
@@ -299,6 +315,7 @@ def create_buttons_for_shapes():
     create_button_for_shape_var = True
 
 def display_function_explanations():
+    logging.DEBUG("Es wurde der Fragezeichen Button ausgeführt")
     explanation_text = """
     Hier sind die Erklärungen für die verschiedenen Funktionen des Algeruethmus Programms:
 
@@ -322,6 +339,7 @@ def display_function_explanations():
         explanation_label.config(text=explanation_text)
 
 def linien_creator(shape_index):
+    logging.DEBUG("shape_index wurde ausgeführt")
     shape = shapes[shape_index]
     shape_type, coords = shape
     if shape_type == "line":
@@ -331,7 +349,7 @@ def linien_creator(shape_index):
     else:
         print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
 
-# wie kann ich den folgenden Code umbauen ,dass er if Punkt button pressed speicher ID in liste danach können so viele Linien Button ausgewählt werden von welchen alle länge zusammen gerechnet werden wenn ein weiterer Punkt Button gedrückt welcher auch mit ID abgespeichert wird. Dies kann immer weitere Listen eintrage machen und wiederholt werden bis
+# wie kann ich den folgenden Code umbauen, dass er if Punkt button pressed speicher ID in liste danach können so viele Linien Button ausgewählt werden von welchen alle länge zusammen gerechnet werden wenn ein weiterer Punkt Button gedrückt welcher auch mit ID abgespeichert wird. Dies kann immer weitere Listen eintrage machen und wiederholt werden bis
 '''
 def verbindung_kreieren():
     button_frame = tk.Frame(root)
@@ -374,6 +392,7 @@ def verbindung_kreieren():
                 print("Keine Verbindungen zum Speichern vorhanden")
 '''
 def verbindung_kreieren():
+    logging.DEBUG("Verbindung_kreieren wurde ausgeführt")
     button_frame = tk.Frame(root)
     explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien in dem sie die Buttons in der Reihenfolge drücken"
 
@@ -387,6 +406,8 @@ def verbindung_kreieren():
 #            break the while Schleife
 #        if button from Point is Pressed:
 #           while Lines_adding:
+#               if button quit is Pressed:
+#                   break the while Schleife
 #               if button from linien is Pressed:
 #                   get laength and add to total_laength
 #                   get ID save to first button create new List in list(all way points)
@@ -399,6 +420,7 @@ def verbindung_kreieren():
     pass
 
 def calculate_length_of_line(circle_id):
+    logging.DEBUG("Hier wurde die länge der Linien ausgerechnet")
     total_length = 0
     for i in range(circle_id):
         start_x, start_y, end_x, end_y = line_coordinates_list[i]
@@ -424,6 +446,10 @@ canvas.pack(fill=tk.BOTH, expand=True)
 create_button_for_shape_var = False
 shapes = []
 line_coordinates_list = []
+logging.basicConfig(filename="sys.log",
+                    style="{",
+                    format="{asctime} [{levelname:8}] {message}"
+                    )
 
 canvas.bind("<Button-1>", create_shapes)
 canvas.bind("<Button-2>", create_shapes)
