@@ -8,6 +8,7 @@ import csv
 import logging
 
 def create_shapes(event):
+    logger.debug('Create shapes')
     x, y = event.x, event.y
     if event.num in (1, 3):  # Linker oder rechter Mausbutton
         shape = canvas.create_oval(x - 5, y - 5, x + 5, y + 5, fill="red")
@@ -24,6 +25,7 @@ def draw_line(event):
         label.config(text=f"Maus Koordinaten: ({event.x}, {event.y})")
 
 def finish_line(event):
+    logger.debug('finisch line')
     if hasattr(canvas, 'line_start'):
         x, y = event.x, event.y
         canvas.delete("current_line")
@@ -35,6 +37,7 @@ def finish_line(event):
         print("Eine Linie wurde gezeichnet!")
 
 def delete_last_shape(event):
+    logger.debug('last shape deletet')
     if shapes and line_coordinates_list:
         shape_type, shape = shapes.pop()
         line_coordinates_list.pop()
@@ -44,11 +47,8 @@ def delete_last_shape(event):
         elif shape_type == "line":
             print("Die letzte Linie wurde gelöscht!")
 
-object_coordinates_c = {}
-object_coordinates_l = {}
-
 def calculate_paths_thread():
-    logging.DEBUG("calculate_path_thread wurde gestartet")
+    logger.debug("calculate_path_thread wurde gestartet")
     # Algorithmus für das Path Finding System
     path_order = [i for i in range(len(line_coordinates_list))]
     path_found = False
@@ -98,18 +98,18 @@ def calculate_paths_thread():
                     total_length += length
                     file.write(
                         f"Strecke: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}\n")
-                    logging.INFO(f"Strecke: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}")
+                    logger.info(f"Strecke: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}")
                 for object_id, coords in object_coordinates_c.items():
                     x, y = coords
                     file.write(f"{object_id}: ({x}, {y})\n")
-                    logging.INFO(f"{object_id}: ({x}, {y})")
+                    logger.info(f"{object_id}: ({x}, {y})")
                     element_list = (f"{object_id}: ({x}, {y})")
                 for object_id, coords in object_coordinates_l.items():
                     x, y = coords
                     file.write(f"{object_id}: ({x}, {y})\n")
-                    logging.INFO(f"{object_id}: ({x}, {y})\n")
+                    logger.info(f"{object_id}: ({x}, {y})")
                 file.write(f"Gesamtlaenge: {total_length}")
-                logging.INFO(f"Gesamtlaenge: {total_length}")
+                logger.info(f"Gesamtlaenge: {total_length}")
 
             generate_diagram(current_path, path_order)
 
@@ -127,7 +127,7 @@ def calculate_paths_thread():
         print("Kein gueltiger Pfad gefunden!")
 
 def generate_table(shapes, line_coordinates_list):
-    logging.INFO("Daten wurden in Table.csv und in Dijkstra_data.csv abgespeichert")
+    logger.debug("Daten wurden in Table.csv und in Dijkstra_data.csv abgespeichert")
     with open("table.csv", "w", newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Objekt ID", "Koordinate Anfang", "Koordinate Ende", "Laenge"])
@@ -162,6 +162,7 @@ def generate_table(shapes, line_coordinates_list):
         file.write("Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!")
 
 def create_line_network():
+    logger.debug('create linenetwork wurde ausgeführt')
     if line_coordinates_list:
         print("Anfangs- und Endkoordinaten der Linien:")
         for line_coordinates in line_coordinates_list:
@@ -179,14 +180,14 @@ def create_line_network():
                         label_2.config(text=f"Beruehrungspunkte auf den Linien: ({point_x}), ({point_y})")
 
     print("jetzt werden die threats gestartet")
-    logging.WARNING("Die Threads wurden gestartet")
+    logger.warning("Die Threads wurden gestartet")
     thread = threading.Thread(target=calculate_paths_thread)
     thread.start()
-    logging.INFO("Die Threads wurden erfolgreich abgeschlossen")
+    logging.info("Die Threads wurden erfolgreich abgeschlossen")
     print("die Threats sind jetzt abgeschlossen")
 
 def is_path_possible(start_x, start_y, end_x, end_y):
-    logging.DEBUG("is_path_possible wurde ausgeführt")
+    logger.debug("is_path_possible wurde ausgeführt")
     for line_coordinates in line_coordinates_list:
         line_start_x1, line_start_y1, line_end_x1, line_end_y1 = line_coordinates
         if lines_intersect(start_x, start_y, end_x, end_y, line_start_x1, line_start_y1, line_end_x1, line_end_y1):
@@ -207,14 +208,14 @@ def is_path_possible(start_x, start_y, end_x, end_y):
     return True
 
 def calculate_length(start_x, start_y, end_x, end_y):
-    logging.DEBUG("Es wurde calculate_length ausgeführt")
+    logger.debug("Es wurde calculate_length ausgeführt")
     print("jetzt wurde die laenge gespeichert!")
     dx = end_x - start_x
     dy = end_y - start_y
     return ((dx ** 2) + (dy ** 2)) ** 0.5
 
 def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
-    logging.DEBUG("Es wurde lines_intersect ausgeführt")
+    logger.debug("Es wurde lines_intersect ausgeführt")
     dx1 = x2 - x1
     dy1 = y2 - y1
     dx2 = x4 - x3
@@ -234,7 +235,7 @@ def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
         return False  # Linien schneiden sich nicht
 
 def next_permutation(arr):
-    logging.DEBUG("next_permutation")
+    logger.debug("next_permutation wurde berechnet")
     i = len(arr) - 2
     while i >= 0 and arr[i] >= arr[i + 1]:
         i -= 1
@@ -247,7 +248,7 @@ def next_permutation(arr):
 
 def generate_diagram(path, path_order):
     # hier müssen noch folgende Diagramme erstellt werden: Zeit pro Aufgabe, länge pro Aufgaben, Dijkstra Alg., A_star Alg.
-    logging.INFO("Die Diagramme wurden gespeichert und zum senden Freigegeben")
+    logger.info("Die Diagramme wurden gespeichert und zum senden Freigegeben")
     diagram = Image.new("RGB", (705, 420), "white")
     draw = ImageDraw.Draw(diagram)
 
@@ -283,7 +284,7 @@ def generate_diagram(path, path_order):
     print("Diagramm erzeugt und als 'diagram.png' gespeichert.")
 
 def create_button(shape_type, index):
-    logging.DEBUG("Es wurden Buttons erzeugt")
+    logger.debug("Es wurden Buttons erzeugt")
     if shape_type == "circle":
         button_text = f"Kreis {index + 1}"
         return tk.Button(root, text=button_text, command=lambda index=index: linien_creator(index))
@@ -292,7 +293,7 @@ def create_button(shape_type, index):
         return tk.Button(root, text=button_text, command=lambda index=index: linien_creator(index))
 
 def create_buttons_for_shapes():
-    logging.DEBUG("Es wurde create_buttons_for_shapes ausgeführt")
+    logger.debug("Es wurde create_buttons_for_shapes ausgeführt")
     global button_list
     button_list = [] # Global variable umwandeln
     button_frame = tk.Frame(root)
@@ -315,7 +316,7 @@ def create_buttons_for_shapes():
     create_button_for_shape_var = True
 
 def display_function_explanations():
-    logging.DEBUG("Es wurde der Fragezeichen Button ausgeführt")
+    logger.debug("Es wurde der Fragezeichen Button ausgeführt")
     explanation_text = """
     Hier sind die Erklärungen für die verschiedenen Funktionen des Algeruethmus Programms:
 
@@ -339,7 +340,7 @@ def display_function_explanations():
         explanation_label.config(text=explanation_text)
 
 def linien_creator(shape_index):
-    logging.DEBUG("shape_index wurde ausgeführt")
+    logger.debug("shape_index wurde ausgeführt")
     shape = shapes[shape_index]
     shape_type, coords = shape
     if shape_type == "line":
@@ -392,7 +393,7 @@ def verbindung_kreieren():
                 print("Keine Verbindungen zum Speichern vorhanden")
 '''
 def verbindung_kreieren():
-    logging.DEBUG("Verbindung_kreieren wurde ausgeführt")
+    logger.debug("Verbindung_kreieren wurde ausgeführt")
     button_frame = tk.Frame(root)
     explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien in dem sie die Buttons in der Reihenfolge drücken"
 
@@ -420,7 +421,7 @@ def verbindung_kreieren():
     pass
 
 def calculate_length_of_line(circle_id):
-    logging.DEBUG("Hier wurde die länge der Linien ausgerechnet")
+    logger.debug("Hier wurde die länge der Linien ausgerechnet")
     total_length = 0
     for i in range(circle_id):
         start_x, start_y, end_x, end_y = line_coordinates_list[i]
@@ -446,19 +447,25 @@ canvas.pack(fill=tk.BOTH, expand=True)
 create_button_for_shape_var = False
 shapes = []
 line_coordinates_list = []
-logging.basicConfig(filename="sys.log",
-                    style="{",
-                    format="{asctime} [{levelname:8}] {message}"
-                    )
 
-canvas.bind("<Button-1>", create_shapes)
-canvas.bind("<Button-2>", create_shapes)
-canvas.bind("<Button-3>", create_shapes)
-canvas.bind("<B2-Motion>", draw_line)
-canvas.bind("<ButtonRelease-2>", finish_line)
-root.bind("z", delete_last_shape)
-root.bind("l", lambda event: [create_buttons_for_shapes()])
-root.bind("b", lambda event: create_line_network())
+object_coordinates_c = {}
+object_coordinates_l = {}
+
+logger = logging.getLogger('Algeruethmus.py')
+logger.setLevel(logging.DEBUG)
+fh = logging.FileHandler('sys.log')
+fh.setLevel(logging.DEBUG)
+logger.addHandler(fh)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fh.setFormatter(formatter)
+logger.addHandler(fh)
+
+canvas.bind("<Button-1>", create_shapes, logger.debug('Button1'))
+canvas.bind("<Button-2>", create_shapes, logger.debug('Button2'))
+canvas.bind("<Button-3>", create_shapes, logger.debug('Button3'))
+canvas.bind("<B2-Motion>", draw_line, logger.debug('B2Motion'))
+canvas.bind("<ButtonRelease-2>", finish_line, logger.debug('ButtonRelease2'))
+root.bind("z", delete_last_shape, logger.debug('Button z'))
 
 render_button_3 = tk.Button(root, text="?", command=display_function_explanations)
 render_button_3.pack()

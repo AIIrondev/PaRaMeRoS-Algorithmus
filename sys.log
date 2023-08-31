@@ -1,11 +1,255 @@
-
-2023-08-30 14:08:48,972 [DEBUG   ] STREAM b'IHDR' 16 13
-2023-08-30 14:08:48,972 [DEBUG   ] STREAM b'sRGB' 41 1
-2023-08-30 14:08:48,972 [DEBUG   ] STREAM b'gAMA' 54 4
-2023-08-30 14:08:48,972 [DEBUG   ] STREAM b'pHYs' 70 9
-2023-08-30 14:08:48,972 [DEBUG   ] STREAM b'IDAT' 91 64815
-2023-08-30 14:09:27,052 [DEBUG   ] STREAM b'IHDR' 16 13
-2023-08-30 14:09:27,053 [DEBUG   ] STREAM b'sRGB' 41 1
-2023-08-30 14:09:27,053 [DEBUG   ] STREAM b'gAMA' 54 4
-2023-08-30 14:09:27,053 [DEBUG   ] STREAM b'pHYs' 70 9
-2023-08-30 14:09:27,053 [DEBUG   ] STREAM b'IDAT' 91 64815
+2023-08-31 10:41:34,384 - Algeruethmus.py - DEBUG - Button1
+2023-08-31 10:41:34,384 - Algeruethmus.py - DEBUG - Button2
+2023-08-31 10:41:34,384 - Algeruethmus.py - DEBUG - Button3
+2023-08-31 10:41:34,384 - Algeruethmus.py - DEBUG - B2Motion
+2023-08-31 10:41:34,385 - Algeruethmus.py - DEBUG - ButtonRelease2
+2023-08-31 10:41:34,385 - Algeruethmus.py - DEBUG - Button z
+2023-08-31 10:41:37,572 - Algeruethmus.py - DEBUG - Create shapes
+2023-08-31 10:41:38,692 - Algeruethmus.py - DEBUG - Create shapes
+2023-08-31 10:41:39,716 - Algeruethmus.py - DEBUG - Create shapes
+2023-08-31 10:41:40,268 - Algeruethmus.py - DEBUG - Create shapes
+2023-08-31 10:41:40,524 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,532 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,540 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,547 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,556 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,564 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,571 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,579 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,587 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,595 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,603 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,611 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,619 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,627 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,635 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,643 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,651 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,659 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,676 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,707 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,844 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,851 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,860 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,868 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,876 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,883 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,892 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,900 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,908 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,915 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,923 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,931 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,939 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,947 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,955 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,963 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,971 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,979 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,987 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:40,995 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,003 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,011 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,027 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,091 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,099 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,107 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,115 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,123 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,131 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,139 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,147 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,155 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,164 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,172 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,219 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,227 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,243 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,259 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,275 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,291 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,308 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:41,756 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,132 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,140 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,156 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,165 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,372 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,379 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,388 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,396 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,403 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,675 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,699 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,724 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,820 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,828 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,836 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:42,875 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:43,179 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:43,219 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:43,227 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:43,236 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:43,691 - Algeruethmus.py - DEBUG - finisch line
+2023-08-31 10:41:43,924 - Algeruethmus.py - DEBUG - Create shapes
+2023-08-31 10:41:44,044 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,051 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,059 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,068 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,075 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,083 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,091 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,099 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,108 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,115 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,123 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,131 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,139 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,147 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,155 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,163 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,171 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,180 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,187 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,195 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,203 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,211 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,219 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,228 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,235 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,243 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,251 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,259 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,267 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,275 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,283 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,291 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,307 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,323 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,339 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,347 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,811 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,819 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,827 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,835 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:44,843 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:45,356 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:45,453 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:45,467 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:45,764 - Algeruethmus.py - DEBUG - finisch line
+2023-08-31 10:41:46,044 - Algeruethmus.py - DEBUG - Create shapes
+2023-08-31 10:41:46,299 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,307 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,315 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,323 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,331 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,339 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,347 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,355 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,363 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,428 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,437 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,443 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,451 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,459 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,468 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,475 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,484 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,492 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,500 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,507 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,516 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,524 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,532 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,540 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,547 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,555 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,563 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,571 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,579 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,595 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,603 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,611 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,619 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,651 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,675 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,699 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,715 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,747 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,771 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,787 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,795 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,852 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,900 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,915 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,923 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,953 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,955 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:46,971 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:47,059 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:47,083 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:47,091 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:47,396 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:47,499 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:47,587 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:47,595 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:47,947 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:47,955 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:47,971 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:48,268 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:48,315 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:48,323 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:48,643 - Algeruethmus.py - DEBUG - draw line
+2023-08-31 10:41:48,835 - Algeruethmus.py - DEBUG - finisch line
+2023-08-31 10:41:50,171 - Algeruethmus.py - DEBUG - Es wurde der Fragezeichen Button ausgeführt
+2023-08-31 10:41:51,172 - Algeruethmus.py - DEBUG - Es wurde der Fragezeichen Button ausgeführt
+2023-08-31 10:41:54,420 - Algeruethmus.py - DEBUG - create linenetwork wurde ausgeführt
+2023-08-31 10:41:54,421 - Algeruethmus.py - WARNING - Die Threads wurden gestartet
+2023-08-31 10:41:54,422 - Algeruethmus.py - DEBUG - calculate_path_thread wurde gestartet
+2023-08-31 10:41:54,425 - Algeruethmus.py - DEBUG - is_path_possible wurde ausgeführt
+2023-08-31 10:41:54,426 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-08-31 10:41:54,426 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-08-31 10:41:54,426 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-08-31 10:41:54,427 - Algeruethmus.py - DEBUG - is_path_possible wurde ausgeführt
+2023-08-31 10:41:54,427 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-08-31 10:41:54,427 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-08-31 10:41:54,427 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-08-31 10:41:54,428 - Algeruethmus.py - DEBUG - is_path_possible wurde ausgeführt
+2023-08-31 10:41:54,428 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-08-31 10:41:54,428 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-08-31 10:41:54,428 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-08-31 10:41:54,428 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-08-31 10:41:54,429 - Algeruethmus.py - INFO - Strecke: Anfangs-Koordinate: (42, 164), End-Koordinate: (188, 165), Laenge: 146.00342461736986
+2023-08-31 10:41:54,429 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-08-31 10:41:54,429 - Algeruethmus.py - INFO - Strecke: Anfangs-Koordinate: (188, 165), End-Koordinate: (81, 80), Laenge: 136.65284482951682
+2023-08-31 10:41:54,429 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-08-31 10:41:54,429 - Algeruethmus.py - INFO - Strecke: Anfangs-Koordinate: (81, 81), End-Koordinate: (42, 166), Laenge: 93.5200513259055
+2023-08-31 10:41:54,429 - Algeruethmus.py - INFO - Punkte_ID1: (77.0, 76.0)
+2023-08-31 10:41:54,430 - Algeruethmus.py - INFO - Punkte_ID2: (181.0, 159.0)
+2023-08-31 10:41:54,430 - Algeruethmus.py - INFO - Punkte_ID3: (37.0, 159.0)
+2023-08-31 10:41:54,430 - Algeruethmus.py - INFO - Line_ID4: (42.0, 164.0)
+2023-08-31 10:41:54,430 - Algeruethmus.py - INFO - Line_ID5: (188.0, 165.0)
+2023-08-31 10:41:54,430 - Algeruethmus.py - INFO - Line_ID6: (81.0, 81.0)
+2023-08-31 10:41:54,430 - Algeruethmus.py - INFO - Gesamtlaenge: 376.17632077279217
+2023-08-31 10:41:54,430 - Algeruethmus.py - INFO - Die Diagramme wurden gespeichert und zum senden Freigegeben
+2023-08-31 10:41:54,450 - Algeruethmus.py - DEBUG - next_permutation wurde berechnet
+2023-08-31 10:41:54,450 - Algeruethmus.py - INFO - Die Diagramme wurden gespeichert und zum senden Freigegeben
+2023-08-31 10:41:54,468 - Algeruethmus.py - DEBUG - Daten wurden in Table.csv und in Dijkstra_data.csv abgespeichert
+2023-08-31 10:41:54,469 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-08-31 10:41:54,469 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-08-31 10:41:54,469 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-08-31 10:41:54,470 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-08-31 10:41:54,470 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-08-31 10:41:54,470 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-08-31 10:42:14,691 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-08-31 10:42:14,692 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-08-31 10:42:14,692 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-08-31 10:42:14,692 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-08-31 10:42:14,692 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-08-31 10:42:14,693 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-08-31 10:42:14,693 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-08-31 10:42:19,955 - Algeruethmus.py - DEBUG - Verbindung_kreieren wurde ausgeführt
+2023-08-31 10:42:21,684 - Algeruethmus.py - DEBUG - Es wurde der Fragezeichen Button ausgeführt
+2023-08-31 10:42:22,219 - Algeruethmus.py - DEBUG - Es wurde der Fragezeichen Button ausgeführt
+2023-08-31 10:42:24,492 - Algeruethmus.py - DEBUG - Verbindung_kreieren wurde ausgeführt
+2023-08-31 10:42:24,827 - Algeruethmus.py - DEBUG - Verbindung_kreieren wurde ausgeführt
