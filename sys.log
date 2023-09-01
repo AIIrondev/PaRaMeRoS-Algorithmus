@@ -253,3 +253,102 @@
 2023-08-31 10:42:22,219 - Algeruethmus.py - DEBUG - Es wurde der Fragezeichen Button ausgeführt
 2023-08-31 10:42:24,492 - Algeruethmus.py - DEBUG - Verbindung_kreieren wurde ausgeführt
 2023-08-31 10:42:24,827 - Algeruethmus.py - DEBUG - Verbindung_kreieren wurde ausgeführt
+2023-09-01 10:59:49,181 - Algeruethmus.py - DEBUG - Button1
+2023-09-01 10:59:49,182 - Algeruethmus.py - DEBUG - Button2
+2023-09-01 10:59:49,182 - Algeruethmus.py - DEBUG - Button3
+2023-09-01 10:59:49,182 - Algeruethmus.py - DEBUG - B2Motion
+2023-09-01 10:59:49,182 - Algeruethmus.py - DEBUG - ButtonRelease2
+2023-09-01 10:59:49,183 - Algeruethmus.py - DEBUG - Button z
+2023-09-01 10:59:57,795 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-01 10:59:59,443 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-01 11:00:00,723 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-01 11:00:03,218 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-01 11:00:06,018 - Algeruethmus.py - DEBUG - finisch line
+2023-09-01 11:00:06,315 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-01 11:00:07,996 - Algeruethmus.py - DEBUG - finisch line
+2023-09-01 11:00:08,242 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-01 11:00:09,858 - Algeruethmus.py - DEBUG - finisch line
+2023-09-01 11:00:11,034 - Algeruethmus.py - DEBUG - Es wurde der Fragezeichen Button ausgeführt
+2023-09-01 11:00:12,058 - Algeruethmus.py - DEBUG - Es wurde der Fragezeichen Button ausgeführt
+2023-09-01 11:00:13,517 - Algeruethmus.py - DEBUG - create linenetwork wurde ausgeführt
+2023-09-01 11:00:13,518 - Algeruethmus.py - WARNING - Die Threads wurden gestartet
+2023-09-01 11:00:13,519 - Algeruethmus.py - DEBUG - calculate_path_thread wurde gestartet
+2023-09-01 11:00:13,522 - Algeruethmus.py - DEBUG - is_path_possible wurde ausgeführt
+2023-09-01 11:00:13,522 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-09-01 11:00:13,522 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-09-01 11:00:13,522 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-09-01 11:00:13,522 - Algeruethmus.py - DEBUG - is_path_possible wurde ausgeführt
+2023-09-01 11:00:13,522 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-09-01 11:00:13,523 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-09-01 11:00:13,523 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-09-01 11:00:13,523 - Algeruethmus.py - DEBUG - is_path_possible wurde ausgeführt
+2023-09-01 11:00:13,523 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-09-01 11:00:13,523 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-09-01 11:00:13,523 - Algeruethmus.py - DEBUG - Es wurde lines_intersect ausgeführt
+2023-09-01 11:00:13,524 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-01 11:00:13,524 - Algeruethmus.py - INFO - Strecke: Anfangs-Koordinate: (82, 72), End-Koordinate: (41, 168), Laenge: 104.38869670610895
+2023-09-01 11:00:13,524 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-01 11:00:13,524 - Algeruethmus.py - INFO - Strecke: Anfangs-Koordinate: (41, 168), End-Koordinate: (189, 167), Laenge: 148.00337833982033
+2023-09-01 11:00:13,524 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-01 11:00:13,524 - Algeruethmus.py - INFO - Strecke: Anfangs-Koordinate: (189, 167), End-Koordinate: (81, 76), Laenge: 141.2267680009707
+2023-09-01 11:00:13,524 - Algeruethmus.py - INFO - Punkte_ID1: (77.0, 68.0)
+2023-09-01 11:00:13,524 - Algeruethmus.py - INFO - Punkte_ID2: (184.0, 161.0)
+2023-09-01 11:00:13,524 - Algeruethmus.py - INFO - Punkte_ID3: (37.0, 162.0)
+2023-09-01 11:00:13,524 - Algeruethmus.py - INFO - Line_ID4: (82.0, 72.0)
+2023-09-01 11:00:13,524 - Algeruethmus.py - INFO - Line_ID5: (41.0, 168.0)
+2023-09-01 11:00:13,524 - Algeruethmus.py - INFO - Line_ID6: (189.0, 167.0)
+2023-09-01 11:00:13,524 - Algeruethmus.py - INFO - Gesamtlaenge: 393.6188430469
+2023-09-01 11:00:13,525 - Algeruethmus.py - INFO - Die Diagramme wurden gespeichert und zum senden Freigegeben
+2023-09-01 11:00:13,553 - Algeruethmus.py - DEBUG - next_permutation wurde berechnet
+2023-09-01 11:00:13,553 - Algeruethmus.py - INFO - Die Diagramme wurden gespeichert und zum senden Freigegeben
+2023-09-01 11:00:13,566 - Algeruethmus.py - DEBUG - Daten wurden in Table.csv und in Dijkstra_data.csv abgespeichert
+2023-09-01 11:00:13,567 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-01 11:00:13,567 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-01 11:00:13,567 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-01 11:00:13,568 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-01 11:00:13,568 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-01 11:00:13,568 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-01 11:00:42,514 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-01 11:00:42,515 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-01 11:00:42,515 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-01 11:00:42,516 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-01 11:00:42,516 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-01 11:00:42,517 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-01 11:00:42,517 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-01 11:00:51,834 - Algeruethmus.py - DEBUG - shape_index wurde ausgeführt
+2023-09-01 11:00:53,210 - Algeruethmus.py - DEBUG - shape_index wurde ausgeführt
+2023-09-01 11:00:53,210 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-01 11:00:53,898 - Algeruethmus.py - DEBUG - shape_index wurde ausgeführt
+2023-09-01 11:00:54,754 - Algeruethmus.py - DEBUG - Verbindung_kreieren wurde ausgeführt
+2023-09-01 11:00:57,122 - Algeruethmus.py - DEBUG - shape_index wurde ausgeführt
+2023-09-01 11:00:57,882 - Algeruethmus.py - DEBUG - shape_index wurde ausgeführt
+2023-09-01 11:00:57,882 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-01 11:00:58,850 - Algeruethmus.py - DEBUG - shape_index wurde ausgeführt
+2023-09-01 12:51:03,656 - Algeruethmus.py - DEBUG - Button1
+2023-09-01 12:51:03,657 - Algeruethmus.py - DEBUG - Button2
+2023-09-01 12:51:03,657 - Algeruethmus.py - DEBUG - Button3
+2023-09-01 12:51:03,657 - Algeruethmus.py - DEBUG - B2Motion
+2023-09-01 12:51:03,657 - Algeruethmus.py - DEBUG - ButtonRelease2
+2023-09-01 12:51:03,658 - Algeruethmus.py - DEBUG - Button z
+2023-09-01 17:24:45,759 - Algeruethmus.py - DEBUG - Button1
+2023-09-01 17:24:45,760 - Algeruethmus.py - DEBUG - Button2
+2023-09-01 17:24:45,760 - Algeruethmus.py - DEBUG - Button3
+2023-09-01 17:24:45,760 - Algeruethmus.py - DEBUG - B2Motion
+2023-09-01 17:24:45,760 - Algeruethmus.py - DEBUG - ButtonRelease2
+2023-09-01 17:24:45,760 - Algeruethmus.py - DEBUG - Button z
+2023-09-01 17:24:59,218 - Algeruethmus.py - DEBUG - Button1
+2023-09-01 17:24:59,218 - Algeruethmus.py - DEBUG - Button2
+2023-09-01 17:24:59,219 - Algeruethmus.py - DEBUG - Button3
+2023-09-01 17:24:59,219 - Algeruethmus.py - DEBUG - B2Motion
+2023-09-01 17:24:59,219 - Algeruethmus.py - DEBUG - ButtonRelease2
+2023-09-01 17:24:59,219 - Algeruethmus.py - DEBUG - Button z
+2023-09-01 17:25:07,706 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-01 17:25:08,298 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-01 17:25:08,778 - Algeruethmus.py - DEBUG - create linenetwork wurde ausgeführt
+2023-09-01 17:25:08,778 - Algeruethmus.py - WARNING - Die Threads wurden gestartet
+2023-09-01 17:25:08,779 - Algeruethmus.py - DEBUG - calculate_path_thread wurde gestartet
+2023-09-01 17:25:08,784 - Algeruethmus.py - INFO - Gesamtlaenge: 0
+2023-09-01 17:25:08,784 - Algeruethmus.py - INFO - Die Diagramme wurden gespeichert und zum senden Freigegeben
+2023-09-01 17:25:08,798 - Algeruethmus.py - DEBUG - next_permutation wurde berechnet
+2023-09-01 17:25:08,799 - Algeruethmus.py - INFO - Die Diagramme wurden gespeichert und zum senden Freigegeben
+2023-09-01 17:25:08,811 - Algeruethmus.py - DEBUG - Daten wurden in Table.csv und in Dijkstra_data.csv abgespeichert

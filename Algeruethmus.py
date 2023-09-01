@@ -7,6 +7,8 @@ from PIL import ImageDraw
 import csv
 import logging
 
+
+#Def Area
 def create_shapes(event):
     logger.debug('Create shapes')
     x, y = event.x, event.y
@@ -17,12 +19,14 @@ def create_shapes(event):
     elif event.num == 2:  # Mittlerer Mausbutton
         canvas.line_start = (x, y)
 
+
 def draw_line(event):
     if hasattr(canvas, 'line_start'):
         x, y = event.x, event.y
         canvas.delete("current_line")
         canvas.create_line(canvas.line_start[0], canvas.line_start[1], x, y, fill="green", width=6, tags="current_line")
         label.config(text=f"Maus Koordinaten: ({event.x}, {event.y})")
+
 
 def finish_line(event):
     logger.debug('finisch line')
@@ -36,6 +40,7 @@ def finish_line(event):
         del canvas.line_start
         print("Eine Linie wurde gezeichnet!")
 
+
 def delete_last_shape(event):
     logger.debug('last shape deletet')
     if shapes and line_coordinates_list:
@@ -46,6 +51,7 @@ def delete_last_shape(event):
             print("Der letzte Kreis wurde gelöscht!")
         elif shape_type == "line":
             print("Die letzte Linie wurde gelöscht!")
+
 
 def calculate_paths_thread():
     logger.debug("calculate_path_thread wurde gestartet")
@@ -126,6 +132,7 @@ def calculate_paths_thread():
     else:
         print("Kein gueltiger Pfad gefunden!")
 
+
 def generate_table(shapes, line_coordinates_list):
     logger.debug("Daten wurden in Table.csv und in Dijkstra_data.csv abgespeichert")
     with open("table.csv", "w", newline='') as file:
@@ -161,6 +168,7 @@ def generate_table(shapes, line_coordinates_list):
     with open("log.fll", "a") as file:
         file.write("Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!")
 
+
 def create_line_network():
     logger.debug('create linenetwork wurde ausgeführt')
     if line_coordinates_list:
@@ -186,6 +194,7 @@ def create_line_network():
     logging.info("Die Threads wurden erfolgreich abgeschlossen")
     print("die Threats sind jetzt abgeschlossen")
 
+
 def is_path_possible(start_x, start_y, end_x, end_y):
     logger.debug("is_path_possible wurde ausgeführt")
     for line_coordinates in line_coordinates_list:
@@ -207,12 +216,14 @@ def is_path_possible(start_x, start_y, end_x, end_y):
                 pass
     return True
 
+
 def calculate_length(start_x, start_y, end_x, end_y):
     logger.debug("Es wurde calculate_length ausgeführt")
     print("jetzt wurde die laenge gespeichert!")
     dx = end_x - start_x
     dy = end_y - start_y
     return ((dx ** 2) + (dy ** 2)) ** 0.5
+
 
 def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
     logger.debug("Es wurde lines_intersect ausgeführt")
@@ -234,6 +245,7 @@ def lines_intersect(x1, y1, x2, y2, x3, y3, x4, y4):
     else:
         return False  # Linien schneiden sich nicht
 
+
 def next_permutation(arr):
     logger.debug("next_permutation wurde berechnet")
     i = len(arr) - 2
@@ -245,6 +257,7 @@ def next_permutation(arr):
             j -= 1
         arr[i], arr[j] = arr[j], arr[i]
     arr[i + 1:] = reversed(arr[i + 1:])
+
 
 def generate_diagram(path, path_order):
     # hier müssen noch folgende Diagramme erstellt werden: Zeit pro Aufgabe, länge pro Aufgaben, Dijkstra Alg., A_star Alg.
@@ -283,19 +296,27 @@ def generate_diagram(path, path_order):
     diagram.save("diagram.png")
     print("Diagramm erzeugt und als 'diagram.png' gespeichert.")
 
+
 def create_button(shape_type, index):
     logger.debug("Es wurden Buttons erzeugt")
+
+
+    def combined_action():
+        linien_creator(index)
+        button_pressed(index)
+
     if shape_type == "circle":
         button_text = f"Kreis {index + 1}"
-        return tk.Button(root, text=button_text, command=lambda index=index: linien_creator(index))
+        return tk.Button(root, text=button_text, command=combined_action)
     elif shape_type == "line":
         button_text = f"Linie {index + 1}"
-        return tk.Button(root, text=button_text, command=lambda index=index: linien_creator(index))
+        return tk.Button(root, text=button_text, command=combined_action)
+
 
 def create_buttons_for_shapes():
     logger.debug("Es wurde create_buttons_for_shapes ausgeführt")
     global button_list
-    button_list = [] # Global variable umwandeln
+    button_list = []
     button_frame = tk.Frame(root)
     canvas.create_window(0, 0, anchor="nw", window=button_frame)
     
@@ -304,15 +325,10 @@ def create_buttons_for_shapes():
         button = create_button(shape_type, i)
         button.pack(fill=tk.BOTH, padx=5, pady=5) 
         button_list.append(button)
-        
-    v_scrollbar = tk.Scrollbar(root, orient="vertical", command=canvas.yview)
-    v_scrollbar.pack(side="right", fill="y")
-    canvas.configure(yscrollcommand=v_scrollbar.set)
 
     canvas.pack(fill=tk.BOTH, expand=True)
     
     canvas.create_window(0, 0, anchor="nw", window=button_frame)
-    canvas.config(scrollregion=canvas.bbox("all"))
     create_button_for_shape_var = True
 
 def display_function_explanations():
@@ -325,13 +341,12 @@ def display_function_explanations():
     - Ziehen bei Mittelklick: Zeichnet eine temporäre grüne Linie.
     - Loslassen nach Mittelklick: Zeichnet eine grüne Linie und speichert sie.
     - Taste 'z': Löscht die zuletzt gezeichnete Form (Kreis oder Linie).
-    - Taste 'l': Erzeugt Schaltflächen für die vorhandenen Formen.
-    - Taste 'b': Führt den Path Finding Algorithmus aus.
 
     Dieses Programm sollte Ausschließlich von Personen verwendet werden, die im FLL Team PaRaMeRoS sind.
     Die Schaltfläche 'Path Finding' führt den Algorithmus aus, um gültige Pfade zu berechnen.
     Die Schaltfläche 'Auflistung der Linien' zeigt Schaltflächen für jede Linie und jeden Kreis an.
     Die Schaltfläche 'Neue Verbindung kreieren' erstellt eine Verbindung zwischen zwei Punkten.
+    Die Schaltfläche 'quit_VK' beendet die Funktion verbindung_kreiren(vk).
     """
     current_text = explanation_label.cget("text")
     if current_text == explanation_text:
@@ -340,85 +355,60 @@ def display_function_explanations():
         explanation_label.config(text=explanation_text)
 
 def linien_creator(shape_index):
-    logger.debug("shape_index wurde ausgeführt")
+    global selected_point_id, selected_line_id
+
     shape = shapes[shape_index]
     shape_type, coords = shape
+
     if shape_type == "line":
         start_x, start_y, end_x, end_y = canvas.coords(coords)
         length = calculate_length(start_x, start_y, end_x, end_y)
+        selected_line_id = shape_index  # Hier speicherst du die ID der ausgewählten Linie
         label_4.config(text=f"Linien Verbindung {shape_index + 1}: Anfangs-Koordinate: ({start_x}, {start_y}), End-Koordinate: ({end_x}, {end_y}), Laenge: {length}")
+
+    elif shape_type == "circle":
+        selected_point_id = shape_index  # Hier speichert die ID des ausgewählten Punkts
+        print(f"Ausgewählter Punkt: {shape_index + 1}")
     else:
-        print(f"Keine Linie gefunden fuer Shape {shape_index + 1}")
+        logger.error("Es wurde kein Shape gefunden")
 
-# wie kann ich den folgenden Code umbauen, dass er if Punkt button pressed speicher ID in liste danach können so viele Linien Button ausgewählt werden von welchen alle länge zusammen gerechnet werden wenn ein weiterer Punkt Button gedrückt welcher auch mit ID abgespeichert wird. Dies kann immer weitere Listen eintrage machen und wiederholt werden bis
-'''
+
 def verbindung_kreieren():
-    button_frame = tk.Frame(root)
-    if create_button_for_shape_var:
-        explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien"
+    set_running = True
+    global selected_objects
 
-        current_text_for_shapes = explanation_label.cget("text")
-        if current_text_for_shapes == explanation_text_for_shape:
-            explanation_label.config(text="")
-        else:
-            explanation_label.config(text=explanation_text_for_shape)
-            
-            # Verbindung erstellen und speichern
-            line_connections = []
-            line_length = None
-            for i, shape in enumerate(shapes):
-                shape_type, _ = shape
-                if shape_type == "circle":
-                    button_text = f"Kreis {i + 1}"
-                    button = create_button(shape_type, i, button_text)
-                    button_frame.columnconfigure(i, weight=1)
-                    button.pack(fill=tk.BOTH, padx=5, pady=5)
-                    button.config(command=lambda i=i: save_connection(i))
-                    line_length = calculate_length_of_line(i)
-            
-            def save_connection(circle_id):
-                line_id = int(render_fild.get())
-                line_connections.append((circle_id + 1, line_id, line_length))
-                print(f"Verbindung zwischen Kreis {circle_id + 1} und Linie {line_id} mit Länge {line_length}")
-            
-            # Liste in CSV-Datei speichern (Quelle, Ziel, Gewicht)/ (source, target, weight)
-            if line_connections:
-                with open("verbindungen.csv", "w", newline='') as file:
-                    csv_writer = csv.writer(file)
-                    csv_writer.writerow(["source", "target", "weight"])
-                    for circle_id, line_id, line_length in line_connections:
-                        csv_writer.writerow([circle_id, line_id, line_length])
-                print("Verbindungen wurden in 'Dijkstra_data.csv' gespeichert")
-            else:
-                print("Keine Verbindungen zum Speichern vorhanden")
-'''
-def verbindung_kreieren():
-    logger.debug("Verbindung_kreieren wurde ausgeführt")
-    button_frame = tk.Frame(root)
-    explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien in dem sie die Buttons in der Reihenfolge drücken"
+    if mode == "point":
+        # Füge den ausgewählten Punkt zur Liste hinzu (hier musst du die ID des ausgewählten Punkts speichern)
+        selected_objects.append(selected_point_id)
+        print(f"Ausgewählter Punkt: {selected_point_id}")
 
-    current_text_for_shapes = explanation_label.cget("text")
-    if current_text_for_shapes == explanation_text_for_shape:
-        explanation_label.config(text="")
-    else:
-        explanation_label.config(text=explanation_text_for_shape)
-#   while set_running:
-#        if button quit is Pressed:
-#            break the while Schleife
-#        if button from Point is Pressed:
-#           while Lines_adding:
-#               if button quit is Pressed:
-#                   break the while Schleife
-#               if button from linien is Pressed:
+    elif mode == "line":
+        # Füge die ausgewählte Linie zur Liste hinzu (hier musst du die ID der ausgewählten Linie speichern)
+        selected_objects.append(selected_line_id)
+        print(f"Ausgewählte Linie: {selected_line_id}")
+
+    while set_running:
+        if button_quit_vk == "quit":
+            set_running = False
+        elif button_pressed_vk == "":
+            lines_adding = True
+            while lines_adding:
+                if button_quit_vk == "quit":
+                    lines_adding = False
+                    set_running = False
+                if button_pressed_vk == "":
+                    pass
 #                   get laength and add to total_laength
 #                   get ID save to first button create new List in list(all way points)
-#               elif button from Points is Pressed:
+                elif button_pressed_vk == "":
+                    pass
 #                   print( total_laength)
 #                   with open(".csv", a) as file:
 #                       file.write(ID from first button, ID vom End button,total_laenght)
 #                   Lines_adding = False
 #                   break
     pass
+
 
 def calculate_length_of_line(circle_id):
     logger.debug("Hier wurde die länge der Linien ausgerechnet")
@@ -429,9 +419,24 @@ def calculate_length_of_line(circle_id):
         total_length += length
     return total_length
 
+
+def switch_mode(new_mode):
+    logger.debug("switch_mode wurde ausgeführt")
+    global mode
+    mode = new_mode
+
+def set_quit_vk():
+    logger.debug("quit vk")
+    button_quit_vk = True
+
+def button_pressed(id):
+    logger.debug("button_pressed wurde ausgeführt")
+    button_pressed_vk = id
+
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
 
+# var def area
 root = tk.Tk()
 root.title("FLL PaRaMeRoS Algeruethmus")
 
@@ -450,6 +455,17 @@ line_coordinates_list = []
 
 object_coordinates_c = {}
 object_coordinates_l = {}
+selected_point_id = None
+selected_line_id = None
+selected_objects = []
+mode = "point"
+button_quit_vk = False
+button_pressed_vk = False
+
+image_path = "FLL_2023-24_Map.png"
+image = Image.open(image_path)
+photo = ImageTk.PhotoImage(image)
+canvas.create_image(0, 0, anchor="nw", image=photo)
 
 logger = logging.getLogger('Algeruethmus.py')
 logger.setLevel(logging.DEBUG)
@@ -466,45 +482,32 @@ canvas.bind("<Button-3>", create_shapes, logger.debug('Button3'))
 canvas.bind("<B2-Motion>", draw_line, logger.debug('B2Motion'))
 canvas.bind("<ButtonRelease-2>", finish_line, logger.debug('ButtonRelease2'))
 root.bind("z", delete_last_shape, logger.debug('Button z'))
-
 render_button_3 = tk.Button(root, text="?", command=display_function_explanations)
-render_button_3.pack()
-
 explanation_label = tk.Label(root, text="", justify=tk.LEFT)
-explanation_label.pack()
-
-image_path = "FLL_2023-24_Map.png"
-image = Image.open(image_path)
-photo = ImageTk.PhotoImage(image)
-canvas.create_image(0, 0, anchor="nw", image=photo)
-
 label = tk.Label(root, text="Maus Koordinaten: (0, 0)", bd=1, relief=tk.SUNKEN, anchor=tk.W)
-label.pack(side=tk.TOP, fill=tk.X)
-
 label_1 = tk.Label(root, text="Anfangs-Koordinate: (0, 0), End-Koordinate: (0, 0)")
-label_1.pack()
-
 label_2 = tk.Label(root, text="Beruehrungspunkte auf den Linien: (0, 0)")
-label_2.pack()
-
-canvas.bind("<Motion>", update_mouse_coordinates)
-
 render_button = tk.Button(root, text="Path Finding", command=create_line_network)
-render_button.pack()
-
 label_3 = tk.Label(root, text="Liste der Linien")
-label_3.pack()
-
 label_4 = tk.Label(root, text="Linien Verbindung 1: (0,0) Leange: (0)")
-label_4.pack()
-
 render_button_1 = tk.Button(root, text="Auflistung der Linien", command=create_buttons_for_shapes)
-render_button_1.pack()
-
 render_button_2 = tk.Button(root, text="Neue Verbindung kreieren", command=verbindung_kreieren)
+point_button = tk.Button(root, text="Punkt auswählen", command=lambda: switch_mode("point"))
+line_button = tk.Button(root, text="Linie hinzufügen", command=lambda: switch_mode("line"))
+render_button_4 = tk.Button(root, text="quit_VK", command=set_quit_vk)
+# run area
+render_button_3.pack()
+explanation_label.pack()
+label.pack(side=tk.TOP, fill=tk.X)
+label_1.pack()
+label_2.pack()
+canvas.bind("<Motion>", update_mouse_coordinates)
+render_button.pack()
+label_3.pack()
+label_4.pack()
+render_button_1.pack()
 render_button_2.pack()
-
-render_fild = tk.Entry(root)
-render_fild.pack()
-
+render_button_4.pack()
+#point_button.pack()
+#line_button.pack()
 root.mainloop()
