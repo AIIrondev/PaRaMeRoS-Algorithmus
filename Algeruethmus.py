@@ -345,9 +345,9 @@ def display_function_explanations():
 
     Dieses Programm sollte Ausschließlich von Personen verwendet werden, die im FLL Team PaRaMeRoS sind.
     Die Schaltfläche 'Path Finding' führt den Algorithmus aus, um gültige Pfade zu berechnen.
-    Die Schaltfläche 'Auflistung der Linien' zeigt Schaltflächen für jede Linie und jeden Kreis an.
-    Die Schaltfläche 'Neue Verbindung kreieren' erstellt eine Verbindung zwischen zwei Punkten.
-    Die Schaltfläche 'quit_VK' beendet die Funktion verbindung_kreiren(vk).
+    Die Schaltfläche 'Auflistung der Linien' zeigt Schaltflächen für jede Linie und jeden Kreis an, nachdem
+    diese Schaltfläche gedrückt wurde, werden alle gedrückten Schaltflächen( Anfangs Punkt, Linien, End Punkt)
+    in eine Liste gespeichert diese wird ausgelesen und verarbeitet so bald Neue Verbindung erstellen gedrückt wird.
     """
     current_text = explanation_label.cget("text")
     if current_text == explanation_text:
@@ -401,9 +401,12 @@ def list_reader_clasifier():
                         csv_writer = csv.writer(file)
                         csv_writer.writerow(["source", "target", "weight"])
                         for start_id, line_length, end_id in vk_data_list:
+                            logger.debug(
+                                f"Es wurde ein Kreis mit einer Linie {line_length}verbunden und einem Kreis verbunden")
                             csv_writer.writerow([start_id, end_id, line_length])
 
                 elif vk_list_sel_obj[2] == "circle":
+                    logger.debug("Es wurde ein Kreis mit einem Kreis verbunden länge = 0")
                     with open("Dijkstra_data.csv", "a", newline='') as file:
                         csv_writer = csv.writer(file)
                         csv_writer.writerow(["source", "target", "weight"])
@@ -413,11 +416,14 @@ def list_reader_clasifier():
 
 def button_pressed(id, shape_type):
     logger.debug(f"Button {shape_type},{id + 1} wurde gedrückt")
-    vk_list_sel_obj.append(id)
+    vk_data_list.append(id)
+    vk_list_sel_obj.append(shape_type)
     print(f"Button {id + 1} wurde gedrückt")
+
 
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
+
 
 # var def area
 root = tk.Tk()
