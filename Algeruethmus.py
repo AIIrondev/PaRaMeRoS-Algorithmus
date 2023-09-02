@@ -260,7 +260,8 @@ def next_permutation(arr):
 
 
 def generate_diagram(path, path_order):
-    # hier müssen noch folgende Diagramme erstellt werden: Zeit pro Aufgabe, länge pro Aufgaben, Dijkstra Alg., A_star Alg.
+    # hier müssen noch folgende Diagramme erstellt werden: Zeit pro Aufgabe, länge pro Aufgaben, Dijkstra Alg.,
+    # A_star Alg.
     logger.info("Die Diagramme wurden gespeichert und zum senden Freigegeben")
     diagram = Image.new("RGB", (705, 420), "white")
     draw = ImageDraw.Draw(diagram)
@@ -303,7 +304,7 @@ def create_button(shape_type, index):
 
     def combined_action():
         linien_creator(index)
-        button_pressed(index)
+        button_pressed(index, shape_type)
 
     if shape_type == "circle":
         button_text = f"Kreis {index + 1}"
@@ -372,43 +373,8 @@ def linien_creator(shape_index):
     else:
         logger.error("Es wurde kein Shape gefunden")
 
-
 def verbindung_kreieren():
-    set_running = True
-    global selected_objects
-
-    if mode == "point":
-        # Füge den ausgewählten Punkt zur Liste hinzu (hier musst du die ID des ausgewählten Punkts speichern)
-        selected_objects.append(selected_point_id)
-        print(f"Ausgewählter Punkt: {selected_point_id}")
-
-    elif mode == "line":
-        # Füge die ausgewählte Linie zur Liste hinzu (hier musst du die ID der ausgewählten Linie speichern)
-        selected_objects.append(selected_line_id)
-        print(f"Ausgewählte Linie: {selected_line_id}")
-
-    while set_running:
-        if button_quit_vk == "quit":
-            set_running = False
-        elif button_pressed_vk == "":
-            lines_adding = True
-            while lines_adding:
-                if button_quit_vk == "quit":
-                    lines_adding = False
-                    set_running = False
-                if button_pressed_vk == "":
-                    pass
-#                   get laength and add to total_laength
-#                   get ID save to first button create new List in list(all way points)
-                elif button_pressed_vk == "":
-                    pass
-#                   print( total_laength)
-#                   with open(".csv", a) as file:
-#                       file.write(ID from first button, ID vom End button,total_laenght)
-#                   Lines_adding = False
-#                   break
     pass
-
 
 def calculate_length_of_line(circle_id):
     logger.debug("Hier wurde die länge der Linien ausgerechnet")
@@ -425,13 +391,30 @@ def switch_mode(new_mode):
     global mode
     mode = new_mode
 
-def set_quit_vk():
-    logger.debug("quit vk")
-    button_quit_vk = True
 
-def button_pressed(id):
-    logger.debug("button_pressed wurde ausgeführt")
-    button_pressed_vk = id
+def list_reader_clasifier():
+    for element in vk_list_sel_obj:
+        if vk_list_sel_obj[-1] == "circle":
+            if vk_list_sel_obj[0] == "circle":
+                if vk_list_sel_obj[2] == "line":
+                    with open("Dijkstra_data.csv", "a", newline='') as file:
+                        csv_writer = csv.writer(file)
+                        csv_writer.writerow(["source", "target", "weight"])
+                        for start_id, line_length, end_id in vk_data_list:
+                            csv_writer.writerow([start_id, end_id, line_length])
+
+                elif vk_list_sel_obj[2] == "circle":
+                    with open("Dijkstra_data.csv", "a", newline='') as file:
+                        csv_writer = csv.writer(file)
+                        csv_writer.writerow(["source", "target", "weight"])
+                        for start_id, end_id in vk_data_list:
+                            csv_writer.writerow([start_id, end_id, "0"])
+
+
+def button_pressed(id, shape_type):
+    logger.debug(f"Button {shape_type},{id + 1} wurde gedrückt")
+    vk_list_sel_obj.append(id)
+    print(f"Button {id + 1} wurde gedrückt")
 
 def update_mouse_coordinates(event):
     label.config(text=f"Maus Koordinaten: ({event.x_root - root.winfo_x()}, {event.y_root - root.winfo_y()})")
@@ -459,8 +442,8 @@ selected_point_id = None
 selected_line_id = None
 selected_objects = []
 mode = "point"
-button_quit_vk = False
-button_pressed_vk = False
+vk_list_sel_obj = []
+vk_data_list = []
 
 image_path = "FLL_2023-24_Map.png"
 image = Image.open(image_path)
@@ -494,7 +477,7 @@ render_button_1 = tk.Button(root, text="Auflistung der Linien", command=create_b
 render_button_2 = tk.Button(root, text="Neue Verbindung kreieren", command=verbindung_kreieren)
 point_button = tk.Button(root, text="Punkt auswählen", command=lambda: switch_mode("point"))
 line_button = tk.Button(root, text="Linie hinzufügen", command=lambda: switch_mode("line"))
-render_button_4 = tk.Button(root, text="quit_VK", command=set_quit_vk)
+
 # run area
 render_button_3.pack()
 explanation_label.pack()
@@ -507,7 +490,5 @@ label_3.pack()
 label_4.pack()
 render_button_1.pack()
 render_button_2.pack()
-render_button_4.pack()
-#point_button.pack()
-#line_button.pack()
+
 root.mainloop()

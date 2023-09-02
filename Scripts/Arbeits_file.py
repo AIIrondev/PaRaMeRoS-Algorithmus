@@ -102,3 +102,44 @@ def verbindung_kreieren():
             else:
                 print("Keine Verbindungen zum Speichern vorhanden")
 '''
+'''
+Problem da Schleife in Schleife ist wird die Schleife immer wieder ausgeführt
+def verbindung_kreieren():
+    total_laength = 0
+    set_running = True
+    global selected_objects
+
+    if mode == "point":
+        # Füge den ausgewählten Punkt zur Liste hinzu (hier musst du die ID des ausgewählten Punkts speichern)
+        selected_objects.append(selected_point_id)
+        print(f"Ausgewählter Punkt: {selected_point_id}")
+
+    elif mode == "line":
+        # Füge die ausgewählte Linie zur Liste hinzu (hier musst du die ID der ausgewählten Linie speichern)
+        selected_objects.append(selected_line_id)
+        print(f"Ausgewählte Linie: {selected_line_id}")
+
+    while set_running:
+        if button_quit_vk == "quit":
+            set_running = False
+        elif button_pressed_vk == "circle":
+            button_id = button_pressed
+            vk_list.append(button_id)
+            lines_adding = True
+            while lines_adding:
+                if button_quit_vk == "quit":
+                    lines_adding = False
+                    set_running = False
+                if button_pressed_vk == "line":
+                    pass
+#                   get laength and add to total_laength
+#                   get ID save to first button create new List in list(all way points)
+                elif button_pressed_vk == "circle":
+                    pass
+#                   print( total_laength)
+#                   with open(".csv", a) as file:
+#                       file.write(ID from first button, ID vom End button,total_laenght)
+#                   Lines_adding = False
+#                   break
+    pass
+'''
