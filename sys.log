@@ -386,3 +386,62 @@
 2023-09-02 22:09:04,412 - Algeruethmus.py - DEBUG - B2Motion
 2023-09-02 22:09:04,412 - Algeruethmus.py - DEBUG - ButtonRelease2
 2023-09-02 22:09:04,412 - Algeruethmus.py - DEBUG - Button z
+2023-09-03 08:47:42,144 - Algeruethmus.py - DEBUG - Button1
+2023-09-03 08:47:42,145 - Algeruethmus.py - DEBUG - Button2
+2023-09-03 08:47:42,145 - Algeruethmus.py - DEBUG - Button3
+2023-09-03 08:47:42,145 - Algeruethmus.py - DEBUG - B2Motion
+2023-09-03 08:47:42,145 - Algeruethmus.py - DEBUG - ButtonRelease2
+2023-09-03 08:47:42,145 - Algeruethmus.py - DEBUG - Button z
+2023-09-03 08:47:45,735 - Algeruethmus.py - DEBUG - Es wurde der Fragezeichen Button ausgeführt
+2023-09-03 08:47:53,031 - Algeruethmus.py - DEBUG - Es wurde der Fragezeichen Button ausgeführt
+2023-09-03 08:47:54,743 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-03 08:47:56,920 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-03 08:47:58,519 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-03 08:47:59,215 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-03 08:48:01,279 - Algeruethmus.py - DEBUG - finisch line
+2023-09-03 08:48:02,567 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-03 08:48:02,567 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:48:02,567 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:48:02,567 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:48:09,799 - Algeruethmus.py - DEBUG - Button circle,1 wurde gedrückt
+2023-09-03 08:48:10,575 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-03 08:48:10,575 - Algeruethmus.py - DEBUG - Button line,3 wurde gedrückt
+2023-09-03 08:48:11,230 - Algeruethmus.py - DEBUG - Button circle,2 wurde gedrückt
+2023-09-03 08:48:55,527 - Algeruethmus.py - DEBUG - Button circle,1 wurde gedrückt
+2023-09-03 08:48:56,247 - Algeruethmus.py - DEBUG - Es wurde calculate_length ausgeführt
+2023-09-03 08:48:56,247 - Algeruethmus.py - DEBUG - Button line,3 wurde gedrückt
+2023-09-03 08:48:56,926 - Algeruethmus.py - DEBUG - Button circle,2 wurde gedrückt
+2023-09-03 08:48:59,647 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-03 08:48:59,647 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:48:59,648 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:48:59,648 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,278 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-03 08:49:02,278 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,279 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,279 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,471 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-03 08:49:02,471 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,472 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,472 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,679 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-03 08:49:02,679 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,680 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,680 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,871 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-03 08:49:02,871 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,872 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:02,872 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:03,038 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-03 08:49:03,039 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:03,039 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:03,039 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:03,238 - Algeruethmus.py - DEBUG - Es wurde create_buttons_for_shapes ausgeführt
+2023-09-03 08:49:03,238 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:03,239 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-03 08:49:03,239 - Algeruethmus.py - DEBUG - Es wurden Buttons erzeugt
+2023-09-04 08:26:21,383 - Algeruethmus.py - DEBUG - Button1
+2023-09-04 08:26:21,383 - Algeruethmus.py - DEBUG - Button2
+2023-09-04 08:26:21,383 - Algeruethmus.py - DEBUG - Button3
+2023-09-04 08:26:21,383 - Algeruethmus.py - DEBUG - B2Motion
+2023-09-04 08:26:21,383 - Algeruethmus.py - DEBUG - ButtonRelease2
+2023-09-04 08:26:21,383 - Algeruethmus.py - DEBUG - Button z

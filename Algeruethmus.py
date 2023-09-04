@@ -8,7 +8,7 @@ import csv
 import logging
 
 
-#Def Area
+# Def Area
 def create_shapes(event):
     logger.debug('Create shapes')
     x, y = event.x, event.y
@@ -294,7 +294,7 @@ def generate_diagram(path, path_order):
         order2, (x2, y2) = leaf_nodes[i + 1]
         draw.line([(x1, y1 + node_radius), (x2, y2 - node_radius)], fill="black", width=2)
 
-    diagram.save("diagram.png")
+    diagram.save("/Bilder/diagram.png")
     print("Diagramm erzeugt und als 'diagram.png' gespeichert.")
 
 
@@ -373,8 +373,10 @@ def linien_creator(shape_index):
     else:
         logger.error("Es wurde kein Shape gefunden")
 
+
 def verbindung_kreieren():
     pass
+
 
 def calculate_length_of_line(circle_id):
     logger.debug("Hier wurde die länge der Linien ausgerechnet")
@@ -393,6 +395,7 @@ def switch_mode(new_mode):
 
 
 def list_reader_clasifier():
+    logger.debug("list_reader_clasifier wurde ausgeführt")
     for element in vk_list_sel_obj:
         if vk_list_sel_obj[-1] == "circle":
             if vk_list_sel_obj[0] == "circle":
@@ -480,7 +483,7 @@ render_button = tk.Button(root, text="Path Finding", command=create_line_network
 label_3 = tk.Label(root, text="Liste der Linien")
 label_4 = tk.Label(root, text="Linien Verbindung 1: (0,0) Leange: (0)")
 render_button_1 = tk.Button(root, text="Auflistung der Linien", command=create_buttons_for_shapes)
-render_button_2 = tk.Button(root, text="Neue Verbindung kreieren", command=verbindung_kreieren)
+render_button_2 = tk.Button(root, text="Neue Verbindung kreieren", command=list_reader_clasifier)
 point_button = tk.Button(root, text="Punkt auswählen", command=lambda: switch_mode("point"))
 line_button = tk.Button(root, text="Linie hinzufügen", command=lambda: switch_mode("line"))
 
