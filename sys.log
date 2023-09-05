@@ -445,3 +445,1093 @@
 2023-09-04 08:26:21,383 - Algeruethmus.py - DEBUG - B2Motion
 2023-09-04 08:26:21,383 - Algeruethmus.py - DEBUG - ButtonRelease2
 2023-09-04 08:26:21,383 - Algeruethmus.py - DEBUG - Button z
+2023-09-05 22:41:36,536 - Algeruethmus.py - INFO - open file
+2023-09-05 22:41:36,536 - Algeruethmus.py - INFO - create list of graphs
+2023-09-05 22:41:36,536 - Algeruethmus.py - INFO - init
+2023-09-05 22:41:36,536 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,357 - Algeruethmus.py - INFO - open file
+2023-09-05 22:42:50,357 - Algeruethmus.py - INFO - create list of graphs
+2023-09-05 22:42:50,357 - Algeruethmus.py - INFO - init
+2023-09-05 22:42:50,357 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,357 - Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:42:50,357 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,357 - Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:42:50,357 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,358 - Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:42:50,358 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - init
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,359 - Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:42:50,359 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:42:50,360 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,360 - Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - init
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:42:50,361 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,361 - Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:42:50,362 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,362 - Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,363 - Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - init
+2023-09-05 22:42:50,363 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,364 - Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:42:50,364 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - init
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,365 - Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:42:50,365 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:42:50,366 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,366 - Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - init
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:42:50,367 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,367 - Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:42:50,368 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,368 - Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - init
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:42:50,369 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,369 - Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,370 - Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:42:50,370 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - init
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,371 - Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:42:50,371 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:42:50,372 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,372 - Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - init
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,373 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,374 - Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:42:50,374 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,375 - Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:42:50,375 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,375 - Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:42:50,375 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,375 - Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:42:50,375 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,375 - Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:42:50,375 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,375 - Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:42:50,375 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,375 - Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:42:50,375 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,375 - Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:42:50,375 - Algeruethmus.py - INFO - add edge
+2023-09-05 22:42:50,375 - Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:42:50,375 - Algeruethmus.py - INFO - calculate and print the shortest distances for each starting vertex
+2023-09-05 22:42:50,375 - Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:42:50,375 - Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:42:50,376 - Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:42:50,376 - Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:42:50,376 - Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:42:50,376 - Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:42:50,377 - Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:42:50,377 - Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:42:50,377 - Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:58:29,468 - Dijkstra큦_Algeruethmus.py - INFO - open file
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - INFO - create list of graphs
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - INFO - init
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,469 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,470 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - init
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,471 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:58:29,472 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - init
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,473 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,474 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - INFO - init
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,475 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:58:29,476 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - init
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:58:29,477 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:58:29,478 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - init
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:58:29,479 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,480 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - init
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:58:29,481 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,482 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - init
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:58:29,483 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:58:29,484 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - init
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 1)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 10)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 9)
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,485 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (14, 11)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (1, 10)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (2, 10)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (3, 11)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 11)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (4, 13)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 607)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 13)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (5, 11)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 12)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 13)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (607, 15)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 13)
+2023-09-05 22:58:29,486 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 12)
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 8)
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (15, 11)
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 13)
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (8, 12)
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 11)
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (9, 10)
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (10, 11)
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 12)
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - INFO - add edge
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - ERROR - Invalid edge: (11, 13)
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - INFO - calculate and print the shortest distances for each starting vertex
+2023-09-05 22:58:29,487 - Dijkstra큦_Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:59:07,976 - Dijkstra큦_Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:59:10,445 - Dijkstra큦_Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:59:12,598 - Dijkstra큦_Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:59:16,384 - Dijkstra큦_Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:59:17,265 - Dijkstra큦_Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:59:18,084 - Dijkstra큦_Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:59:19,020 - Dijkstra큦_Algeruethmus.py - INFO - dijkstra
+2023-09-05 22:59:20,323 - Dijkstra큦_Algeruethmus.py - INFO - dijkstra
