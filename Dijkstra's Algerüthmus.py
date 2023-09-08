@@ -1,5 +1,4 @@
 import csv
-from queue import PriorityQueue
 import logging
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -52,6 +51,7 @@ class Graph:
                             D[neighbor] = new_cost
         return D
 
+
 # Read the graph data from the CSV file
 data = []
 with open("Dijkstra_data.csv", "r") as file:
@@ -59,42 +59,60 @@ with open("Dijkstra_data.csv", "r") as file:
     reader = csv.reader(file)
     next(reader)  # Skip the header
     for row in reader:
-        data.append(tuple(map(int, row)))
+        try:
+            u, v, weight = map(int, row)
+            data.append((u, v, weight))
+        except ValueError:
+            logger.error(f"Skipping row with invalid data: {row}")
+            continue
 
 # Create a list of graphs
 graphs = []
 logger.info('create list of graphs')
-for i in range(9):
-    g = Graph(9)
+for i in range(15):
+    g = Graph(15)
     for row in data:
         g.add_edge(row[0], row[1], row[2])
     graphs.append(g)
 
-# Calculate and print the shortest distances for each starting vertex
-logger.info('calculate and print the shortest distances for each starting vertex')
+# Calculate and print the shortest distances and paths for each starting vertex
+logger.info('calculate and print the shortest distances and paths for each starting vertex')
 for i, g in enumerate(graphs):
     D = g.dijkstra(i)
     G = nx.Graph()
-    
+
     # Add nodes to the graph
     for vertex in range(len(D)):
         G.add_node(vertex)
-    
+
     # Add edges with their weights to the graph
     for u in range(len(g.edges)):
         for v in range(len(g.edges[u])):
             weight = g.edges[u][v]
             if weight != -1:
                 G.add_edge(u, v, weight=weight)
-    
-    # Plot the graph
+
+    # Find the shortest path from the starting vertex to all other vertices
+    shortest_paths = {vertex: nx.shortest_path(G, source=i, target=vertex, weight='weight') for vertex in range(len(D))}
+
+    # Create a list of edges for the shortest path (excluding the starting vertex)
+    shortest_path_edges = []
+    for vertex, path in shortest_paths.items():
+        if vertex != i:
+            shortest_path_edges.extend([(path[j], path[j + 1]) for j in range(len(path) - 1)])
+
+    # Plot the graph with the shortest path highlighted in orange
     pos = nx.spring_layout(G)  # Define the layout for the graph
     labels = nx.get_edge_attributes(G, 'weight')
     nx.draw(G, pos, with_labels=True, node_size=500, node_color='skyblue', font_size=10)
     nx.draw_networkx_edge_labels(G, pos, edge_labels=labels, font_size=8)
     
+    # Draw the shortest path with orange color and arrows
+    nx.draw_networkx_edges(G, pos, edgelist=shortest_path_edges, edge_color='orange', width=2, arrows=True)
+
     plt.title(f"Shortest Path from vertex {i}")
     plt.show()
 
     for vertex in range(len(D)):
         print("Distance from vertex", i, "to vertex", vertex, "is", D[vertex])
+        print("Shortest Path:", shortest_paths[vertex])
