@@ -1,5 +1,6 @@
 import csv
 import logging
+from queue import PriorityQueue
 import networkx as nx
 import matplotlib.pyplot as plt
 
@@ -106,7 +107,7 @@ for i, g in enumerate(graphs):
     labels = nx.get_edge_attributes(G, 'weight')
     nx.draw(G, pos, with_labels=True, node_size=500, node_color='skyblue', font_size=10)
     nx.draw_networkx_edge_labels(G, pos, edge_labels=labels, font_size=8)
-    
+
     # Draw the shortest path with orange color and arrows
     nx.draw_networkx_edges(G, pos, edgelist=shortest_path_edges, edge_color='orange', width=2, arrows=True)
 
