@@ -103,6 +103,3 @@ source,target,weight
 12,13,3
 12,14,60
 13,14,56
-
-0,=,startzone_links
-14,=,startzone_rechts
