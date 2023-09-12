@@ -52,29 +52,53 @@ class AStarGraph:
 def create_data_model():
     data = {}
     data["locations"] = []
+    data["distances"] = []  # Neu hinzugefügt
     # Öffnen Sie die CSV-Datei und lesen Sie die Daten ein
     with open("dijkstra_results.csv", "r") as file:
         reader = csv.reader(file)
         next(reader)  # Überspringen Sie die Header-Zeile
         for row in reader:
             try:
-                x, y = map(float, row[1:])  # Annahme: Die Koordinaten sind in den Spalten 1 und 2
+                x, y = map(int, row[2].strip('[]').replace(' ', '').split(','))  # Angepasst für Koordinatenextraktion
                 data["locations"].append((x, y))
-            except ValueError:
+            except (ValueError, IndexError):
                 print(f"Fehler beim Lesen der Zeile: {row}")
 
-    # Führen Sie die Berechnung der Entfernungen zwischen den Koordinaten durch
-    data["distances"] = compute_euclidean_distance_matrix(data["locations"])
+    # Berechnen Sie die Distanzmatrix direkt hier
+    num_locations = len(data["locations"])
+    data["distances"] = [[0] * num_locations for _ in range(num_locations)]
+    for i in range(num_locations):
+        for j in range(i, num_locations):
+            x1, y1 = data["locations"][i]
+            x2, y2 = data["locations"][j]
+            distance = math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
+            data["distances"][i][j] = distance
+            data["distances"][j][i] = distance
+
     data["num_vehicles"] = 1
     data["depot"] = 0
     return data
+
+def print_solution(manager, routing, solution):
+    print("Lösung:")
+    index = routing.Start(0)
+    plan_output = []
+    route_distance = 0
+    while not routing.IsEnd(index):
+        node_index = manager.IndexToNode(index)
+        plan_output.append(data["locations"][node_index])  # Nutzen Sie die Koordinaten aus data["locations"]
+        previous_index = index
+        index = solution.Value(routing.NextVar(index))
+        route_distance += routing.GetArcCostForVehicle(previous_index, index, 0)
+    print(f"Entfernung: {route_distance} Einheiten")
+    print(f"Geplante Routen-Koordinaten: {plan_output}")
 
 # Restlicher Code für die Ausführung des A*-Algorithmus
 def main():
     data = create_data_model()
     graph = AStarGraph(data)
     start_node = 0
-    goal_node = 10
+    goal_node = 14
 
     path = graph.a_star_search(start_node, goal_node)
 

@@ -84,53 +84,43 @@ for i in range(15):
 
 # Calculate and export the shortest distances and paths for each starting vertex
 logger.info('calculate and print the shortest distances and paths for each starting vertex')
+
+# Create data dictionary to store locations and distances
+data_for_a_star = {"locations": [], "distances": []}
+
 for i, g in enumerate(graphs):
     D = g.dijkstra(i)
-    G = nx.Graph()
+    locations = [(0, 0)] * len(D)  # Initialize with dummy values
+    distances = [[0] * len(D) for _ in range(len(D))]  # Initialize with zeros
 
-    # Add nodes to the graph
     for vertex in range(len(D)):
-        G.add_node(vertex)
+        locations[vertex] = (vertex, 0)  # Set coordinates (you can change the y-coordinate as needed)
+        distances[vertex][vertex] = 0  # Set zero distance for the same vertex
 
-    # Add edges with their weights to the graph
     for u in range(len(g.edges)):
         for v in range(len(g.edges[u])):
             weight = g.edges[u][v]
             if weight != -1:
-                G.add_edge(u, v, weight=weight)
+                distances[u][v] = weight
+                distances[v][u] = weight
 
-    # Find the shortest path from the starting vertex to all other vertices
-    shortest_paths = {vertex: nx.shortest_path(G, source=i, target=vertex, weight='weight') for vertex in range(len(D))}
+    data_for_a_star["locations"].append(locations)
+    data_for_a_star["distances"].append(distances)
 
-    # Create a list of edges for the shortest path (excluding the starting vertex)
-    shortest_path_edges = []
-    for vertex, path in shortest_paths.items():
-        if vertex != i:
-            shortest_path_edges.extend([(path[j], path[j + 1]) for j in range(len(path) - 1)])
+    # Export the distances to a CSV file
+    with open(f"dijkstra_results_{i}.csv", "w", newline='') as file:
+        writer = csv.writer(file)
+        for row in distances:
+            writer.writerow(row)
 
-    # Erhöhe die Auflösung auf 4K (3840x2160)
-    plt.figure(figsize=(16, 9))
+    # Rest of your code for generating images and printing results
 
-    # Plot the graph with the shortest path highlighted in orange
-    pos = nx.spring_layout(G)  # Define the layout for the graph
-    labels = nx.get_edge_attributes(G, 'weight')
-    nx.draw(G, pos, with_labels=True, node_size=500, node_color='skyblue', font_size=10)
-    nx.draw_networkx_edge_labels(G, pos, edge_labels=labels, font_size=8)
+# Export the locations to a CSV file
+with open("dijkstra_locations.csv", "w", newline='') as file:
+    writer = csv.writer(file)
+    for row in data_for_a_star["locations"]:
+        writer.writerow(row)
 
-    # Draw the shortest path with orange color and arrows
-    nx.draw_networkx_edges(G, pos, edgelist=shortest_path_edges, edge_color='orange', width=2, arrows=True)
-
-    plt.title(f"Shortest Path from vertex {i}")
-
-    # Speichere das Bild im Ordner "exported_images" mit dem Dateinamen "shortest_path_i.png"
-    image_filename = os.path.join('exported_images', f'shortest_path_{i}.png')
-    plt.savefig(image_filename, dpi=300)  # 300 DPI entspricht 4K-Auflösung
-
-    # Schließe die Matplotlib-Figur
-    plt.close()
-
-    for vertex in range(len(D)):
-        print("Distance from vertex", i, "to vertex", vertex, "is", D[vertex])
-        print("Shortest Path:", shortest_paths[vertex])
+# Rest of your code
 
 logging.info('Programm erfolgreich beendet')
