@@ -3,8 +3,13 @@ import logging
 from queue import PriorityQueue
 import networkx as nx
 import matplotlib.pyplot as plt
+import os
 
-logger = logging.getLogger('Dijkstra´s_Algeruethmus.py')
+# Erstelle einen Ordner für die exportierten Bilder
+if not os.path.exists('exported_images'):
+    os.makedirs('exported_images')
+
+logger = logging.getLogger('Dijkstra´s_Algorithm.py')
 logger.setLevel(logging.DEBUG)
 fh = logging.FileHandler('sys.log')
 fh.setLevel(logging.DEBUG)
@@ -12,7 +17,6 @@ logger.addHandler(fh)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
 logger.addHandler(fh)
-
 
 class Graph:
     def __init__(self, num_of_vertices):
@@ -52,7 +56,6 @@ class Graph:
                             D[neighbor] = new_cost
         return D
 
-
 # Read the graph data from the CSV file
 data = []
 with open("Dijkstra_data.csv", "r") as file:
@@ -76,7 +79,7 @@ for i in range(15):
         g.add_edge(row[0], row[1], row[2])
     graphs.append(g)
 
-# Calculate and print the shortest distances and paths for each starting vertex
+# Calculate and export the shortest distances and paths for each starting vertex
 logger.info('calculate and print the shortest distances and paths for each starting vertex')
 for i, g in enumerate(graphs):
     D = g.dijkstra(i)
@@ -112,8 +115,16 @@ for i, g in enumerate(graphs):
     nx.draw_networkx_edges(G, pos, edgelist=shortest_path_edges, edge_color='orange', width=2, arrows=True)
 
     plt.title(f"Shortest Path from vertex {i}")
-    plt.show()
+
+    # Speichere das Bild im Ordner "exported_images" mit dem Dateinamen "shortest_path_i.png"
+    image_filename = os.path.join('exported_images', f'shortest_path_{i}.png')
+    plt.savefig(image_filename)
+
+    # Schließe die Matplotlib-Figur
+    plt.close()
 
     for vertex in range(len(D)):
         print("Distance from vertex", i, "to vertex", vertex, "is", D[vertex])
         print("Shortest Path:", shortest_paths[vertex])
+
+logging.info('Programm erfolgreich beendet')
