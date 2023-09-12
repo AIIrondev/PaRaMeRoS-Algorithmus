@@ -105,6 +105,9 @@ for i, g in enumerate(graphs):
         if vertex != i:
             shortest_path_edges.extend([(path[j], path[j + 1]) for j in range(len(path) - 1)])
 
+    # Erhöhe die Auflösung auf 4K (3840x2160)
+    plt.figure(figsize=(16, 9))
+
     # Plot the graph with the shortest path highlighted in orange
     pos = nx.spring_layout(G)  # Define the layout for the graph
     labels = nx.get_edge_attributes(G, 'weight')
@@ -118,7 +121,7 @@ for i, g in enumerate(graphs):
 
     # Speichere das Bild im Ordner "exported_images" mit dem Dateinamen "shortest_path_i.png"
     image_filename = os.path.join('exported_images', f'shortest_path_{i}.png')
-    plt.savefig(image_filename)
+    plt.savefig(image_filename, dpi=300)  # 300 DPI entspricht 4K-Auflösung
 
     # Schließe die Matplotlib-Figur
     plt.close()
