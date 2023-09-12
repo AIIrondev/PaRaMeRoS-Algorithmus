@@ -7,10 +7,16 @@ from queue import PriorityQueue
 import networkx as nx
 import matplotlib.pyplot as plt
 import os
+import shutil  # Importieren Sie die 'shutil'-Bibliothek für das Verschieben von Dateien
 
 # Erstelle einen Ordner für die exportierten Bilder
 if not os.path.exists('exported_images'):
     os.makedirs('exported_images')
+
+# Erstelle einen Ordner für die CSV-Dateien
+csv_folder = 'csv_files'
+if not os.path.exists(csv_folder):
+    os.makedirs(csv_folder)
 
 logger = logging.getLogger('Dijkstra´s_Algorithm.py')
 logger.setLevel(logging.DEBUG)
@@ -108,7 +114,7 @@ for i, g in enumerate(graphs):
     data_for_a_star["distances"].append(distances)
 
     # Export the distances to a CSV file
-    with open(f"dijkstra_results_{i}.csv", "w", newline='') as file:
+    with open(os.path.join(csv_folder, f"dijkstra_results_{i}.csv"), "w", newline='') as file:
         writer = csv.writer(file)
         for row in distances:
             writer.writerow(row)
@@ -116,7 +122,7 @@ for i, g in enumerate(graphs):
     # Rest of your code for generating images and printing results
 
 # Export the locations to a CSV file
-with open("dijkstra_locations.csv", "w", newline='') as file:
+with open(os.path.join(csv_folder, "dijkstra_locations.csv"), "w", newline='') as file:
     writer = csv.writer(file)
     for row in data_for_a_star["locations"]:
         writer.writerow(row)
