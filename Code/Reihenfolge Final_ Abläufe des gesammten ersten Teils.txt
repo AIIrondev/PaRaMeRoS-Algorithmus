@@ -1,0 +1,36 @@
+Basierent auf der Stochastik werden erst die Wege zwischen allen Punkten berechnet, zusätzlich wird jedem Objekt eine ID zugewiesen welche in einer Dict. 
+gespeichert wird und somit erst die ID dann die Koordinaten. 
+Danach werden erst alle Kombinationen anhand einem schnellsten Weg berechnet und mit der insgesammte länge in ein Text File, welches Log heißt mit Ablauf der Linien und Punkte gespeichert.
+Auserdem soll ein sehr vereinfachtes Diagramm als Bilddatei ausgegeben werden, welches alle Kombinationen als Stochastisches Baum Diagramm gespeichert wird, außerdem muss zu jedem vom Ausschließlich schnellsten Weg angegeben Wird. 
+Dieses Programm muss mit einer Multithreating library ergänzt werden um dieses Programm effizienter gelaufen. 
+Auserdem müssen die verschiedenen Lösungen in verschiedenen .fll Dateien abgespeichert werden.
+Linien Auch ID Hinzufügen, auch daraufhin weisen das alle krosses nicht so gut gerechnet werden können.
+
+
+Es müssen noch alle Kombinationen hinzugefügt werden, durch eine Liste für die beste Verarbeitung.
+
+
+Das Programm bietet die folgenden Funktionen:
+
+Zeichnen von Formen: Mit der linken, rechten und mittleren Maustaste können Sie rote Punkte auf dem Canvas platzieren. Diese Punkte repräsentieren die Formen im Programm.
+
+Zeichnen von Linien: Mit der mittleren Maustaste können Sie Linien auf dem Canvas zeichnen, indem Sie von einem Punkt zum anderen ziehen. Die Linien werden in grüner Farbe dargestellt.
+
+Löschen von Formen: Durch Drücken der "z"-Taste können Sie die zuletzt platzierten Formen löschen.
+
+Berechnung des Pfads: Durch Drücken der Taste "b" wird der Pfad berechnet, der alle Linien verbindet und die Formen berührt. Es wird überprüft, ob alle Strecken möglich sind und ob ein gültiger Pfad gefunden werden kann.
+
+Anzeige der Mauskoordinaten: Die aktuelle Mausposition wird in Echtzeit in der oberen Leiste des Fensters angezeigt.
+
+Anzeige der Linienkoordinaten: Die Anfangs- und Endkoordinaten aller gezeichneten Linien werden im Fenster angezeigt.
+
+Anzeige der Berührungspunkte: Die Koordinaten der Punkte, an denen die gezeichneten Linien die roten Punkte berühren, werden im Fenster angezeigt.
+
+Erzeugung eines Diagramms: Nachdem ein gültiger Pfad gefunden wurde, wird ein Diagramm erstellt, das die Linien und Formen visualisiert.
+Das Diagramm wird sowohl angezeigt als auch als "diagram.png" gespeichert.
+
+Erzeugung eines Kombinationsbaums: Der Kombinationsbaum wird erstellt, um die verschiedenen Möglichkeiten der Kombination der Punkte über die Linien darzustellen.
+Der Baum wird im Diagramm angezeigt.
+
+Diese Funktionen ermöglichen es Ihnen, verschiedene Formen zu platzieren, Linien zu zeichnen und einen gültigen Pfad zu finden, der alle Linien verbindet und die Formen berührt.
+Das Programm bietet auch eine visuelle Darstellung der Ergebnisse in Form eines Diagramms.
