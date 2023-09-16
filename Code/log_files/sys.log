@@ -1,0 +1,59 @@
+2023-09-16 16:11:39,079 - A_star.py - INFO - open filecsv_files, node_coordinates.csv
+2023-09-16 16:41:52,077 - A_star.py - INFO - open filecsv_files, node_coordinates.csv
+2023-09-16 16:41:52,081 - A_star.py - DEBUG - a_star_search
+2023-09-16 16:41:52,081 - A_star.py - DEBUG - neighbors
+2023-09-16 18:04:41,407 - Algeruethmus.py - DEBUG - Button1
+2023-09-16 18:04:41,407 - Algeruethmus.py - DEBUG - Button2
+2023-09-16 18:04:41,407 - Algeruethmus.py - DEBUG - Button3
+2023-09-16 18:04:41,407 - Algeruethmus.py - DEBUG - B2Motion
+2023-09-16 18:04:41,407 - Algeruethmus.py - DEBUG - ButtonRelease2
+2023-09-16 18:04:41,407 - Algeruethmus.py - DEBUG - Button z
+2023-09-16 18:04:59,139 - Dijkstra큦_Algorithm.py - INFO - open file
+2023-09-16 18:04:59,139 - Dijkstra큦_Algorithm.py - INFO - create list of graphs
+2023-09-16 18:04:59,139 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,139 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,139 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,139 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,139 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,140 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,140 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,140 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,140 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,140 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,140 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,140 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,140 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,140 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,140 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-16 18:04:59,141 - Dijkstra큦_Algorithm.py - INFO - calculate and print the shortest distances and paths for each starting vertex
+2023-09-16 18:04:59,141 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:00,095 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:01,036 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:01,972 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:02,908 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:03,820 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:04,757 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:05,656 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:06,561 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:07,445 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:08,357 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:09,325 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:10,241 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:11,184 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,087 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,967 - Dijkstra큦_Algorithm.py - INFO - calculate and print the shortest distances and paths for each starting vertex
+2023-09-16 18:05:12,967 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,970 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,973 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,976 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,979 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,982 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,985 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,988 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,991 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,994 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:12,997 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:13,000 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:13,003 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:13,006 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-16 18:05:13,009 - Dijkstra큦_Algorithm.py - INFO - dijkstra

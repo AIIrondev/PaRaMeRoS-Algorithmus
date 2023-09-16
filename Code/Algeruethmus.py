@@ -6,6 +6,7 @@ import datetime
 from PIL import ImageDraw
 import csv
 import logging
+import os
 
 
 # Def Area
@@ -454,6 +455,10 @@ mode = "point"
 vk_list_sel_obj = []
 vk_data_list = []
 
+log_folder = 'log_files'
+if not os.path.exists(log_folder):
+    os.makedirs(log_folder)
+
 image_path = "FLL_2023-24_Map.png"
 image = Image.open(image_path)
 photo = ImageTk.PhotoImage(image)
@@ -461,7 +466,7 @@ canvas.create_image(0, 0, anchor="nw", image=photo)
 
 logger = logging.getLogger('Algeruethmus.py')
 logger.setLevel(logging.DEBUG)
-fh = logging.FileHandler('sys.log')
+fh = logging.FileHandler(os.path.join(log_folder, 'sys.log'))
 fh.setLevel(logging.DEBUG)
 logger.addHandler(fh)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')

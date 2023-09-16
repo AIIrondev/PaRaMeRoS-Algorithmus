@@ -143,3 +143,28 @@ def verbindung_kreieren():
 #                   break
     pass
 '''
+'''
+# Erstelle einen Ordner für die CSV-Dateien
+csv_folder = 'csv_files'
+log_folder = 'log_files'
+if not os.path.exists(csv_folder):
+    os.makedirs(csv_folder)
+if not os.path.exists(log_folder):
+    os.makedirs(log_folder)
+'''
+'''
+# Funktion zum Speichern der Koordinaten in einer CSV-Datei
+def save_coordinates_to_csv(coordinates, filename):
+    with open(os.path.join(csv_folder, filename), mode='w', newline='') as csv_file:
+        fieldnames = ['Graph', 'Vertex', 'X Coordinate', 'Y Coordinate']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writeheader()
+        for graph_id, graph_coordinates in enumerate(coordinates):
+            for vertex, x, y in graph_coordinates:
+                writer.writerow({
+                    'Graph': graph_id,
+                    'Vertex': vertex,
+                    'X Coordinate': x,
+                    'Y Coordinate': y
+                })
+'''

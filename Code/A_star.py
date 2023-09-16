@@ -1,20 +1,46 @@
 import math
 import heapq
 import csv
+import os
+import logging
+
+csv_folder = 'csv_files'
+log_folder = 'log_files'
+data = {}
+
+logger = logging.getLogger('A_star.py')
+logger.setLevel(logging.DEBUG)
+fh = logging.FileHandler(os.path.join(log_folder, 'sys.log'))
+fh.setLevel(logging.DEBUG)
+logger.addHandler(fh)
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+fh.setFormatter(formatter)
+logger.addHandler(fh)
+
+# Erstelle einen Ordner für die CSV-Dateien
+if not os.path.exists(csv_folder):
+    os.makedirs(csv_folder)
+    logger.warning(f"Folder {csv_folder} created.")
+if not os.path.exists(log_folder):
+    os.makedirs(log_folder)
+    logger.warning(f"Folder {log_folder} created.")
 
 class AStarGraph:
     def __init__(self, graph):
         self.graph = graph
 
     def heuristic(self, start, goal):
+        logger.debug('heuristic')
         x1, y1 = self.graph["locations"][start]
         x2, y2 = self.graph["locations"][goal]
         return math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
 
     def neighbors(self, node):
+        logger.debug('neighbors')
         return [neighbor for neighbor in range(len(self.graph["locations"])) if self.graph["distances"][node][neighbor] != 0]
 
     def a_star_search(self, start, goal):
+        logger.debug('a_star_search')
         open_list = []
         closed_list = set()
         start_node = (start, 0)
@@ -54,7 +80,8 @@ def create_data_model():
     data["locations"] = []
     data["distances"] = []  # Neu hinzugefügt
     # Öffnen Sie die CSV-Datei und lesen Sie die Daten ein
-    with open("dijkstra_results.csv", "r") as file:
+    with open(os.path.join(csv_folder, "node_coordinates.csv"), "r") as file:
+        logger.info(f'open file{csv_folder}, node_coordinates.csv')
         reader = csv.reader(file)
         next(reader)  # Überspringen Sie die Header-Zeile
         for row in reader:
@@ -92,6 +119,8 @@ def print_solution(manager, routing, solution):
         route_distance += routing.GetArcCostForVehicle(previous_index, index, 0)
     print(f"Entfernung: {route_distance} Einheiten")
     print(f"Geplante Routen-Koordinaten: {plan_output}")
+    logger.info(f"Entfernung: {route_distance} Einheiten")
+    logger.info(f"Geplante Routen-Koordinaten: {plan_output}")
 
 # Restlicher Code für die Ausführung des A*-Algorithmus
 def main():

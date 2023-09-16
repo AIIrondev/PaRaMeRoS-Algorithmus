@@ -1,13 +1,9 @@
-import math
-from ortools.constraint_solver import routing_enums_pb2
-from ortools.constraint_solver import pywrapcp
 import csv
 import logging
 from queue import PriorityQueue
 import networkx as nx
 import matplotlib.pyplot as plt
 import os
-import shutil  # Importieren Sie die 'shutil'-Bibliothek für das Verschieben von Dateien
 
 # Erstelle einen Ordner für die exportierten Bilder
 if not os.path.exists('exported_images'):
@@ -23,7 +19,7 @@ if not os.path.exists(log_folder):
 
 logger = logging.getLogger('Dijkstra´s_Algorithm.py')
 logger.setLevel(logging.DEBUG)
-fh = logging.FileHandler(os.path.join(log_folder,'sys.log'))
+fh = logging.FileHandler(os.path.join(log_folder, 'sys.log'))
 fh.setLevel(logging.DEBUG)
 logger.addHandler(fh)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
@@ -38,7 +34,6 @@ class Graph:
         self.visited = []
 
     def add_edge(self, u, v, weight):
-        logger.info('add edge')
         if 0 <= u < self.v and 0 <= v < self.v:
             self.edges[u][v] = weight
             self.edges[v][u] = weight
@@ -70,7 +65,7 @@ class Graph:
 
 # Read the graph data from the CSV file
 data = []
-with open(os.path.join(csv_folder, "Dijkstra's Algeruethmus.csv"), "r") as file:
+with open(os.path.join(csv_folder, "dijkstra_data.csv"), "r") as file:
     logger.info('open file')
     reader = csv.reader(file)
     next(reader)  # Skip the header
@@ -91,45 +86,111 @@ for i in range(15):
         g.add_edge(row[0], row[1], row[2])
     graphs.append(g)
 
+# Create a CSV file to store the results
+with open(os.path.join(csv_folder, "dijkstra_results.csv"), mode='w', newline='') as csv_file:
+    fieldnames = ['Start Vertex', 'End Vertex', 'Shortest Distance', 'Shortest Path']
+    writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+    writer.writeheader()
+
+    # Calculate and export the shortest distances and paths for each starting vertex
+    logger.info('calculate and print the shortest distances and paths for each starting vertex')
+    for i, g in enumerate(graphs):
+        D = g.dijkstra(i)
+        G = nx.Graph()
+
+        # Add nodes to the graph
+        for vertex in range(len(D)):
+            G.add_node(vertex)
+
+        # Add edges with their weights to the graph
+        for u in range(len(g.edges)):
+            for v in range(len(g.edges[u])):
+                weight = g.edges[u][v]
+                if weight != -1:
+                    G.add_edge(u, v, weight=weight)
+
+        # Find the shortest path from the starting vertex to all other vertices
+        shortest_paths = {vertex: nx.shortest_path(G, source=i, target=vertex, weight='weight') for vertex in range(len(D))}
+
+        # Write the results to the CSV file
+        for vertex in range(len(D)):
+            if vertex != i:
+                writer.writerow({
+                    'Start Vertex': i,
+                    'End Vertex': vertex,
+                    'Shortest Distance': D[vertex],
+                    'Shortest Path': shortest_paths[vertex]
+                })
+
+        # Erhöhe die Auflösung auf 4K (3840x2160)
+        plt.figure(figsize=(16, 9))
+
+        # Plot the graph with the shortest path highlighted in orange
+        pos = nx.spring_layout(G)  # Define the layout for the graph
+        labels = nx.get_edge_attributes(G, 'weight')
+        nx.draw(G, pos, with_labels=True, node_size=500, node_color='skyblue', font_size=10)
+        nx.draw_networkx_edge_labels(G, pos, edge_labels=labels, font_size=8)
+
+        # Draw the shortest path with orange color and arrows
+        shortest_path_edges = [(shortest_paths[i][j], shortest_paths[i][j + 1]) for j in range(len(shortest_paths[i]) - 1)]
+        nx.draw_networkx_edges(G, pos, edgelist=shortest_path_edges, edge_color='orange', width=2, arrows=True)
+
+        plt.title(f"Shortest Path from vertex {i}")
+
+        # Speichere das Bild im Ordner "exported_images" mit dem Dateinamen "shortest_path_i.png"
+        image_filename = os.path.join('exported_images', f'shortest_path_{i}.png')
+        plt.savefig(image_filename, dpi=300)  # 300 DPI entspricht 4K-Auflösung
+
+        # Schließe die Matplotlib-Figur
+        plt.close()
+
+# Funktion zum Speichern der Koordinaten in einer CSV-Datei
+def save_coordinates_to_csv(coordinates, filename):
+    with open(os.path.join(csv_folder, filename), mode='w', newline='') as csv_file:
+        fieldnames = ['Graph', 'Vertex', 'X Coordinate', 'Y Coordinate']
+        writer = csv.DictWriter(csv_file, fieldnames=fieldnames)
+        writer.writeheader()
+        for graph_id, graph_coordinates in enumerate(coordinates):
+            for vertex, x, y in graph_coordinates:
+                writer.writerow({
+                    'Graph': graph_id,
+                    'Vertex': vertex,
+                    'X Coordinate': x,
+                    'Y Coordinate': y
+                })
+
+# Erstellen Sie eine Liste, um die Koordinaten der Knoten zu speichern
+coordinates_list = []
+
 # Calculate and export the shortest distances and paths for each starting vertex
 logger.info('calculate and print the shortest distances and paths for each starting vertex')
-
-# Create data dictionary to store locations and distances
-data_for_a_star = {"locations": [], "distances": []}
-
 for i, g in enumerate(graphs):
     D = g.dijkstra(i)
-    locations = [(0, 0)] * len(D)  # Initialize with dummy values
-    distances = [[0] * len(D) for _ in range(len(D))]  # Initialize with zeros
+    G = nx.Graph()
 
+    # Add nodes to the graph
     for vertex in range(len(D)):
-        locations[vertex] = (vertex, 0)  # Set coordinates (you can change the y-coordinate as needed)
-        distances[vertex][vertex] = 0  # Set zero distance for the same vertex
+        G.add_node(vertex)
 
+    # Add edges with their weights to the graph
     for u in range(len(g.edges)):
         for v in range(len(g.edges[u])):
             weight = g.edges[u][v]
             if weight != -1:
-                distances[u][v] = weight
-                distances[v][u] = weight
+                G.add_edge(u, v, weight=weight)
 
-    data_for_a_star["locations"].append(locations)
-    data_for_a_star["distances"].append(distances)
+    # Find the shortest path from the starting vertex to all other vertices
+    shortest_paths = {vertex: nx.shortest_path(G, source=i, target=vertex, weight='weight') for vertex in range(len(D))}
 
-    # Export the distances to a CSV file
-    with open(os.path.join(csv_folder, f"dijkstra_results_{i}.csv"), "w", newline='') as file:
-        writer = csv.writer(file)
-        for row in distances:
-            writer.writerow(row)
+    # Get the positions of nodes for this graph layout
+    pos = nx.spring_layout(G)
 
-    # Rest of your code for generating images and printing results
+    # Prepare the coordinates for this graph
+    graph_coordinates = [(vertex, pos[vertex][0], pos[vertex][1]) for vertex in range(len(D))]
+    coordinates_list.append(graph_coordinates)
 
-# Export the locations to a CSV file
-with open(os.path.join(csv_folder, "dijkstra_locations.csv"), "w", newline='') as file:
-    writer = csv.writer(file)
-    for row in data_for_a_star["locations"]:
-        writer.writerow(row)
-
-# Rest of your code
+# Speichern Sie die Koordinaten in einer CSV-Datei
+coordinates_filename = "node_coordinates.csv"
+save_coordinates_to_csv(coordinates_list, coordinates_filename)
 
 logging.info('Programm erfolgreich beendet')
