@@ -57,3 +57,20 @@
 2023-09-16 18:05:13,003 - Dijkstra´s_Algorithm.py - INFO - dijkstra
 2023-09-16 18:05:13,006 - Dijkstra´s_Algorithm.py - INFO - dijkstra
 2023-09-16 18:05:13,009 - Dijkstra´s_Algorithm.py - INFO - dijkstra
+2023-09-16 20:09:49,701 - Algeruethmus.py - DEBUG - Button1
+2023-09-16 20:09:49,701 - Algeruethmus.py - DEBUG - Button2
+2023-09-16 20:09:49,701 - Algeruethmus.py - DEBUG - Button3
+2023-09-16 20:09:49,701 - Algeruethmus.py - DEBUG - B2Motion
+2023-09-16 20:09:49,701 - Algeruethmus.py - DEBUG - ButtonRelease2
+2023-09-16 20:09:49,701 - Algeruethmus.py - DEBUG - Button z
+2023-09-16 20:09:51,726 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-16 20:09:52,034 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-16 20:09:52,323 - Algeruethmus.py - DEBUG - Create shapes
+2023-09-16 20:09:53,114 - Algeruethmus.py - DEBUG - create linenetwork wurde ausgeführt
+2023-09-16 20:09:53,114 - Algeruethmus.py - WARNING - Die Threads wurden gestartet
+2023-09-16 20:09:53,115 - Algeruethmus.py - DEBUG - calculate_path_thread wurde gestartet
+2023-09-16 20:09:53,116 - Algeruethmus.py - INFO - Punkte_ID1: (274.0, 131.0)
+2023-09-16 20:09:53,116 - Algeruethmus.py - INFO - Punkte_ID2: (390.0, 192.0)
+2023-09-16 20:09:53,116 - Algeruethmus.py - INFO - Punkte_ID3: (333.0, 280.0)
+2023-09-16 20:09:53,116 - Algeruethmus.py - INFO - Gesamtlaenge: 0
+2023-09-16 20:09:53,116 - Algeruethmus.py - INFO - Die Diagramme wurden gespeichert und zum senden Freigegeben
