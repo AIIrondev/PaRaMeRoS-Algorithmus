@@ -25,6 +25,7 @@ def verbindung_kreieren():
                 elif shape == "Linie":
                     print("Linie, unvalid")
 '''
+
 '''def verbindung_kreieren():
     if create_button_for_shape_var:
         explanation_text_for_shape = "Verbinden Sie die Punkte mit Linien"
@@ -61,6 +62,7 @@ def verbindung_kreieren():
                 print("Keine Verbindungen zum Speichern vorhanden")
 
 '''
+
 '''
 def verbindung_kreieren():
     button_frame = tk.Frame(root)
@@ -102,6 +104,7 @@ def verbindung_kreieren():
             else:
                 print("Keine Verbindungen zum Speichern vorhanden")
 '''
+
 '''
 Problem da Schleife in Schleife ist wird die Schleife immer wieder ausgeführt
 def verbindung_kreieren():
@@ -143,6 +146,7 @@ def verbindung_kreieren():
 #                   break
     pass
 '''
+
 '''
 # Erstelle einen Ordner für die CSV-Dateien
 csv_folder = 'csv_files'
@@ -152,6 +156,7 @@ if not os.path.exists(csv_folder):
 if not os.path.exists(log_folder):
     os.makedirs(log_folder)
 '''
+
 '''
 # Funktion zum Speichern der Koordinaten in einer CSV-Datei
 def save_coordinates_to_csv(coordinates, filename):

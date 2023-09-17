@@ -74,3 +74,104 @@
 2023-09-16 20:09:53,116 - Algeruethmus.py - INFO - Punkte_ID3: (333.0, 280.0)
 2023-09-16 20:09:53,116 - Algeruethmus.py - INFO - Gesamtlaenge: 0
 2023-09-16 20:09:53,116 - Algeruethmus.py - INFO - Die Diagramme wurden gespeichert und zum senden Freigegeben
+2023-09-17 11:26:08,569 - Dijkstra큦_Algorithm.py - INFO - open file
+2023-09-17 11:26:08,569 - Dijkstra큦_Algorithm.py - INFO - create list of graphs
+2023-09-17 11:26:08,569 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,570 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,571 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:08,571 - Dijkstra큦_Algorithm.py - INFO - calculate and print the shortest distances and paths for each starting vertex
+2023-09-17 11:26:08,571 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:09,518 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:10,403 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:11,288 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:12,206 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:13,096 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:14,003 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:14,910 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:15,795 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:16,691 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:17,578 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:18,550 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:19,450 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:20,350 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:21,241 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,172 - Dijkstra큦_Algorithm.py - INFO - calculate and print the shortest distances and paths for each starting vertex
+2023-09-17 11:26:22,172 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,176 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,179 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,182 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,185 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,188 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,192 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,195 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,198 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,201 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,204 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,208 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,211 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,214 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:22,217 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:57,537 - Dijkstra큦_Algorithm.py - INFO - open file
+2023-09-17 11:26:57,537 - Dijkstra큦_Algorithm.py - INFO - create list of graphs
+2023-09-17 11:26:57,537 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,537 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,537 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,537 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,537 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,537 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,537 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,537 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,538 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,538 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,538 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,538 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,538 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,538 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,538 - Dijkstra큦_Algorithm.py - INFO - init
+2023-09-17 11:26:57,538 - Dijkstra큦_Algorithm.py - INFO - calculate and print the shortest distances and paths for each starting vertex
+2023-09-17 11:26:57,538 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:58,464 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:26:59,354 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:00,237 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:01,153 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:02,040 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:02,916 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:03,808 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:04,700 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:05,574 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:06,473 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:07,434 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:08,352 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:09,242 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:10,134 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,031 - Dijkstra큦_Algorithm.py - INFO - calculate and print the shortest distances and paths for each starting vertex
+2023-09-17 11:27:11,031 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,034 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,038 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,041 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,044 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,047 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,050 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,053 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,056 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,060 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,063 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,066 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,069 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,072 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:11,075 - Dijkstra큦_Algorithm.py - INFO - dijkstra
+2023-09-17 11:27:16,691 - A_star.py - INFO - open filecsv_files, node_coordinates.csv
+2023-09-17 11:27:16,696 - A_star.py - DEBUG - a_star_search
+2023-09-17 11:27:16,696 - A_star.py - DEBUG - neighbors
