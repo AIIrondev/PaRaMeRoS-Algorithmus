@@ -6,7 +6,7 @@ If you accept those Terms you can use the Code acording.
 
 ## Supported Versions
 
-The supportet Versions
+The supportet Versions are the Following 
 The Versions are different Brances
 
 | Version | Supported          |
