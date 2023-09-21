@@ -6,8 +6,9 @@ If you accept those Terms you can use the Code acording.
 
 ## Supported Versions
 
-The supportet Versions are the Following 
-The Versions are different Brances
+
+The supportet Versions
+The Versions are different Brances with the right declaration.
 
 | Version | Supported          |
 | ------- | ------------------ |
@@ -19,4 +20,5 @@ The Versions are different Brances
 Vulnerability reporting is done via an isue message!
 
 The Projekt is curently been updatet for the next 2 Month(starting:13.09.2023).
+
 In this TIME you get constant security and feature UPDATES!
