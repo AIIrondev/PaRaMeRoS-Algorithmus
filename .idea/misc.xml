@@ -5,5 +5,5 @@
     <option name="pathToExecutable" value="$USER_HOME$/anaconda3/bin/black" />
     <option name="sdkUUID" value="e486e144-8886-4c77-beff-04665a313238" />
   </component>
-  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11 (KI_Code)" project-jdk-type="Python SDK" />
+  <component name="ProjectRootManager" version="2" project-jdk-name="Python 3.11" project-jdk-type="Python SDK" />
 </project>

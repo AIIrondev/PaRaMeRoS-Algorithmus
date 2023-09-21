@@ -1,4 +1,4 @@
-Dies ist ein auf Python basierten Projekt welches beinhaltet:
+Dies ist ein auf python basierten Projekt welches beinhaltet:
 1. GUI System für ein auf Basis von dem First Lego League Plan, auf welchem mit verschiedenen Funktionen verschiedene Wege einzeichnen kann.
 2. Die eingezeichneten Wege in den Dijkstras Algeruethmus weiter gelietet und in ca. 30 sec. ausgerechnet(Ryzen 7 3800X, NVIDIA GeForce GTX 1650).
 3. Diese Daten werden ein letztes mal für weitere Berechnungen eingelesen und mit einem A* Algeruethmus den schnellsten Weg von im ersten Teil erstellten Wege berechnet, dies wird in einem .csv File ausgegeben und auch als Statistik ausgegeben.
