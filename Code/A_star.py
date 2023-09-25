@@ -3,11 +3,13 @@ import heapq
 import csv
 import os
 import logging
+import folium
 
 # Festlegung der Ordner für CSV-Dateien und Log-Dateien
 csv_folder = 'csv_files'
 log_folder = 'log_files'
 data = {}  # Eine leere Datenstruktur zur Aufbewahrung von Informationen
+m = folium.Map(location=data["depot"], zoom_start=13) # Erstellen Sie eine Karte mit den Koordinaten der Standorte
 
 # Konfigurieren des Loggers für die Protokollierung von Informationen
 logger = logging.getLogger('A_star.py')
@@ -160,6 +162,32 @@ def main():
     print("Route Koordinaten:")
     for coordinate in route_coordinates:
         print(coordinate)
+
+    # Export the map as an HTML file
+    export_image()
+
+def export_image():
+    data = create_data_model()
+    graph = AStarGraph(data)
+    start_node = 0
+    end_node = 14
+    a_star_graph = AStarGraph(graph)
+    # Find the shortest path between the start and end nodes
+    full_path = a_star_graph.a_star_search(start_node, end_node)
+
+    # Erstellen Sie eine Karte mit den Koordinaten der Standorte
+    m = folium.Map(location=data["depot"], zoom_start=13)
+
+    # Fügen Sie den Start- und Endstandort hinzu
+    folium.Marker(location=data["locations"][full_path[0]], icon=folium.Icon(color="green")).add_to(m)
+    folium.Marker(location=data["locations"][full_path[-1]], icon=folium.Icon(color="red")).add_to(m)
+
+    # Fügen Sie die Route hinzu
+    route = [data["locations"][node] for node in full_path]
+    folium.PolyLine(locations=route, color="blue").add_to(m)
+
+    # Speichern Sie die Karte als HTML-Datei
+    m.save("route.html")
 
 if __name__ == "__main__":
     main()
