@@ -4,10 +4,12 @@ import csv
 import os
 import logging
 
+# Festlegung der Ordner für CSV-Dateien und Log-Dateien
 csv_folder = 'csv_files'
 log_folder = 'log_files'
-data = {}
+data = {}  # Eine leere Datenstruktur zur Aufbewahrung von Informationen
 
+# Konfigurieren des Loggers für die Protokollierung von Informationen
 logger = logging.getLogger('A_star.py')
 logger.setLevel(logging.DEBUG)
 fh = logging.FileHandler(os.path.join(log_folder, 'sys.log'))
@@ -17,7 +19,7 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 fh.setFormatter(formatter)
 logger.addHandler(fh)
 
-# Erstelle einen Ordner für die CSV-Dateien falls nicht vorhanden
+# Überprüfen und Erstellen der Ordner für CSV-Dateien und Log-Dateien
 if not os.path.exists(csv_folder):
     os.makedirs(csv_folder)
     logger.warning(f"Folder {csv_folder} created.")
@@ -25,20 +27,24 @@ if not os.path.exists(log_folder):
     os.makedirs(log_folder)
     logger.warning(f"Folder {log_folder} created.")
 
+# Die AStarGraph-Klasse definiert den Graphen und den A*-Algorithmus
 class AStarGraph:
     def __init__(self, graph):
         self.graph = graph
 
+    # Diese Methode berechnet die heuristische Schätzung (H-Wert) zwischen zwei Knoten
     def heuristic(self, start, goal):
         logger.debug('heuristic')
         x1, y1 = self.graph["locations"][start]
         x2, y2 = self.graph["locations"][goal]
         return math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
 
+    # Diese Methode gibt die Nachbarn eines Knotens zurück
     def neighbors(self, node):
         logger.debug('neighbors')
         return [neighbor for neighbor in range(len(self.graph["locations"])) if self.graph["distances"][node][neighbor] != 0]
 
+    # Diese Methode führt die A*-Suche aus
     def a_star_search(self, start, goal):
         logger.debug('a_star_search')
         open_list = []
@@ -75,10 +81,11 @@ class AStarGraph:
 
         return None
 
+# Diese Methode erstellt das Datenmodell aus CSV-Dateien
 def create_data_model():
     data = {}
-    data["locations"] = []
-    data["distances"] = []
+    data["locations"] = []  # Eine Liste zur Aufbewahrung der Koordinaten der Punkte
+    data["distances"] = []  # Eine Liste zur Aufbewahrung der Entfernungen zwischen den Punkten
 
     with open(os.path.join(csv_folder, "node_coordinates.csv"), "r") as file:
         logger.info(f'open file {csv_folder}, node_coordinates.csv')
@@ -109,6 +116,7 @@ def create_data_model():
     data["depot"] = 0
     return data
 
+# Diese Methode gibt die Lösung der Route aus
 def print_solution(manager, routing, solution):
     print("Lösung:")
     index = routing.Start(0)
@@ -125,31 +133,33 @@ def print_solution(manager, routing, solution):
     logger.info(f"Entfernung: {route_distance} Einheiten")
     logger.info(f"Geplante Routen-Koordinaten: {plan_output}")
 
+def find_full_path(graph, start_node, end_node):
+    # Verwenden Sie den A*-Algorithmus, um den Pfad zwischen start_node und end_node zu finden
+    path = graph.a_star_search(start_node, end_node)
+    return path
+
+# Die Hauptmethode, die den A*-Algorithmus ausführt
 def main():
     data = create_data_model()
     graph = AStarGraph(data)
+
+    # Start- und Zielknoten
     start_node = 0
-    goal_node = 14
+    end_node = 14
 
-    path = graph.a_star_search(start_node, goal_node)
+    full_path = [start_node]  # Beginnen Sie mit dem Startknoten
 
-    if path:
-        print("A* Path:", path)
-        full_path = []
-        for i in range(len(path) - 1):
-            start = path[i]
-            goal = path[i + 1]
-            segment = graph.a_star_search(start, goal)
-            full_path.extend(segment[:-1])  # Vermeiden der doppelte Knoten
-        full_path.append(goal_node)
-        print("Vollständiger Weg:", full_path)
-        route_coordinates = [data["locations"][node] for node in full_path]
-        print("Route Koordinaten:")
-        print(full_path)
-        for coordinate in route_coordinates:
-            print(coordinate)
-    else:
-        print("Kein Pfad gefunden.")
+    for node in range(1, end_node + 1):
+        if node != start_node:
+            segment = find_full_path(graph, start_node, node)
+            full_path.extend(segment[:-1])  # Vermeiden der doppelten Knoten
+            start_node = node
+
+    print("Vollständiger Weg:", full_path)
+    route_coordinates = [data["locations"][node] for node in full_path]
+    print("Route Koordinaten:")
+    for coordinate in route_coordinates:
+        print(coordinate)
 
 if __name__ == "__main__":
     main()
