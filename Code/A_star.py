@@ -17,7 +17,7 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 fh.setFormatter(formatter)
 logger.addHandler(fh)
 
-# Erstelle einen Ordner für die CSV-Dateien
+# Erstelle einen Ordner für die CSV-Dateien falls nicht vorhanden
 if not os.path.exists(csv_folder):
     os.makedirs(csv_folder)
     logger.warning(f"Folder {csv_folder} created.")
@@ -78,18 +78,21 @@ class AStarGraph:
 def create_data_model():
     data = {}
     data["locations"] = []
-    data["distances"] = []  # Neu hinzugefügt
-    # Öffnen Sie die CSV-Datei und lesen Sie die Daten ein
+    data["distances"] = []
+
     with open(os.path.join(csv_folder, "node_coordinates.csv"), "r") as file:
-        logger.info(f'open file{csv_folder}, node_coordinates.csv')
+        logger.info(f'open file {csv_folder}, node_coordinates.csv')
         reader = csv.reader(file)
         next(reader)  # Überspringen Sie die Header-Zeile
         for row in reader:
-            try:
-                x, y = map(int, row[2].strip('[]').replace(' ', '').split(','))  # Angepasst für Koordinatenextraktion
-                data["locations"].append((x, y))
-            except (ValueError, IndexError):
-                print(f"Fehler beim Lesen der Zeile: {row}")
+            if len(row) >= 2:  # Stellen Sie sicher, dass mindestens 2 Spalten vorhanden sind
+                try:
+                    x, y = map(float, row)  # X- und Y-Koordinaten als Floats einlesen
+                    data["locations"].append((x, y))
+                except (ValueError, IndexError):
+                    logger.error(f"Fehler beim Lesen der Zeile: {row}")
+            else:
+                logger.error(f"Ungültige Zeile: {row}")
 
     # Berechnen Sie die Distanzmatrix direkt hier
     num_locations = len(data["locations"])
@@ -122,7 +125,6 @@ def print_solution(manager, routing, solution):
     logger.info(f"Entfernung: {route_distance} Einheiten")
     logger.info(f"Geplante Routen-Koordinaten: {plan_output}")
 
-# Restlicher Code für die Ausführung des A*-Algorithmus
 def main():
     data = create_data_model()
     graph = AStarGraph(data)
@@ -133,6 +135,19 @@ def main():
 
     if path:
         print("A* Path:", path)
+        full_path = []
+        for i in range(len(path) - 1):
+            start = path[i]
+            goal = path[i + 1]
+            segment = graph.a_star_search(start, goal)
+            full_path.extend(segment[:-1])  # Vermeiden der doppelte Knoten
+        full_path.append(goal_node)
+        print("Vollständiger Weg:", full_path)
+        route_coordinates = [data["locations"][node] for node in full_path]
+        print("Route Koordinaten:")
+        print(full_path)
+        for coordinate in route_coordinates:
+            print(coordinate)
     else:
         print("Kein Pfad gefunden.")
 
