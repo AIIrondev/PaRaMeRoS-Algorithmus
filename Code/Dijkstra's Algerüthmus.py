@@ -155,8 +155,8 @@ def save_coordinates_to_csv(coordinates, filename):
                 writer.writerow({
 #                    'Graph': graph_id,
 #                    'Vertex': vertex,
-                    'X Coordinate': x,
-                    'Y Coordinate': y
+                    'X Coordinate': x + 3,
+                    'Y Coordinate': y + 3
                 })
 
 # Erstellen Sie eine Liste, um die Koordinaten der Knoten zu speichern
