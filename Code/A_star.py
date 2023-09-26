@@ -3,13 +3,13 @@ import heapq
 import csv
 import os
 import logging
-import folium
+import networkx as nx
+import matplotlib.pyplot as plt
 
 # Festlegung der Ordner für CSV-Dateien und Log-Dateien
 csv_folder = 'csv_files'
 log_folder = 'log_files'
 data = {}  # Eine leere Datenstruktur zur Aufbewahrung von Informationen
-m = folium.Map(location=data["depot"], zoom_start=13) # Erstellen Sie eine Karte mit den Koordinaten der Standorte
 
 # Konfigurieren des Loggers für die Protokollierung von Informationen
 logger = logging.getLogger('A_star.py')
@@ -31,20 +31,20 @@ if not os.path.exists(log_folder):
 
 # Die AStarGraph-Klasse definiert den Graphen und den A*-Algorithmus
 class AStarGraph:
-    def __init__(self, graph):
-        self.graph = graph
+    def __init__(self, data):
+        self.data = data
 
     # Diese Methode berechnet die heuristische Schätzung (H-Wert) zwischen zwei Knoten
     def heuristic(self, start, goal):
         logger.debug('heuristic')
-        x1, y1 = self.graph["locations"][start]
-        x2, y2 = self.graph["locations"][goal]
+        x1, y1 = self.data["locations"][start]
+        x2, y2 = self.data["locations"][goal]
         return math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
 
     # Diese Methode gibt die Nachbarn eines Knotens zurück
     def neighbors(self, node):
         logger.debug('neighbors')
-        return [neighbor for neighbor in range(len(self.graph["locations"])) if self.graph["distances"][node][neighbor] != 0]
+        return [neighbor for neighbor in range(len(self.data["locations"])) if self.data["distances"][node][neighbor] != 0]
 
     # Diese Methode führt die A*-Suche aus
     def a_star_search(self, start, goal):
@@ -53,7 +53,7 @@ class AStarGraph:
         closed_list = set()
         start_node = (start, 0)
         heapq.heappush(open_list, start_node)
-        g_score = {node: float("inf") for node in range(len(self.graph["locations"]))}
+        g_score = {node: float("inf") for node in range(len(self.data["locations"]))}  # Änderung hier
         g_score[start] = 0
         came_from = {}
 
@@ -74,17 +74,16 @@ class AStarGraph:
             closed_list.add(current_node)
 
             for neighbor in self.neighbors(current_node):
-                tentative_g_score = g_score[current_node] + self.graph["distances"][current_node][neighbor]
+                tentative_g_score = g_score[current_node] + self.data["distances"][current_node][neighbor]
                 if tentative_g_score < g_score[neighbor]:
                     came_from[neighbor] = current_node
                     g_score[neighbor] = tentative_g_score
                     f_score = tentative_g_score + self.heuristic(neighbor, goal)
                     heapq.heappush(open_list, (neighbor, f_score))
 
-        return None
-
 # Diese Methode erstellt das Datenmodell aus CSV-Dateien
 def create_data_model():
+    global data  # Deklarieren Sie data als global, um es im gesamten Skript sichtbar zu machen
     data = {}
     data["locations"] = []  # Eine Liste zur Aufbewahrung der Koordinaten der Punkte
     data["distances"] = []  # Eine Liste zur Aufbewahrung der Entfernungen zwischen den Punkten
@@ -115,7 +114,7 @@ def create_data_model():
             data["distances"][j][i] = distance
 
     data["num_vehicles"] = 1
-    data["depot"] = 0
+    data["depot"] = data["locations"][0]  # Hier verwenden wir den ersten Standort als Depot
     return data
 
 # Diese Methode gibt die Lösung der Route aus
@@ -163,31 +162,17 @@ def main():
     for coordinate in route_coordinates:
         print(coordinate)
 
-    # Export the map as an HTML file
-    export_image()
+    # Erstellen Sie den Graphen und zeichnen Sie die Route
+    G = nx.Graph()
+    G.add_nodes_from(range(len(route_coordinates)))
+    for i in range(len(route_coordinates) - 1):
+        G.add_edge(full_path[i], full_path[i + 1])
 
-def export_image():
-    data = create_data_model()
-    graph = AStarGraph(data)
-    start_node = 0
-    end_node = 14
-    a_star_graph = AStarGraph(graph)
-    # Find the shortest path between the start and end nodes
-    full_path = a_star_graph.a_star_search(start_node, end_node)
-
-    # Erstellen Sie eine Karte mit den Koordinaten der Standorte
-    m = folium.Map(location=data["depot"], zoom_start=13)
-
-    # Fügen Sie den Start- und Endstandort hinzu
-    folium.Marker(location=data["locations"][full_path[0]], icon=folium.Icon(color="green")).add_to(m)
-    folium.Marker(location=data["locations"][full_path[-1]], icon=folium.Icon(color="red")).add_to(m)
-
-    # Fügen Sie die Route hinzu
-    route = [data["locations"][node] for node in full_path]
-    folium.PolyLine(locations=route, color="blue").add_to(m)
-
-    # Speichern Sie die Karte als HTML-Datei
-    m.save("route.html")
+    pos = {i: route_coordinates[i] for i in range(len(route_coordinates))}
+    nx.draw(G, pos, with_labels=True, node_size=100)
+    image_filename = os.path.join('export_folder', 'shortest_path_a_star.png')
+    plt.savefig(image_filename, dpi=300)  # 300 DPI entspricht 4K-Auflösung
+    plt.show()
 
 if __name__ == "__main__":
     main()

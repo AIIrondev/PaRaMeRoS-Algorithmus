@@ -13,7 +13,7 @@ import matplotlib.pyplot as plt
 ## var Area
 csv_folder = 'csv_files'
 log_folder = 'log_files'
-export_folder = 'export_files'
+export_folder = 'export_folder'
 data = {}
 
 # Konfigurieren des Loggers für die Protokollierung von Informationen
