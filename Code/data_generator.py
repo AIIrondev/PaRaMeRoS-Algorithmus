@@ -14,7 +14,9 @@ import matplotlib.pyplot as plt
 csv_folder = 'csv_files'
 log_folder = 'log_files'
 export_folder = 'export_folder'
-data = {}
+data = []
+data_leangth = []
+fig, ax = plt.subplots()
 
 # Konfigurieren des Loggers für die Protokollierung von Informationen
 logger = logging.getLogger('A_star.py')
@@ -42,13 +44,26 @@ if not os.path.exists(export_folder):
 def extract_data(file):
     with open(file, 'r') as f:
         f.read()
+        data_leangth.append(len(f.readlines()))
         data.append(f)
         return data
 
-def export_data(data):
+
+def create_statistic(data_1, data_2, titel, ytitel, xtitel, legend_label_1):
+    ax.set_titel(titel)
+    ax.xaxis(len(data_1))
+    ax.yaxis(len(data_2))
+    ax.set_ylabel(ytitel)
+    ax.set_xlabel(xtitel)
+    ax.legend()
+    ax.plot([data_1],[data_2], label=legend_label_1)
+
+
+def export_data(data_export):
     with open(os.path.join(export_folder, 'export.csv'), 'w') as f:
         f.write(data)
         return data
+
 
 def main():
     print("Main function")

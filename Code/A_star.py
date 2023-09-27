@@ -28,6 +28,8 @@ if not os.path.exists(csv_folder):
 if not os.path.exists(log_folder):
     os.makedirs(log_folder)
     logger.warning(f"Folder {log_folder} created.")
+if not os.path.exists("export_folder"):
+    os.makedirs("export_folder")
 
 # Die AStarGraph-Klasse definiert den Graphen und den A*-Algorithmus
 class AStarGraph:
