@@ -56,13 +56,14 @@ def extract_data(file):
             log_level = parts[2].strip()
             message = parts[3].strip()
             extracted_data.append((date_time, file_name, log_level, message))
+            print(date_time)
             time_stamps.append(date_time)
         if time_stamps:
-            cleaned_string = ''.join(filter(str.isdigit, time_stamps))
-            numeric_value = int(cleaned_string)
+            cleaned_string_1 = ''.join(filter(str.isdigit, time_stamps[0]))
+            numeric_value_1 = cleaned_string_1
             formatted_string = '.'.join(
-                [numeric_value[:4], numeric_value[4:6], numeric_value[6:8], numeric_value[8:10], numeric_value[10:12],
-                 numeric_value[12:14], numeric_value[14:]])
+                [numeric_value_1[:4], numeric_value_1[4:6], numeric_value_1[6:8], numeric_value_1[8:10], numeric_value_1[10:12],
+                 numeric_value_1[12:14], numeric_value_1[14:]])
             time_span.extend([min(time_stamps), max(time_stamps)])
             time_difference.append(formatted_string)
             print(time_difference)
