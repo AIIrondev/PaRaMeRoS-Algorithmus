@@ -97,28 +97,28 @@ def main():
     if ValueError:
         logger.error("ValueError")
     else:
-        logger.info("Exported data to export.png")
+        logger.info("Exported data to export_Zeit_auf_menge.png")
     # Datentypen(Error, Debug und Warning, info) auf x-achse und y-achse Anzahl der einträge
     create_statistic(data[2], data_length, 'Datentypen auf Anzahl der Einträge', 'Anzahl der Einträge', 'Datentypen',
                      'Anzahl der Einträge', 'export_Datentypen_auf_menge.png')
     if ValueError:
         logger.error("ValueError")
     else:
-        logger.info("Exported data to export.png")
+        logger.info("Exported data to export_Datentypen_auf_menge.png")
     # Zeit auf x-achse und y-achse Datentypen(Error, Debug und Warning, info)
     create_statistic(time_span, data[2], 'Zeit auf Datentypen', 'Datentypen', 'Zeit', 'Datentypen',
                      'export_Zeit_auf_Datentypen.png')
     if ValueError:
         logger.error("ValueError")
     else:
-        logger.info("Exported data to export.png")
+        logger.info("Exported data to export_Zeit_auf_Datentypen.png")
     # Verschiedene Files auf x-achse und y-achse Anzahl der einträge
     create_statistic(data[1], data_length, 'Verschiedene Files auf Anzahl der Einträge', 'Anzahl der Einträge',
                      'Verschiedene Files', 'Anzahl der Einträge', 'export_Verschiedene_Files_auf_menge.png')
     if ValueError:
         logger.error("ValueError")
     else:
-        logger.info("Exported data to export.png")
+        logger.info("Exported data to export_Verschiedene_Files_auf_menge.png")
 
 
 ## run Area
