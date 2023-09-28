@@ -96,7 +96,7 @@ def calculate_paths_thread():
             path_found = True
             print("Gueltiger Pfad gefunden:")
             timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            with open("log.fll", "a") as file:
+            with open(os.path.join(log_folder, "log.fll"), "a") as file:
                 file.write(f"\n\n--- Protokoll vom {timestamp} ---\n")
                 total_length = 0
                 for line_coordinates in current_path:
@@ -126,7 +126,7 @@ def calculate_paths_thread():
     if path_found:
         print("Gueltiger Pfad gefunden:")
         timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        with open("log.fll", "a") as file:
+        with open(os.path.join(log_folder, "log.fll"), "a") as file:
             generate_diagram(current_path, path_order)
             generate_table(shapes, line_coordinates_list)
 
@@ -136,7 +136,7 @@ def calculate_paths_thread():
 
 def generate_table(shapes, line_coordinates_list):
     logger.debug("Daten wurden in Table.csv und in Dijkstra_data.csv abgespeichert")
-    with open("table.csv", "w", newline='') as file:
+    with open(os.path.join(csv_folder, "table.csv"), "w", newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["Objekt ID", "Koordinate Anfang", "Koordinate Ende", "Laenge"])
         for i, shape in enumerate(shapes):
@@ -156,7 +156,7 @@ def generate_table(shapes, line_coordinates_list):
                 row = [object_id, f"({start_x}; {start_y})", f"({end_x}; {end_y})", f"{length:.2f}"]
                 writer.writerow(row)
 
-    with open("Dijkstra_data.csv", "w", newline='') as file:
+    with open(os.path.join(csv_folder, "Dijkstra_data.csv"), "w", newline='') as file:
         writer = csv.writer(file)
         writer.writerow(["source", "target", "weight"])
         for i, shape in enumerate(shapes):
@@ -166,7 +166,7 @@ def generate_table(shapes, line_coordinates_list):
                 length = calculate_length(start_x, start_y, end_x, end_y)
 #                writer.writerow(f"({start_x}; {start_y})", f"({end_x}; {end_y})", f"{length:.2f}")
 
-    with open("log.fll", "a") as file:
+    with open(os.path.join(log_folder, "log.fll"), "a") as file:
         file.write("Die Linien Laengen und Punkte Koordinaten wurden in |Dijkstra_data.csv| gespeichert!")
 
 
@@ -210,10 +210,8 @@ def is_path_possible(start_x, start_y, end_x, end_y):
             radius = 50  # Set the radius as per your requirement
             distance_start = ((start_x - circle_center_x) ** 2 + (start_y - circle_center_y) ** 2) ** 0.5
             distance_end = ((end_x - circle_center_x) ** 2 + (end_y - circle_center_y) ** 2) ** 0.5
-
-            if distance_start <= radius and distance_end <= radius:
-                with open("test_speicher.fll", "a") as WRITE:
-                    WRITE.write(f"Line from ({start_x}, {start_y}) to ({end_x}, {end_y}) intersects with circle ({circle_center_x}, {circle_center_y})\n")
+            if distance_start <= radius or distance_end <= radius:
+                # If die Linien einen Kreis schneiden, return True
                 pass
     return True
 
@@ -401,7 +399,7 @@ def list_reader_clasifier():
         if vk_list_sel_obj[-1] == "circle":
             if vk_list_sel_obj[0] == "circle":
                 if vk_list_sel_obj[2] == "line":
-                    with open("Dijkstra_data.csv", "a", newline='') as file:
+                    with open(os.path.join(csv_folder, "Dijkstra_data.csv"), "a", newline='') as file:
                         csv_writer = csv.writer(file)
                         csv_writer.writerow(["source", "target", "weight"])
                         for start_id, line_length, end_id in vk_data_list:
@@ -411,7 +409,7 @@ def list_reader_clasifier():
 
                 elif vk_list_sel_obj[2] == "circle":
                     logger.debug("Es wurde ein Kreis mit einem Kreis verbunden länge = 0")
-                    with open("Dijkstra_data.csv", "a", newline='') as file:
+                    with open(os.path.join(csv_folder, "Dijkstra_data.csv"), "a", newline='') as file:
                         csv_writer = csv.writer(file)
                         csv_writer.writerow(["source", "target", "weight"])
                         for start_id, end_id in vk_data_list:
@@ -433,12 +431,15 @@ def update_mouse_coordinates(event):
 root = tk.Tk()
 root.title("FLL PaRaMeRoS Algeruethmus")
 
-log_folder = 'log_files'
-bilder_folder = 'Bilder'
+log_folder = '../log_files'
+bilder_folder = '../Bilder'
+csv_folder = '../csv_files'
 if not os.path.exists(log_folder):
     os.makedirs(log_folder)
 if not os.path.exists(bilder_folder):
     os.makedirs(bilder_folder)
+if not os.path.exists(csv_folder):
+    os.makedirs(csv_folder)
 
 logo_path = os.path.join(bilder_folder, "LOGO.jpeg")
 logo = ImageTk.PhotoImage(Image.open(logo_path))

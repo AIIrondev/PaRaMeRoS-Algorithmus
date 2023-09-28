@@ -10,8 +10,8 @@ if not os.path.exists('exported_images'):
     os.makedirs('exported_images')
 
 # Erstelle einen Ordner für die CSV-Dateien
-csv_folder = 'csv_files'
-log_folder = 'log_files'
+csv_folder = '../csv_files'
+log_folder = '../log_files'
 if not os.path.exists(csv_folder):
     os.makedirs(csv_folder)
 if not os.path.exists(log_folder):
@@ -190,7 +190,7 @@ for i, g in enumerate(graphs):
     coordinates_list.append(graph_coordinates)
 
 # Speichern Sie die Koordinaten in einer CSV-Datei
-coordinates_filename = "node_coordinates.csv"
+coordinates_filename = "../node_coordinates.csv"
 save_coordinates_to_csv(coordinates_list, coordinates_filename)
 
 logging.info('Programm erfolgreich beendet')

@@ -7,8 +7,8 @@ import networkx as nx
 import matplotlib.pyplot as plt
 
 # Festlegung der Ordner für CSV-Dateien und Log-Dateien
-csv_folder = 'csv_files'
-log_folder = 'log_files'
+csv_folder = '../csv_files'
+log_folder = '../log_files'
 data = {}  # Eine leere Datenstruktur zur Aufbewahrung von Informationen
 
 # Konfigurieren des Loggers für die Protokollierung von Informationen
@@ -28,7 +28,7 @@ if not os.path.exists(csv_folder):
 if not os.path.exists(log_folder):
     os.makedirs(log_folder)
     logger.warning(f"Folder {log_folder} created.")
-if not os.path.exists("export_folder"):
+if not os.path.exists("../export_folder"):
     os.makedirs("export_folder")
 
 # Die AStarGraph-Klasse definiert den Graphen und den A*-Algorithmus
@@ -172,7 +172,7 @@ def main():
 
     pos = {i: route_coordinates[i] for i in range(len(route_coordinates))}
     nx.draw(G, pos, with_labels=True, node_size=100)
-    image_filename = os.path.join('export_folder', 'shortest_path_a_star.png')
+    image_filename = os.path.join('../export_folder', 'shortest_path_a_star.png')
     plt.savefig(image_filename, dpi=300)  # 300 DPI entspricht 4K-Auflösung
     plt.show()
 
