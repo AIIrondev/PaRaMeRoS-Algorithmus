@@ -6,8 +6,8 @@ import matplotlib.pyplot as plt
 import os
 
 # Erstelle einen Ordner für die exportierten Bilder
-if not os.path.exists('exported_images'):
-    os.makedirs('exported_images')
+if not os.path.exists('../exported_images'):
+    os.makedirs('../exported_images')
 
 # Erstelle einen Ordner für die CSV-Dateien
 csv_folder = '../csv_files'
@@ -65,7 +65,7 @@ class Graph:
 
 # Read the graph data from the CSV file
 data = []
-with open(os.path.join(csv_folder, "dijkstra_data.csv"), "r") as file:
+with open(os.path.join(csv_folder, "dijkstra_data_1.csv"), "r") as file:
     logger.info('open file')
     reader = csv.reader(file)
     next(reader)  # Skip the header
@@ -138,7 +138,7 @@ with open(os.path.join(csv_folder, "dijkstra_results.csv"), mode='w', newline=''
         plt.title(f"Shortest Path from vertex {i}")
 
         # Speichere das Bild im Ordner "exported_images" mit dem Dateinamen "shortest_path_i.png"
-        image_filename = os.path.join('exported_images', f'shortest_path_{i}.png')
+        image_filename = os.path.join('../exported_images', f'shortest_path_{i}.png')
         plt.savefig(image_filename, dpi=300)  # 300 DPI entspricht 4K-Auflösung
 
         # Schließe die Matplotlib-Figur
@@ -190,7 +190,7 @@ for i, g in enumerate(graphs):
     coordinates_list.append(graph_coordinates)
 
 # Speichern Sie die Koordinaten in einer CSV-Datei
-coordinates_filename = "../node_coordinates.csv"
+coordinates_filename = "../csv_files/node_coordinates.csv"
 save_coordinates_to_csv(coordinates_list, coordinates_filename)
 
 logging.info('Programm erfolgreich beendet')
