@@ -12,7 +12,9 @@ The Versions are different Brances with the right declaration.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| Alpha1.1| :white_check_mark: |
+| Alpha1.1| :x:                |
+| Alpha1.2| :white_check_mark: |
+| Alpha1.3| :white_check_mark: |
 
 ## Reporting a Vulnerability
 
