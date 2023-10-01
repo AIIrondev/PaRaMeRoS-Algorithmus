@@ -6,9 +6,8 @@ If you accept those Terms you can use the Code acording.
 
 ## Supported Versions
 
-
-The supportet Versions
-The Versions are different Brances with the right declaration.
+The Versions with an check Mark are supported.
+The Versions with an X aren't supported any more.
 
 | Version | Supported          |
 | ------- | ------------------ |
