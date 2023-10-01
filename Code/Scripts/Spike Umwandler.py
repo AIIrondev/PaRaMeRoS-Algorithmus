@@ -56,8 +56,8 @@ def switch_module(switch):
 			return switch
 
 
-def ai_control():
-	# Hier kommt der AI Code hin
+def ai_control(Weg_daten):
+	# Hier kommt der AI Code hin PPO AI für optimisierung des vorgedachten Weges
 	pass
 
 
