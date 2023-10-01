@@ -1,18 +1,21 @@
 ''' Importe für Spike und umwandler '''
-#import spike
+import spike
 
 
-''' Spike umwandlung für KI Programm '''
-dict_spike = {
-	"forne": "Spike command",
-	"hinten": "Spike command",
-	"drehen_rechts": "Spike command",
-	"drehen_links": "Spike command",
-	"modul": "Spike command",
-	"sensor_ultraschall": "Spike command",
-	"sensor_rotation": "Spike command",
-	"sensor_press": "Spike command",
-}
+''' Importe für Spike'''
+motor_module = spike.Motor('A')
+motor_pair = spike.MotorPair('c', 'B')
+color_sensor = spike.ColorSensor('E')	
+distance_sensor = spike.DistanceSensor('F')
+force_sensor = spike.ForceSensor('D')
 
 
-print(dict_spike["forne"])
+
+# def AREA
+
+def drive_forward(distance):
+    motor_pair.start_tank(100, 100)
+	
+	while distance_sensor.get_distance_cm() > distance:
+		pass
+	motor_pair.stop()
