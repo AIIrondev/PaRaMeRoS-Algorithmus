@@ -7,7 +7,7 @@ If you accept those Terms you can use the Code acording.
 ## Supported Versions
 
 The Versions with an check Mark are supported.
-The Versions with an X aren't supported any more.
+The Versions with an X aren't supported.
 
 | Version | Supported          |
 | ------- | ------------------ |
