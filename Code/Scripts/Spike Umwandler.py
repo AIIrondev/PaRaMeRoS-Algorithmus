@@ -13,8 +13,8 @@ calibration = 0
 
 # def AREA
 
-def drive_forward(distance):
-	motor_pair.move(distance - calibration, 'cm')
+def drive_forward(distance, speed):
+	motor_pair.move(distance - calibration, 'cm', None, speed)
 
 
 def calibrate_driving():
