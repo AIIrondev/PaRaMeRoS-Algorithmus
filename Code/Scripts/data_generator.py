@@ -1,7 +1,7 @@
 import os
 import logging
 import matplotlib.pyplot as plt
-import datetime
+import ftplib
 
 # Verzeichnisnamen
 csv_folder = '../csv_files'
@@ -22,20 +22,33 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 fh.setFormatter(formatter)
 logger.addHandler(fh)
 
-# Überprüfen und Erstellen der Ordner
-if not os.path.exists(csv_folder):
-    os.makedirs(csv_folder)
-    logger.warning(f"Folder {csv_folder} created.")
-if not os.path.exists(log_folder):
-    os.makedirs(log_folder)
-    logger.warning(f"Folder {log_folder} created.")
-if not os.path.exists(export_folder):
-    os.makedirs(export_folder)
-    logger.warning(f"Folder {export_folder} created.")
+
+def conf():
+    logger.debug("conf...")
+    global csv_folder, log_folder, export_folder
+
+    with open("../data_generator.config", "r") as f:
+        lines = f.readline(1)
+        lines = lines.split(" , ")
+        csv_folder = lines[0].strip()
+        log_folder = lines[1].strip()
+        export_folder = lines[2].strip()
+
+    # Überprüfen und Erstellen der Ordner
+    if not os.path.exists(csv_folder):
+        os.makedirs(csv_folder)
+        logger.warning(f"Folder {csv_folder} created.")
+    if not os.path.exists(log_folder):
+        os.makedirs(log_folder)
+        logger.warning(f"Folder {log_folder} created.")
+    if not os.path.exists(export_folder):
+        os.makedirs(export_folder)
+        logger.warning(f"Folder {export_folder} created.")
 
 
 # Funktion zum Extrahieren von Daten aus der Log-Datei
 def extract_data(file):
+    logger.debug("extract_data...")
     extracted_data = []
     entries_per_day = {}
     log_levels = []
@@ -63,11 +76,12 @@ def extract_data(file):
             log_levels.append(log_level)
             extracted_data.append((date_time, message))
 
-    return extracted_data, entries_per_day, log_levels, file_name
+            return entries_per_day, log_levels, file_name
 
 
 # Funktion zum Erstellen und Speichern von Statistiken als Grafik
 def create_statistic(data_1, data_2, title, y_label, x_label, legend_label, export_file):
+    logger.debug("create_statistic...")
     fig, ax = plt.subplots()
     ax.grid()
     ax.set_title(title)
@@ -80,6 +94,7 @@ def create_statistic(data_1, data_2, title, y_label, x_label, legend_label, expo
 
 # Funktion zum Erstellen eines Balkendiagramms
 def create_bar_chart(data_1, data_2, title, y_label, x_label, export_file):
+    logger.debug("create_bar_chart...")
     plt.bar(data_1, data_2, color='blue')
     plt.xlabel(x_label)
     plt.ylabel(y_label)
@@ -90,11 +105,28 @@ def create_bar_chart(data_1, data_2, title, y_label, x_label, export_file):
     plt.show()
 
 
+def export_data_ftp(files):
+    logger.debug("ftp_export...")
+    ftp = ftplib.FTP()
+    host = "Parameros.de"
+    port = 21
+    ftp.connect(host, port)
+    print(ftp.getwelcome())
+    try:
+        print("Logging in...")
+        ftp.login("Server2-1", "password") # Username und Passwort
+        logger.info("successful login")
+        ftp.storbinary("STOR " + files, open(files, "rb"))
+    except ftplib.all_errors:
+        logger.error("failed login")
+        print("WARNING: !!!Error was not able to connect to ftp server!!!!")
+
+
 # Hauptfunktionsaufruf
 def main():
-    logger.info("Main function")
+    logger.info("Main...")
 
-    extracted_data, entries_per_day, log_levels, files = extract_data(os.path.join(log_folder, 'sys.log'))
+    entries_per_day, log_levels, files = extract_data(os.path.join(log_folder, 'sys.log'))
 
     # Extrahierte Daten pro Tag
     x_values = list(entries_per_day.keys())
@@ -125,4 +157,5 @@ def main():
 
 # Ausführung der Hauptfunktion
 if __name__ == '__main__':
+    conf()
     main()

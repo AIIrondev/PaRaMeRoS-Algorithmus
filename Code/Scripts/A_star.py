@@ -21,15 +21,6 @@ formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(messag
 fh.setFormatter(formatter)
 logger.addHandler(fh)
 
-# Überprüfen und Erstellen der Ordner für CSV-Dateien und Log-Dateien
-if not os.path.exists(csv_folder):
-    os.makedirs(csv_folder)
-    logger.warning(f"Folder {csv_folder} created.")
-if not os.path.exists(log_folder):
-    os.makedirs(log_folder)
-    logger.warning(f"Folder {log_folder} created.")
-if not os.path.exists("../export_folder"):
-    os.makedirs("export_folder")
 
 # Die AStarGraph-Klasse definiert den Graphen und den A*-Algorithmus
 class AStarGraph:
@@ -83,6 +74,30 @@ class AStarGraph:
                     f_score = tentative_g_score + self.heuristic(neighbor, goal)
                     heapq.heappush(open_list, (neighbor, f_score))
 
+
+def conf():
+    logger.debug("conf...")
+    global csv_folder, log_folder, export_folder
+
+    with open("../A_star.config", "r") as f:
+        lines = f.readline(1)
+        lines = lines.split(" , ")
+        csv_folder = lines[0].strip()
+        log_folder = lines[1].strip()
+        export_folder = lines[2].strip()
+
+    # Überprüfen und Erstellen der Ordner
+    if not os.path.exists(csv_folder):
+        os.makedirs(csv_folder)
+        logger.warning(f"Folder {csv_folder} created.")
+    if not os.path.exists(log_folder):
+        os.makedirs(log_folder)
+        logger.warning(f"Folder {log_folder} created.")
+    if not os.path.exists(export_folder):
+        os.makedirs(export_folder)
+        logger.warning(f"Folder {export_folder} created.")
+        
+
 # Diese Methode erstellt das Datenmodell aus CSV-Dateien
 def create_data_model():
     global data  # Deklarieren Sie data als global, um es im gesamten Skript sichtbar zu machen
@@ -119,6 +134,7 @@ def create_data_model():
     data["depot"] = data["locations"][0]  # Hier verwenden wir den ersten Standort als Depot
     return data
 
+
 # Diese Methode gibt die Lösung der Route aus
 def print_solution(manager, routing, solution):
     print("Lösung:")
@@ -136,10 +152,12 @@ def print_solution(manager, routing, solution):
     logger.info(f"Entfernung: {route_distance} Einheiten")
     logger.info(f"Geplante Routen-Koordinaten: {plan_output}")
 
+
 def find_full_path(graph, start_node, end_node):
     # Verwenden Sie den A*-Algorithmus, um den Pfad zwischen start_node und end_node zu finden
     path = graph.a_star_search(start_node, end_node)
     return path
+
 
 # Die Hauptmethode, die den A*-Algorithmus ausführt
 def main():
@@ -172,9 +190,10 @@ def main():
 
     pos = {i: route_coordinates[i] for i in range(len(route_coordinates))}
     nx.draw(G, pos, with_labels=True, node_size=100)
-    image_filename = os.path.join('../export_folder', 'shortest_path_a_star.png')
+    image_filename = os.path.join(export_folder, 'shortest_path_a_star.png')
     plt.savefig(image_filename, dpi=300)  # 300 DPI entspricht 4K-Auflösung
     plt.show()
 
 if __name__ == "__main__":
+    conf()
     main()
