@@ -108,7 +108,7 @@ def create_bar_chart(data_1, data_2, title, y_label, x_label, export_file):
 def export_data_ftp(files):
     logger.debug("ftp_export...")
     ftp = ftplib.FTP()
-    host = "Parameros.de"
+    host = "Parameros.com"
     port = 21
     ftp.connect(host, port)
     print(ftp.getwelcome())
