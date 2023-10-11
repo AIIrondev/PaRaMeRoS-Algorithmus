@@ -5,3 +5,4 @@ Dies ist ein auf python basierten Projekt welches beinhaltet:
 4. Als letztes was noch eingebaut wird, werden die Daten und Protokolle die über alle Skripts erhoben werden. Diese werden dann an die Website geschickt und dann dort in einem extra Tab dargestellt.
 5. Eine Weitere Optimierung die in Planung ist die integration einer Multi Threading Bibliotek.
 6. Dies soll alles in einen Verbund von Geräten implementiert.
+7. Alle Daten und Statistiken werden per ftp an die Website des FLL Teams geschickt und dort dargestellt.
