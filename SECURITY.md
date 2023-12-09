@@ -22,3 +22,5 @@ Vulnerability reporting is done via an isue message!
 The Projekt is curently been updatet for the next Month(starting:13.09.2023).
 
 In this TIME you get constant security and feature UPDATES!
+
+the time After this Projekt will be updatet sometime
