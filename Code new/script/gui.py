@@ -37,7 +37,7 @@ icon_path = os.path.join(base_dir, "..", "Bilder", "LOGO.ico")
 class main:
     def __init__(self):
         self.window = tk.CTk()
-        self.window.title("Folder sorter")
+        self.window.title("Algorithmus")
         self.window.geometry("600x400")
         self.window.resizable(False, False)
         self.window._set_appearance_mode("light")
@@ -50,29 +50,22 @@ class main:
         tk.CTkLabel(self.window, text="Welcome to the Algorithm Path finder", font=("Arial", 25), text_color="black").place(x=75, y=25)
         tk.CTkButton(self.window, text="Create new simulation", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=180, y=100)
         tk.CTkButton(self.window, text="Load simulation", command=self.main_load, corner_radius=32, font=("Arial", 19)).place(x=205, y=150)
-        tk.CTkLabel(self.window, text="Made by: @AIIronDev", font=("Arial", 10), text_color="black").place(x=240, y=360)
+        tk.CTkButton(self.window, text="Exit", command=self.window.destroy, corner_radius=32, font=("Arial", 19), fg_color="red", hover_color="darkred").place(x=217, y=200)
+        tk.CTkLabel(self.window, text="Made by: @AIIronDev", font=("Arial", 10), text_color="black").place(x=240, y=340)
+        tk.CTkLabel(self.window, text="(c) Maximilian Gründinger v.2", font=("Arial", 10), text_color="black").place(x=220, y=360)
         tk.CTkLabel(self.window, text="Github: https://github.com/PaRaMeRoS/Algorithmus", font=("Arial", 10), text_color="blue").place(x=200, y=380)
-        tk.CTkComboBox(self.window, values=["Light", "Dark"], command=self.window._set_appearance_mode).place(x=215, y=215)
+        tk.CTkComboBox(self.window, values=["Light", "Dark"], command=self.window._set_appearance_mode).place(x=215, y=240)
 
     
     def main_programm(self):
         self.reset_screen()
+        self.combobox_var = tk2.StringVar()
         tk.CTkLabel(self.window, text="Configuration", font=("Arial", 25), text_color="black").place(x=75, y=25)
         tk.CTkLabel(self.window, text="Choose the Point count", font=("Arial", 25), text_color="black").place(x=75, y=75)
-        self.Option = tk.CTkComboBox(self.window, values=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"]).place(x=205, y=150)
+        self.Option = tk.CTkComboBox(self.window, values=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"], variable=self.combobox_var).place(x=205, y=150)
         tk.CTkLabel(self.window, text="", font=("Arial", 25), text_color="black").place(x=75, y=200)
-        self.Entry = tk.CTkEntry(self.window, placeholder_text="CTkEntry").place(x=205, y=200)
-        tk.CTkButton(self.window, text="Start", command=self.main_menu, corner_radius=32, font=("Arial", 19)).place(x=205, y=250)
-        tk.CTkButton(self.window, text="Back", command=self.main_menu, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
-        
-        match 
-        
-    def option_calback_menu(self, event):
-        self.reset_screen()
-        tk.CTkLabel(self.window, text="New Programm", font=("Arial", 25), text_color="black").place(x=75, y=25)
-        tk.CTkLabel(self.window, text="Choose the Point count", font=("Arial", 25), text_color="black").place(x=75, y=75)
-        tk.CTkOptionMenu(self.window, values=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"], command=self.option_calback_menu).place(x=205, y=150)
-        tk.CTkLabel(self.window, text="Enter the number off ", font=("Arial", 25), text_color="black").place(x=75, y=200)
+        self.Entry = tk.CTkEntry(self.window, placeholder_text="Count of Connections betwen Points").place(x=205, y=200)
+        tk.CTkButton(self.window, text="Start", command=self.running, corner_radius=32, font=("Arial", 19)).place(x=205, y=250)
         tk.CTkButton(self.window, text="Back", command=self.main_menu, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
 
     def main_load(self):
@@ -83,15 +76,23 @@ class main:
         for widget in self.window.winfo_children():
             widget.destroy()
 
-    def new_window_render(self):
-        self.frame = tk.CTkFrame(self.window, width=600, height=400)
-        self.frame.titel("New Window")
-        self.frame.geometry("600x400")
-        self.frame.resizable(False, False)
-        self.frame._set_appearance_mode("light")
-        self.frame.iconbitmap(icon_path)
-        # Hier noch die Elemente hinzufügen
-        self.frame.mainloop()
+#    def new_window_render(self): 
+#        self.window1 = tk.CTk()
+#        self.window1.titel("Render") # AttributeError: '_tkinter.tkapp' object has no attribute 'titel'
+#        self.window1.geometry("600x400")
+#        self.window1.resizable(False, False)
+#        self.window1._set_appearance_mode("light")
+#        self.window1.iconbitmap(icon_path)
+#        # Hier noch die Elemente hinzufügen
+#        self.window1.mainloop()
+
+    def running(self):
+        self.reset_screen()
+        print(self.combobox_var.get()) # geht jetzt nicht wie self.Entry.get() -> AttributeError: 'main' object has no attribute 'Entry'
+        tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="black").place(x=75, y=25) # change Titel
+        tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
+        tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
+        self.new_window_render()
 
 # main running area -> main function
 if __name__ == "__main__":
