@@ -64,7 +64,7 @@ class main:
         tk.CTkLabel(self.window, text="Choose the Point count", font=("Arial", 25), text_color="black").place(x=75, y=75)
         self.Option = tk.CTkComboBox(self.window, values=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"], variable=self.combobox_var).place(x=205, y=150)
         tk.CTkLabel(self.window, text="", font=("Arial", 25), text_color="black").place(x=75, y=200)
-        self.Entry = tk.CTkEntry(self.window, placeholder_text="Count of Connections betwen Points").place(x=205, y=200)
+        self.Entry = tk.CTkEntry(self.window, placeholder_text="Count of Connections betwen Points").place(x=205, y=200) # write this out and just leave the combobox for the count of points because evry point has to be connected with evry other point
         tk.CTkButton(self.window, text="Start", command=self.running, corner_radius=32, font=("Arial", 19)).place(x=205, y=250)
         tk.CTkButton(self.window, text="Back", command=self.main_menu, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
 
@@ -86,7 +86,7 @@ class main:
 #        # Hier noch die Elemente hinzufügen
 #        self.window1.mainloop()
 
-    def running(self):
+    def running(self): # add logik and extra frame for from point to point is Distance
         self.reset_screen()
         print(self.combobox_var.get()) # geht jetzt nicht wie self.Entry.get() -> AttributeError: 'main' object has no attribute 'Entry'
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="black").place(x=75, y=25) # change Titel
@@ -112,7 +112,7 @@ class logik:
         count1 = 0
         count2 = 0
         combinations = [] # [[0,1], [0,2], [0,3], [0,4], [0,5], [0,6], [0,7], [0,8], [0,9], [1,2], [1,3], [1,4], [1,5], [1,6], [1,7], [1,8], [1,9], [2,3], [2,4], [2,5], [2,6], etc. until count is reached]
-        for i in range(count1):
+        for i in range(count1): # finisch the logik for the combinations
             if count1 == count:
                 break
             for j in range(count2):
