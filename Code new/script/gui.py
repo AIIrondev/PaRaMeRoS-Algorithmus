@@ -94,6 +94,41 @@ class main:
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
         self.new_window_render()
 
+
+class logik:
+    def __init__(self):
+        pass
+
+    def save_data(self, datax, datay):
+        print(f"Data to save is: {datax}, {datay}")
+    
+    def load_data(self):
+        pass
+    
+    def configuration(self):
+        pass
+
+    def get_combinations(self, count):
+        count1 = 0
+        count2 = 0
+        combinations = [] # [[0,1], [0,2], [0,3], [0,4], [0,5], [0,6], [0,7], [0,8], [0,9], [1,2], [1,3], [1,4], [1,5], [1,6], [1,7], [1,8], [1,9], [2,3], [2,4], [2,5], [2,6], etc. until count is reached]
+        for i in range(count1):
+            if count1 == count:
+                break
+            for j in range(count2):
+                com = [count2, i]
+                if com[0] == com[1]:
+                    pass
+                else:
+                    if com in combinations:
+                        pass
+                    elif com[::-1] in combinations:
+                        combinations.append(com)
+                count2 += 1
+            count1 += 1
+                
+    
+
 # main running area -> main function
 if __name__ == "__main__":
     window = main()
