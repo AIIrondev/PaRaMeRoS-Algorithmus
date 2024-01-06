@@ -51,13 +51,14 @@ class main:
         tk.CTkButton(self.window, text="Load simulation", command=self.main_load, corner_radius=32, font=("Arial", 19)).place(x=205, y=150)
         tk.CTkLabel(self.window, text="Made by: @AIIronDev", font=("Arial", 10), text_color="black").place(x=240, y=360)
         tk.CTkLabel(self.window, text="Github: https://github.com/Iron-witch/Folder-sorter", font=("Arial", 10), text_color="blue").place(x=200, y=380)
+        tk.CTkComboBox(self.window, values=["Light", "Dark"], command=self.window._set_appearance_mode).place(x=100, y=80)
 
     
     def main_programm(self):
         self.reset_screen()
         tk.CTkLabel(self.window, text="Configuration", font=("Arial", 25), text_color="black").place(x=75, y=25)
         tk.CTkLabel(self.window, text="Choose the Point count", font=("Arial", 25), text_color="black").place(x=75, y=75)
-        self.Optionmenu = tk.CTkOptionMenu(self.window, values=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"]).place(x=205, y=150)
+        self.Option = tk.CTkComboBox(self.window, values=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"]).place(x=205, y=150)
         tk.CTkLabel(self.window, text="", font=("Arial", 25), text_color="black").place(x=75, y=200)
         self.Entry = tk.CTkEntry(self.window, placeholder_text="CTkEntry").place(x=205, y=200)
         tk.CTkButton(self.window, text="Start", command=self.main_menu, corner_radius=32, font=("Arial", 19)).place(x=205, y=250)
