@@ -55,15 +55,23 @@ class main:
     
     def main_programm(self):
         self.reset_screen()
-        tk.CTkLabel(self.window, text="You ", font=("Arial", 25), text_color="black").place(x=75, y=25)
-        tk.CTkOptionMenu(self.window, values=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15"], command=self.option_calback_menu).place(x=205, y=150)
-        tk.CTkButton(self.window, text="Back", command=self.main_menu, corner_radius=32, font=("Arial", 19)).place(x=205, y=200)
+        tk.CTkLabel(self.window, text="Configuration", font=("Arial", 25), text_color="black").place(x=75, y=25)
+        tk.CTkLabel(self.window, text="Choose the Point count", font=("Arial", 25), text_color="black").place(x=75, y=75)
+        self.Optionmenu = tk.CTkOptionMenu(self.window, values=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"]).place(x=205, y=150)
+        tk.CTkLabel(self.window, text="", font=("Arial", 25), text_color="black").place(x=75, y=200)
+        self.Entry = tk.CTkEntry(self.window, placeholder_text="CTkEntry").place(x=205, y=200)
+        tk.CTkButton(self.window, text="Start", command=self.main_menu, corner_radius=32, font=("Arial", 19)).place(x=205, y=250)
+        tk.CTkButton(self.window, text="Back", command=self.main_menu, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
+        
+        match 
         
     def option_calback_menu(self, event):
-        if event == "Normal":
-            self.normal()
-        elif event == "Custom":
-            self.custom()
+        self.reset_screen()
+        tk.CTkLabel(self.window, text="New Programm", font=("Arial", 25), text_color="black").place(x=75, y=25)
+        tk.CTkLabel(self.window, text="Choose the Point count", font=("Arial", 25), text_color="black").place(x=75, y=75)
+        tk.CTkOptionMenu(self.window, values=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"], command=self.option_calback_menu).place(x=205, y=150)
+        tk.CTkLabel(self.window, text="Enter the number off ", font=("Arial", 25), text_color="black").place(x=75, y=200)
+        tk.CTkButton(self.window, text="Back", command=self.main_menu, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
 
     def main_load(self):
         self.reset_screen()
