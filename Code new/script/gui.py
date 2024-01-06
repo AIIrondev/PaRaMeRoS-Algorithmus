@@ -42,6 +42,7 @@ class main:
         self.window.resizable(False, False)
         self.window._set_appearance_mode("light")
         self.window.iconbitmap(icon_path)
+
         self.main_menu()
         
     def main_menu(self):
@@ -50,8 +51,8 @@ class main:
         tk.CTkButton(self.window, text="Create new simulation", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=180, y=100)
         tk.CTkButton(self.window, text="Load simulation", command=self.main_load, corner_radius=32, font=("Arial", 19)).place(x=205, y=150)
         tk.CTkLabel(self.window, text="Made by: @AIIronDev", font=("Arial", 10), text_color="black").place(x=240, y=360)
-        tk.CTkLabel(self.window, text="Github: https://github.com/Iron-witch/Folder-sorter", font=("Arial", 10), text_color="blue").place(x=200, y=380)
-        tk.CTkComboBox(self.window, values=["Light", "Dark"], command=self.window._set_appearance_mode).place(x=100, y=80)
+        tk.CTkLabel(self.window, text="Github: https://github.com/PaRaMeRoS/Algorithmus", font=("Arial", 10), text_color="blue").place(x=200, y=380)
+        tk.CTkComboBox(self.window, values=["Light", "Dark"], command=self.window._set_appearance_mode).place(x=215, y=215)
 
     
     def main_programm(self):
@@ -82,6 +83,15 @@ class main:
         for widget in self.window.winfo_children():
             widget.destroy()
 
+    def new_window_render(self):
+        self.frame = tk.CTkFrame(self.window, width=600, height=400)
+        self.frame.titel("New Window")
+        self.frame.geometry("600x400")
+        self.frame.resizable(False, False)
+        self.frame._set_appearance_mode("light")
+        self.frame.iconbitmap(icon_path)
+        # Hier noch die Elemente hinzufügen
+        self.frame.mainloop()
 
 # main running area -> main function
 if __name__ == "__main__":
