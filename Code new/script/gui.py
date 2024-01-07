@@ -88,21 +88,25 @@ class main:
 
     def running(self): # add logik and extra frame for from point to point is Distance
         self.reset_screen()
-        print(self.combobox_var.get()) # geht jetzt nicht wie self.Entry.get() -> AttributeError: 'main' object has no attribute 'Entry'
-        self.fenster_liste = logik.get_combinations(self.combobox_var.get()) # -> add the right frame for the distances
+        self.entry_combobox = self.combobox_var.get() # geht jetzt nicht wie self.Entry.get() -> AttributeError: 'main' object has no attribute 'Entry'
+        self.fenster_liste = logik.get_combinations(self.entry_combobox) # -> add the right frame for the distances
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="black").place(x=75, y=25) # change Titel
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
         self.generate_form_1()
 
     def generate_form_1(self): # hier müssen die Punkte mit den jeweiligen Distanzen eingetragen werden gegebenen fals in einem neuen Fenster mit der logik -> logik.get_combinations(self.combobox_var.get()) und nur noch die distanzen eintragen
-        self.fram = tk.Frame(self.window, width=600, height=400, bg="red").place(x=0, y=100)
-        tk.CTkLabel(self.fram, text="From", font=("Arial", 16), text_color="black").place(x=75, y=125)
         # Evry Point has to be connected with evry other Point
-        tk.CTkLabel(self.fram, text="To", font=("Arial", 16), text_color="black").place(x=75, y=175)
-        tk.CTkLabel(self.fram, text="Distance", font=("Arial", 16), text_color="black").place(x=75, y=225)
-        tk.CTkEntry(self.fram, placeholder_text="Distance no , or .").place(x=175, y=125)
-        pass
+        self.fram = tk.CTkScrollableFrame(self.window, width=600, height=400, bg="transparent").place(x=0, y=100)
+        for element in self.fenster_liste:
+            print(element)
+            first_point = element[0]
+            second_point = element[1]
+            tk.CTkLabel(self.fram, text="From", font=("Arial", 16), text_color="black")
+            tk.CTkLabel(self.fram, text=str(first_point), font=("Arial", 16), text_color="black")
+            tk.CTkLabel(self.fram, text="To", font=("Arial", 16), text_color="black")
+            tk.CTkLabel(self.fram, text=str(second_point), font=("Arial", 16), text_color="black")
+            tk.CTkEntry(self.fram, placeholder_text="Distance")
 
 
 class logik:
