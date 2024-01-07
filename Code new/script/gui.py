@@ -89,11 +89,14 @@ class main:
     def running(self): # add logik and extra frame for from point to point is Distance
         self.reset_screen()
         self.entry_combobox = self.combobox_var.get() # geht jetzt nicht wie self.Entry.get() -> AttributeError: 'main' object has no attribute 'Entry'
+        #try: # dann einfügen wenn deployed oder funktion ferig zum catchen if ein Input gegeben
         self.fenster_liste = logik.get_combinations(self.entry_combobox) # -> add the right frame for the distances
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="black").place(x=75, y=25) # change Titel
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
         self.generate_form_1()
+        #exept:
+        #    self.error_window()
 
     def generate_form_1(self): # hier müssen die Punkte mit den jeweiligen Distanzen eingetragen werden gegebenen fals in einem neuen Fenster mit der logik -> logik.get_combinations(self.combobox_var.get()) und nur noch die distanzen eintragen
         # Evry Point has to be connected with evry other Point
@@ -107,6 +110,9 @@ class main:
             tk.CTkLabel(self.fram, text="To", font=("Arial", 16), text_color="black")
             tk.CTkLabel(self.fram, text=str(second_point), font=("Arial", 16), text_color="black")
             tk.CTkEntry(self.fram, placeholder_text="Distance")
+            
+    def error_window(self):
+        tk2.messagebox.showerror("Error", "Please enter a number between 1 and 20")
 
 
 class logik:
