@@ -92,18 +92,27 @@ class main:
         self.fenster_liste = logik.get_combinations(self.combobox_var.get()) # -> add the right frame for the distances
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="black").place(x=75, y=25) # change Titel
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
-        # hier müssen die Punkte mit den jeweiligen Distanzen eingetragen werden gegebenen fals in einem neuen Fenster mit der logik -> logik.get_combinations(self.combobox_var.get()) und nur noch die distanzen eintragen
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
+        self.generate_form_1()
+
+    def generate_form_1(self): # hier müssen die Punkte mit den jeweiligen Distanzen eingetragen werden gegebenen fals in einem neuen Fenster mit der logik -> logik.get_combinations(self.combobox_var.get()) und nur noch die distanzen eintragen
+        self.fram = tk.Frame(self.window, width=600, height=400, bg="red").place(x=0, y=100)
+        tk.CTkLabel(self.fram, text="From", font=("Arial", 16), text_color="black").place(x=75, y=125)
+        # Evry Point has to be connected with evry other Point
+        tk.CTkLabel(self.fram, text="To", font=("Arial", 16), text_color="black").place(x=75, y=175)
+        tk.CTkLabel(self.fram, text="Distance", font=("Arial", 16), text_color="black").place(x=75, y=225)
+        tk.CTkEntry(self.fram, placeholder_text="Distance no , or .").place(x=175, y=125)
+        pass
 
 
 class logik:
     def __init__(self):
         pass
 
-    def save_data(self, datax, datay):
-        print(f"Data to save is: {datax}, {datay}")
+    def save_simulation(self):
+        pass
     
-    def load_data(self):
+    def load_simulation(self):
         pass
 
     def get_combinations(self, count):
@@ -114,20 +123,22 @@ class logik:
             if count1 == count:
                 break
             for j in range(count2):
+                if count2 == count:
+                    break
                 com = [count2, i]
                 if com[0] == com[1]:
                     pass
                 else:
-                    if com in combinations:
+                    if com in combinations: # check if the combination is already in the list
                         pass
-                    elif com[::-1] in combinations:
+                    elif com[::-1] in combinations: # check if the combination is already in the list
                         pass
                     else:
                         combinations.append(com)
                 count2 += 1
             count1 += 1
             return combinations
-                
+    
     
 class config:
     def __init__(self):
