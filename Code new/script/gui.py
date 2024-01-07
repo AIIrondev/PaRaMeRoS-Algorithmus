@@ -121,6 +121,8 @@ class logik:
                     if com in combinations:
                         pass
                     elif com[::-1] in combinations:
+                        pass
+                    else:
                         combinations.append(com)
                 count2 += 1
             count1 += 1
