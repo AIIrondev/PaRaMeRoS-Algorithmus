@@ -62,12 +62,11 @@ class main:
         self.combobox_var = tk2.StringVar()
         tk.CTkLabel(self.window, text="Configuration", font=("Arial", 25), text_color="black").place(x=75, y=25)
         tk.CTkLabel(self.window, text="Choose the Point count", font=("Arial", 25), text_color="black").place(x=75, y=75)
-        self.Option = tk.CTkComboBox(self.window, values=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"], variable=self.combobox_var).place(x=205, y=150)
+        self.Option = tk.CTkComboBox(self.window, values=["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "12", "13", "14", "15", "16", "17", "18", "19", "20"], variable=self.combobox_var).place(x=205, y=150) # vieleicht auch gegen Slider austauschen
         tk.CTkLabel(self.window, text="", font=("Arial", 25), text_color="black").place(x=75, y=200)
-        self.Entry = tk.CTkEntry(self.window, placeholder_text="Count of Connections betwen Points").place(x=205, y=200) # write this out and just leave the combobox for the count of points because evry point has to be connected with evry other point
         tk.CTkButton(self.window, text="Start", command=self.running, corner_radius=32, font=("Arial", 19)).place(x=205, y=250)
         tk.CTkButton(self.window, text="Back", command=self.main_menu, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
-
+        
     def main_load(self):
         self.reset_screen()
         pass
@@ -88,28 +87,33 @@ class main:
 
     def running(self): # add logik and extra frame for from point to point is Distance
         self.reset_screen()
+        print(self.Option1.get())
         self.entry_combobox = self.combobox_var.get() # geht jetzt nicht wie self.Entry.get() -> AttributeError: 'main' object has no attribute 'Entry'
+        print(self.entry_combobox)
         #try: # dann einfügen wenn deployed oder funktion ferig zum catchen if ein Input gegeben
-        self.fenster_liste = logik.get_combinations(self.entry_combobox) # -> add the right frame for the distances
-        tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="black").place(x=75, y=25) # change Titel
+        tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="grey").place(x=75, y=25) # change Titel
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
-        tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
+        tk.CTkButton(self.window, text="Help", font=("Arial", 16), bg_color="green", hover_color="darkgreen", corner_radius=32).place(x=75, y=100) # -> add help window
+        tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
         self.generate_form_1()
         #exept:
         #    self.error_window()
 
     def generate_form_1(self): # hier müssen die Punkte mit den jeweiligen Distanzen eingetragen werden gegebenen fals in einem neuen Fenster mit der logik -> logik.get_combinations(self.combobox_var.get()) und nur noch die distanzen eintragen
         # Evry Point has to be connected with evry other Point
-        self.fram = tk.CTkScrollableFrame(self.window, width=600, height=400, bg="transparent").place(x=0, y=100)
-        for element in self.fenster_liste:
-            print(element)
-            first_point = element[0]
-            second_point = element[1]
-            tk.CTkLabel(self.fram, text="From", font=("Arial", 16), text_color="black")
-            tk.CTkLabel(self.fram, text=str(first_point), font=("Arial", 16), text_color="black")
-            tk.CTkLabel(self.fram, text="To", font=("Arial", 16), text_color="black")
-            tk.CTkLabel(self.fram, text=str(second_point), font=("Arial", 16), text_color="black")
-            tk.CTkEntry(self.fram, placeholder_text="Distance")
+        self.fram = tk.CTkScrollableFrame(self.window, width=600, height=400).place(x=0, y=100)
+        fenster_liste = self.entry_combobox
+        print(fenster_liste)
+        tk.CTkLabel(self.fram, text="From", font=("Arial", 16), text_color="black").pack()
+        #for element1, element2 in fenster_liste:
+            #print(element1)
+            #first_point = element1
+            #second_point = element2
+            #tk.CTkLabel(self.fram, text="From", font=("Arial", 16), text_color="black").pack()
+            #tk.CTkLabel(self.fram, text=str(first_point), font=("Arial", 16), text_color="black").pack()
+            #tk.CTkLabel(self.fram, text="To", font=("Arial", 16), text_color="black").pack()
+            #tk.CTkLabel(self.fram, text=str(second_point), font=("Arial", 16), text_color="black").pack()
+            #tk.CTkEntry(self.fram, placeholder_text="Distance").pack()
             
     def error_window(self):
         tk2.messagebox.showerror("Error", "Please enter a number between 1 and 20")
@@ -119,8 +123,10 @@ class logik:
     def __init__(self):
         pass
 
-    def save_simulation(self):
-        pass
+    def save_simulation(self, count, option1, option2, file):
+        self.save_path = os.path.join(base_dir, "..", file)
+        with open(self.config_path, "w") as f:
+            f.write(f"{count}, {option1}, {option2}\n")
     
     def load_simulation(self):
         pass
