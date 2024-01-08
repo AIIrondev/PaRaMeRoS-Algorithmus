@@ -87,42 +87,22 @@ class main:
 
     def running(self): # add logik and extra frame for from point to point is Distance
         self.reset_screen()
-        self.entry_combobox = self.combobox_var.get() # geht jetzt nicht wie self.Entry.get() -> AttributeError: 'main' object has no attribute 'Entry'
-        print(self.entry_combobox)
+        fenster_liste = self.logic_instance.get_combinations(int(self.combobox_var.get()))  # geht jetzt nicht wie self.Entry.get() -> AttributeError: 'main' object has no attribute 'Entry'
         #try: # dann einfügen wenn deployed oder funktion ferig zum catchen if ein Input gegeben
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="grey").place(x=75, y=25) # change Titel
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
         tk.CTkButton(self.window, text="Help", font=("Arial", 16), bg_color="green", hover_color="darkgreen", corner_radius=32).place(x=75, y=100) # -> add help window
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
-        self.generate_form_1()
-        #exept:
-        #    self.error_window()
-
-    def generate_form_1(self): # hier müssen die Punkte mit den jeweiligen Distanzen eingetragen werden gegebenen fals in einem neuen Fenster mit der logik -> logik.get_combinations(self.combobox_var.get()) und nur noch die distanzen eintragen
         # Evry Point has to be connected with evry other Point
         self.fram = tk.CTkScrollableFrame(self.window, width=600, height=400).place(x=0, y=100)
-        fenster_liste = self.entry_combobox
-        print(fenster_liste)
-
-        # Hier fügst du die Logik zum Abrufen der Kombinationen hinzu
-        fenster_liste = self.logik.get_combinations(self.combobox_var.get())
-
-        # Erstelle das Scrollable Frame
+        fenster_liste = logik.get_combinations(self.entry_combobox)
         scrollable_frame = tk.Frame(self.window)
         scrollable_frame.place(x=0, y=100)
-
-        # Erstelle die Scrollbar
         scrollbar = tk.Scrollbar(scrollable_frame, orient="vertical")
         scrollbar.pack(side="right", fill="y")
-
-        # Erstelle den Canvas im Scrollable Frame
         canvas = tk.Canvas(scrollable_frame, yscrollcommand=scrollbar.set)
         canvas.pack(side="left", fill="both", expand=True)
-
-        # Konfiguriere die Scrollbar
         scrollbar.config(command=canvas.yview)
-
-        # Erstelle ein Frame im Canvas, um die Widgets anzuzeigen
         frame = tk.Frame(canvas)
         canvas.create_window((0, 0), window=frame, anchor="nw")
 
@@ -137,6 +117,8 @@ class main:
         # Konfiguriere das Canvas, um die Größe basierend auf dem Inhalt anzupassen
         frame.update_idletasks()
         canvas.config(scrollregion=canvas.bbox("all"))
+        #exept:
+        #    self.error_window()
             
     def error_window(self):
         tk2.messagebox.showerror("Error", "Please enter a number between 1 and 20")
@@ -157,8 +139,8 @@ class logik:
     def get_combinations(self, count):
         count1 = 0
         count2 = 0
-        combinations = [] # [[0,1], [0,2], [0,3], [0,4], [0,5], [0,6], [0,7], [0,8], [0,9], [1,2], [1,3], [1,4], [1,5], [1,6], [1,7], [1,8], [1,9], [2,3], [2,4], [2,5], [2,6], etc. until count is reached]
-        for i in range(count1): # finisch the logik for the combinations
+        combinations = []
+        for i in range(count1):
             if count1 == count:
                 break
             for j in range(count2):
@@ -168,15 +150,14 @@ class logik:
                 if com[0] == com[1]:
                     pass
                 else:
-                    if com in combinations: # check if the combination is already in the list
-                        pass
-                    elif com[::-1] in combinations: # check if the combination is already in the list
+                    if com in combinations or com[::-1] in combinations:
                         pass
                     else:
                         combinations.append(com)
                 count2 += 1
             count1 += 1
-            return combinations
+        return combinations
+
     
     
 class config:
