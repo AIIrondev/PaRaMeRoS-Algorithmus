@@ -42,7 +42,7 @@ class main:
         self.window.resizable(False, False)
         self.window._set_appearance_mode("light")
         self.window.iconbitmap(icon_path)
-
+        self.logic_instance = logik()
         self.main_menu()
         
     def main_menu(self):
@@ -95,7 +95,6 @@ class main:
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
         # Evry Point has to be connected with evry other Point
         self.fram = tk.CTkScrollableFrame(self.window, width=600, height=400).place(x=0, y=100)
-        fenster_liste = logik.get_combinations(self.entry_combobox)
         scrollable_frame = tk.Frame(self.window)
         scrollable_frame.place(x=0, y=100)
         scrollbar = tk.Scrollbar(scrollable_frame, orient="vertical")
@@ -158,7 +157,6 @@ class logik:
             count1 += 1
         return combinations
 
-    
     
 class config:
     def __init__(self):
