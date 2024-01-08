@@ -87,7 +87,6 @@ class main:
 
     def running(self): # add logik and extra frame for from point to point is Distance
         self.reset_screen()
-        print(self.Option1.get())
         self.entry_combobox = self.combobox_var.get() # geht jetzt nicht wie self.Entry.get() -> AttributeError: 'main' object has no attribute 'Entry'
         print(self.entry_combobox)
         #try: # dann einfügen wenn deployed oder funktion ferig zum catchen if ein Input gegeben
@@ -104,16 +103,40 @@ class main:
         self.fram = tk.CTkScrollableFrame(self.window, width=600, height=400).place(x=0, y=100)
         fenster_liste = self.entry_combobox
         print(fenster_liste)
-        tk.CTkLabel(self.fram, text="From", font=("Arial", 16), text_color="black").pack()
-        #for element1, element2 in fenster_liste:
-            #print(element1)
-            #first_point = element1
-            #second_point = element2
-            #tk.CTkLabel(self.fram, text="From", font=("Arial", 16), text_color="black").pack()
-            #tk.CTkLabel(self.fram, text=str(first_point), font=("Arial", 16), text_color="black").pack()
-            #tk.CTkLabel(self.fram, text="To", font=("Arial", 16), text_color="black").pack()
-            #tk.CTkLabel(self.fram, text=str(second_point), font=("Arial", 16), text_color="black").pack()
-            #tk.CTkEntry(self.fram, placeholder_text="Distance").pack()
+
+        # Hier fügst du die Logik zum Abrufen der Kombinationen hinzu
+        fenster_liste = self.logik.get_combinations(self.combobox_var.get())
+
+        # Erstelle das Scrollable Frame
+        scrollable_frame = tk.Frame(self.window)
+        scrollable_frame.place(x=0, y=100)
+
+        # Erstelle die Scrollbar
+        scrollbar = tk.Scrollbar(scrollable_frame, orient="vertical")
+        scrollbar.pack(side="right", fill="y")
+
+        # Erstelle den Canvas im Scrollable Frame
+        canvas = tk.Canvas(scrollable_frame, yscrollcommand=scrollbar.set)
+        canvas.pack(side="left", fill="both", expand=True)
+
+        # Konfiguriere die Scrollbar
+        scrollbar.config(command=canvas.yview)
+
+        # Erstelle ein Frame im Canvas, um die Widgets anzuzeigen
+        frame = tk.Frame(canvas)
+        canvas.create_window((0, 0), window=frame, anchor="nw")
+
+        # Iteriere durch die Kombinationen und erstelle Labels und Entry für jedes Paar
+        for element1, element2 in fenster_liste:
+            tk.Label(frame, text="From", font=("Arial", 16), text_color="black").pack()
+            tk.Label(frame, text=str(element1), font=("Arial", 16), text_color="black").pack()
+            tk.Label(frame, text="To", font=("Arial", 16), text_color="black").pack()
+            tk.Label(frame, text=str(element2), font=("Arial", 16), text_color="black").pack()
+            tk.Entry(frame, placeholder_text="Distance").pack()
+
+        # Konfiguriere das Canvas, um die Größe basierend auf dem Inhalt anzupassen
+        frame.update_idletasks()
+        canvas.config(scrollregion=canvas.bbox("all"))
             
     def error_window(self):
         tk2.messagebox.showerror("Error", "Please enter a number between 1 and 20")
