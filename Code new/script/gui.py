@@ -39,8 +39,8 @@ class main:
     def __init__(self):
         self.window = tk.CTk()
         self.window.title("Algorithmus")
-        self.window.geometry("600x400")
-        self.window.resizable(False, False)
+        self.window.geometry("600x420")
+        self.window.resizable(True, True)
         self.window._set_appearance_mode("light")
         self.window.iconbitmap(icon_path)
         self.logic_instance = logik()
@@ -98,19 +98,15 @@ class main:
         tk.CTkButton(self.window, text="Help", font=("Arial", 16), fg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
-        # Create a scrollable canvas on the main window
         scrollable_frame = tk.CTkCanvas(self.window)
-        scrollable_frame.place(x=0, y=150, relwidth=1, relheight=1)  # Adjust the starting position as needed
+        scrollable_frame.place(x=0, y=150, relwidth=3, relheight=1)
 
-        # Create a frame inside the canvas
         frame = tk.CTkFrame(scrollable_frame)
         scrollable_frame.create_window((0, 0), window=frame, anchor="nw")
 
-        # Create a themed vertical scrollbar
         scrollbar = ttk.Scrollbar(self.window, orient="vertical", command=scrollable_frame.yview)
         scrollbar.place(x=self.window.winfo_width() - scrollbar.winfo_reqwidth(), y=150, height=scrollable_frame.winfo_reqheight())
 
-        # Configure the canvas to scroll
         scrollable_frame.config(scrollregion=scrollable_frame.bbox("all"), yscrollcommand=scrollbar.set)
 
         for element1, element2 in fenster_liste:
