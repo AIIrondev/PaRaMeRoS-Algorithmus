@@ -128,6 +128,9 @@ class main:
 
         frame.update_idletasks()
 
+    def save_gui(self):
+        pass # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
+
     def error_window(self):
         tk2.messagebox.showerror("Error", "Please enter a number between 1 and 20")
 
