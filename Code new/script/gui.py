@@ -96,7 +96,7 @@ class main:
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="grey").place(x=75, y=25)
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
         tk.CTkButton(self.window, text="Help", font=("Arial", 16), fg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
-        tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=lambda: self.save_gui).place(x=125, y=100)
+        tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=lambda: self.save_gui).place(x=225, y=100)
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
         scrollable_frame = tk.CTkCanvas(self.window)
