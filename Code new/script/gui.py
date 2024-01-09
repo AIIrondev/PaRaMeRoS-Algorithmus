@@ -89,13 +89,14 @@ class main:
     def help(self):
         tk2.messagebox.showinfo("Help", "Please enter the distances between the points in the order that they are displayed. \n\nExample: \nFrom: 1 \nTo: 2 \nDistance: 5 \n\nFrom: 1 \nTo: 3 \nDistance: 4 \n\n If you have any more questions, please contact me on Github: @PaRaMeRoS/Algorithmus or via E-Mail: PaRaMeRoS@mein.gmx \n\n Have fun!")
 
-    def running(self):
+    def running(self): # Scrollscreen ausbessern
         self.reset_screen()
         fenster_liste = self.logic_instance.get_combinations(int(self.combobox_var.get()))
 
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="grey").place(x=75, y=25)
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
         tk.CTkButton(self.window, text="Help", font=("Arial", 16), fg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
+        tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=lambda: self.save_gui).place(x=125, y=100)
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
         scrollable_frame = tk.CTkCanvas(self.window)
