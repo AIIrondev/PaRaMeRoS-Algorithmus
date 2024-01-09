@@ -26,8 +26,9 @@ For older versions, the above legal terms and conditions will remain valid from 
 
 # import modules
 import customtkinter as tk
-import tkinter as tk2
 import os
+import tkinter as tk2
+from tkinter import ttk
 
 # var definition
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -85,40 +86,42 @@ class main:
 #        # Hier noch die Elemente hinzufügen
 #        self.window1.mainloop()
 
-    def running(self): # add logik and extra frame for from point to point is Distance
+    def help(self):
+        tk2.messagebox.showinfo("Help", "Please enter the distances between the points in the order that they are displayed. \n\nExample: \nFrom: 1 \nTo: 2 \nDistance: 5 \n\nFrom: 1 \nTo: 3 \nDistance: 4 \n\n If you have any more questions, please contact me on Github: @PaRaMeRoS/Algorithmus or via E-Mail: PaRaMeRoS@mein.gmx \n\n Have fun!")
+
+    def running(self):
         self.reset_screen()
-        fenster_liste = self.logic_instance.get_combinations(int(self.combobox_var.get()))  # geht jetzt nicht wie self.Entry.get() -> AttributeError: 'main' object has no attribute 'Entry'
-        #try: # dann einfügen wenn deployed oder funktion ferig zum catchen if ein Input gegeben
-        tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="grey").place(x=75, y=25) # change Titel
+        fenster_liste = self.logic_instance.get_combinations(int(self.combobox_var.get()))
+
+        tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="grey").place(x=75, y=25)
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
-        tk.CTkButton(self.window, text="Help", font=("Arial", 16), bg_color="green", hover_color="darkgreen", corner_radius=32).place(x=75, y=100) # -> add help window
+        tk.CTkButton(self.window, text="Help", font=("Arial", 16), fg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
-        # Evry Point has to be connected with evry other Point
-        self.fram = tk.CTkScrollableFrame(self.window, width=600, height=400).place(x=0, y=100)
-        scrollable_frame = tk.Frame(self.window)
-        scrollable_frame.place(x=0, y=100)
-        scrollbar = tk.Scrollbar(scrollable_frame, orient="vertical")
-        scrollbar.pack(side="right", fill="y")
-        canvas = tk.Canvas(scrollable_frame, yscrollcommand=scrollbar.set)
-        canvas.pack(side="left", fill="both", expand=True)
-        scrollbar.config(command=canvas.yview)
-        frame = tk.Frame(canvas)
-        canvas.create_window((0, 0), window=frame, anchor="nw")
 
-        # Iteriere durch die Kombinationen und erstelle Labels und Entry für jedes Paar
+        # Create a scrollable canvas on the main window
+        scrollable_frame = tk.CTkCanvas(self.window)
+        scrollable_frame.place(x=0, y=150, relwidth=1, relheight=1)  # Adjust the starting position as needed
+
+        # Create a frame inside the canvas
+        frame = tk.CTkFrame(scrollable_frame)
+        scrollable_frame.create_window((0, 0), window=frame, anchor="nw")
+
+        # Create a themed vertical scrollbar
+        scrollbar = ttk.Scrollbar(self.window, orient="vertical", command=scrollable_frame.yview)
+        scrollbar.place(x=self.window.winfo_width() - scrollbar.winfo_reqwidth(), y=150, height=scrollable_frame.winfo_reqheight())
+
+        # Configure the canvas to scroll
+        scrollable_frame.config(scrollregion=scrollable_frame.bbox("all"), yscrollcommand=scrollbar.set)
+
         for element1, element2 in fenster_liste:
-            tk.Label(frame, text="From", font=("Arial", 16), text_color="black").pack()
-            tk.Label(frame, text=str(element1), font=("Arial", 16), text_color="black").pack()
-            tk.Label(frame, text="To", font=("Arial", 16), text_color="black").pack()
-            tk.Label(frame, text=str(element2), font=("Arial", 16), text_color="black").pack()
-            tk.Entry(frame, placeholder_text="Distance").pack()
+            tk.CTkLabel(frame, text="From", font=("Arial", 16), text_color="black").pack()
+            tk.CTkLabel(frame, text=str(element1), font=("Arial", 16), text_color="black").pack()
+            tk.CTkLabel(frame, text="To", font=("Arial", 16), text_color="black").pack()
+            tk.CTkLabel(frame, text=str(element2), font=("Arial", 16), text_color="black").pack()
+            tk.CTkEntry(frame, placeholder_text="Distance").pack()
 
-        # Konfiguriere das Canvas, um die Größe basierend auf dem Inhalt anzupassen
         frame.update_idletasks()
-        canvas.config(scrollregion=canvas.bbox("all"))
-        #exept:
-        #    self.error_window()
-            
+
     def error_window(self):
         tk2.messagebox.showerror("Error", "Please enter a number between 1 and 20")
 
@@ -136,25 +139,13 @@ class logik:
         pass
 
     def get_combinations(self, count):
-        count1 = 0
-        count2 = 0
         combinations = []
-        for i in range(count1):
-            if count1 == count:
-                break
-            for j in range(count2):
-                if count2 == count:
-                    break
-                com = [count2, i]
-                if com[0] == com[1]:
-                    pass
-                else:
-                    if com in combinations or com[::-1] in combinations:
-                        pass
-                    else:
+        for i in range(count):
+            for j in range(count):
+                if i != j:
+                    com = [i, j]
+                    if com not in combinations and com[::-1] not in combinations:
                         combinations.append(com)
-                count2 += 1
-            count1 += 1
         return combinations
 
     
