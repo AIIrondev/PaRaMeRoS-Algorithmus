@@ -110,11 +110,16 @@ class main:
         scrollable_frame.config(scrollregion=scrollable_frame.bbox("all"), yscrollcommand=scrollbar.set)
 
         for element1, element2 in fenster_liste:
-            tk.CTkLabel(frame, text="From", font=("Arial", 16), text_color="black").pack()
-            tk.CTkLabel(frame, text=str(element1), font=("Arial", 16), text_color="black").pack()
-            tk.CTkLabel(frame, text="To", font=("Arial", 16), text_color="black").pack()
-            tk.CTkLabel(frame, text=str(element2), font=("Arial", 16), text_color="black").pack()
-            tk.CTkEntry(frame, placeholder_text="Distance").pack()
+            # Erstelle ein neues Frame für jede Iteration
+            inner_frame = tk.CTkFrame(frame)
+            inner_frame.pack()
+        
+            tk.CTkLabel(inner_frame, text="From", font=("Arial", 16), text_color="black").pack(side="left")
+            tk.CTkLabel(inner_frame, text=str(element1), font=("Arial", 16), text_color="black").pack(side="left")
+            tk.CTkLabel(inner_frame, text="To", font=("Arial", 16), text_color="black").pack(side="left")
+            tk.CTkLabel(inner_frame, text=str(element2), font=("Arial", 16), text_color="black").pack(side="left")
+            tk.CTkEntry(inner_frame, placeholder_text="Distance").pack(side="left")
+
 
         frame.update_idletasks()
 
