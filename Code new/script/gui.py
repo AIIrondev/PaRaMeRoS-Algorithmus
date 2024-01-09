@@ -95,33 +95,37 @@ class main:
 
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="grey").place(x=75, y=25)
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
-        tk.CTkButton(self.window, text="Help", font=("Arial", 16), fg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
+        tk.CTkButton(self.window, text="Help", font=("Arial", 16), bg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
-        scrollable_frame = tk.CTkCanvas(self.window)
-        scrollable_frame.place(x=0, y=150, relwidth=3, relheight=1)
+        # Erstelle ein scrollbares Canvas im Hauptfenster
+        scrollable_frame = tk.CTkCanvas(self.window, bg_color="white")  # Hintergrundfarbe auf Weiß gesetzt
+        scrollable_frame.place(x=0, y=150, relwidth=1, relheight=1)
 
-        frame = tk.CTkFrame(scrollable_frame)
+        # Erstelle einen Rahmen innerhalb des Canvas
+        frame = tk.CTkFrame(scrollable_frame, bg_color="white")  # Hintergrundfarbe auf Weiß gesetzt
         scrollable_frame.create_window((0, 0), window=frame, anchor="nw")
 
-        scrollbar = ttk.Scrollbar(self.window, orient="vertical", command=scrollable_frame.yview)
+        # Erstelle einen vertikalen Scrollbar
+        scrollbar = tk.CTkScrollbar(self.window, orient="vertical", command=scrollable_frame.yview)
         scrollbar.place(x=self.window.winfo_width() - scrollbar.winfo_reqwidth(), y=150, height=scrollable_frame.winfo_reqheight())
 
+        # Konfiguriere das Canvas zum Scrollen
         scrollable_frame.config(scrollregion=scrollable_frame.bbox("all"), yscrollcommand=scrollbar.set)
 
         for element1, element2 in fenster_liste:
             # Erstelle ein neues Frame für jede Iteration
-            inner_frame = tk.CTkFrame(frame)
-            inner_frame.pack()
-        
+            inner_frame = tk.CTkFrame(frame, bg_color="white")  # Hintergrundfarbe auf Weiß gesetzt
+            inner_frame.pack(fill="x")
+
             tk.CTkLabel(inner_frame, text="From", font=("Arial", 16), text_color="black").pack(side="left")
             tk.CTkLabel(inner_frame, text=str(element1), font=("Arial", 16), text_color="black").pack(side="left")
             tk.CTkLabel(inner_frame, text="To", font=("Arial", 16), text_color="black").pack(side="left")
             tk.CTkLabel(inner_frame, text=str(element2), font=("Arial", 16), text_color="black").pack(side="left")
             tk.CTkEntry(inner_frame, placeholder_text="Distance").pack(side="left")
 
-
         frame.update_idletasks()
+
 
     def error_window(self):
         tk2.messagebox.showerror("Error", "Please enter a number between 1 and 20")
