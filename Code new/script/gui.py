@@ -22,8 +22,6 @@ excluding older or custom versions from third parties.
 For older versions, the above legal terms and conditions will remain valid from the year 2023 onwards.
 '''
 
-
-
 # import modules
 import customtkinter as tk
 import os
