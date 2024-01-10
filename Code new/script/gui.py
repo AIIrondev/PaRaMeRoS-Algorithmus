@@ -112,7 +112,7 @@ class main:
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="grey").place(x=75, y=25)
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
         tk.CTkButton(self.window, text="Help", font=("Arial", 16), fg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
-        tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=lambda: self.save_gui).place(x=225, y=100)
+        tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=self.save_gui).place(x=225, y=100)
         tk.CTkButton(self.window, text="Render", font=("Arial", 16), corner_radius=32, command=self.render).place(x=375, y=100)	
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
@@ -131,6 +131,7 @@ class main:
         frame.bind("<Configure>", update_scrollregion)
         scrollable_frame.config(yscrollcommand=scrollbar.set)
 
+        self.distance = []
         for element1, element2 in fenster_liste:
             # Erstelle ein neues Frame für jede Iteration
             inner_frame = tk.CTkFrame(frame)
@@ -150,6 +151,7 @@ class main:
         # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
         count = self.combobox
         Distance_list = self.distance
+        self.path = ""
         self.window3 = tk.CTk()
         self.window3.title("Algorithmus _Save")
         self.window3.geometry("600x420")
@@ -164,6 +166,7 @@ class main:
         tk.CTkLabel(self.window3, text="Enter Simulation Name: ", font=("Arial", 16)).place(x=75, y=150)
         tk.CTkEntry(self.window3, placeholder_text="Simulation Name").place(x=125, y=150)
         #tk.CTkButton(self.window3, text="Save", font=("Arial", 16), command=lambda: self.logic_instance.save_simulation().place(x=75, y=100)# Add right command
+        tk.CTkButton(self.window3, text="Break", command=self.window3.destroy, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
         self.window3.mainloop()
 
     def error_window(self):
