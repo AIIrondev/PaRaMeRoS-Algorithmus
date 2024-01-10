@@ -75,16 +75,29 @@ class main:
     def reset_screen(self):
         for widget in self.window.winfo_children():
             widget.destroy()
+            
+    def render(self):
+        self.active_task = "saving"  # file ausgelesern werden
+        self.running_done = 50  # Set the initial value (you can change this)
+        self.window2 = tk.CTk()
+        self.window2.title("Algorithmus _Render")
+        self.window2.geometry("600x420")
+        self.window2.resizable(True, True)
+        self.window2._set_appearance_mode("light")
+        # self.window2.iconbitmap(icon_path)  # Uncomment this line if you have the icon_path defined
 
-#    def new_window_render(self): 
-#        self.window1 = tk.CTk()
-#        self.window1.titel("Render") # AttributeError: '_tkinter.tkapp' object has no attribute 'titel'
-#        self.window1.geometry("600x400")
-#        self.window1.resizable(False, False)
-#        self.window1._set_appearance_mode("light")
-#        self.window1.iconbitmap(icon_path)
-#        # Hier noch die Elemente hinzufügen
-#        self.window1.mainloop()
+        tk.CTkLabel(self.window2, text="Render", font=("Arial", 25)).place(x=75, y=25)
+
+        match self.active_task:
+            case "saving":
+                tk.CTkLabel(self.window2, text="saving", font=("Arial", 25)).place(x=125, y=75)
+                self.scrollbar = ttk.Progressbar(self.window2, orient='horizontal', mode='determinate', length=280, maximum=100, value=self.running_done).place(x=150, y=150)
+            case "dijkstra":
+                tk.CTkLabel(self.window2, text="dijkstra", font=("Arial", 25)).place(x=75, y=75)
+            case "A*":
+                tk.CTkLabel(self.window2, text="A*", font=("Arial", 25)).place(x=75, y=75)
+
+        self.window2.mainloop()
 
     def help(self):
         tk2.messagebox.showinfo("Help", "Please enter the distances between the points in the order that they are displayed. \n\nExample: \nFrom: 1 \nTo: 2 \nDistance: 5 \n\nFrom: 1 \nTo: 3 \nDistance: 4 \n\n If you have any more questions, please contact me on Github: @PaRaMeRoS/Algorithmus or via E-Mail: PaRaMeRoS@mein.gmx \n\n Have fun!")
@@ -97,6 +110,7 @@ class main:
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
         tk.CTkButton(self.window, text="Help", font=("Arial", 16), fg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
         tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=lambda: self.save_gui).place(x=225, y=100)
+        tk.CTkButton(self.window, text="Render", font=("Arial", 16), corner_radius=32, command=self.render).place(x=375, y=100)	
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
         scrollable_frame = tk.CTkCanvas(self.window)
