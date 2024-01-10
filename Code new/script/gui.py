@@ -78,7 +78,7 @@ class main:
             widget.destroy()
             
     def render(self):
-        logik.save_simulation(self, int(self.combobox_var.get()), "dijkstra", "A*", "simulation.txt")
+        self.save_gui()
         self.active_task = "saving"  # file ausgelesern werden
         self.running_done = 50  # Set the initial value (you can change this)
         self.window2 = tk.CTk()
@@ -106,7 +106,8 @@ class main:
 
     def running(self): # Scrollscreen ausbessern
         self.reset_screen()
-        fenster_liste = self.logic_instance.get_combinations(int(self.combobox_var.get()))
+        self.combobox = int(self.combobox_var.get())
+        fenster_liste = self.logic_instance.get_combinations(self.combobox)
 
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="grey").place(x=75, y=25)
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
@@ -134,41 +135,54 @@ class main:
             # Erstelle ein neues Frame für jede Iteration
             inner_frame = tk.CTkFrame(frame)
             inner_frame.pack()
-        
-            tk.CTkLabel(inner_frame, text="From", font=("Arial", 16), text_color="black").pack(side="left")
-            tk.CTkLabel(inner_frame, text=str(element1), font=("Arial", 16), text_color="black").pack(side="left")
-            tk.CTkLabel(inner_frame, text="To", font=("Arial", 16), text_color="black").pack(side="left")
-            tk.CTkLabel(inner_frame, text=str(element2), font=("Arial", 16), text_color="black").pack(side="left")
-            tk.CTkEntry(inner_frame, placeholder_text="Distance").pack(side="left")
 
+            tk.CTkLabel(inner_frame, text="From ", font=("Arial", 16), text_color="black").pack(side="left")
+            tk.CTkLabel(inner_frame, text=str(element1), font=("Arial", 16), text_color="black").pack(side="left")
+            tk.CTkLabel(inner_frame, text="To ", font=("Arial", 16), text_color="black").pack(side="left")
+            tk.CTkLabel(inner_frame, text=str(element2), font=("Arial", 16), text_color="black").pack(side="left")
+            distance_entry = tk.CTkEntry(inner_frame, placeholder_text="Distance")
+            distance_entry.pack(side="left")
+            self.distance.append(distance_entry.get())
 
         frame.update_idletasks()
 
     def save_gui(self):
-        pass # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
+        # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
+        count = self.combobox
+        Distance_list = self.distance
         self.window3 = tk.CTk()
         self.window3.title("Algorithmus _Save")
         self.window3.geometry("600x420")
         self.window3.resizable(True, True)
         self.window3._set_appearance_mode("light")
         self.window3.iconbitmap(icon_path)
-        
+        tk.CTkLabel(self.window3, text="Save", font=("Arial", 25)).place(x=75, y=25)
+        tk.CTkButton(self.window3, text="Select Path", font=("Arial", 16), command=self.get_path).place(x=75, y=75)
+        tk.CTkLabel(self.window3, text=self.path, font=("Arial", 16)).place(x=75, y=50)
+        tk.CTkLabel(self.window3, text="Enter Author: ", font=("Arial", 16)).place(x=75, y=200)
+        tk.CTkEntry(self.window3, placeholder_text="Author").place(x=125, y=200)
+        tk.CTkLabel(self.window3, text="Enter Simulation Name: ", font=("Arial", 16)).place(x=75, y=150)
+        tk.CTkEntry(self.window3, placeholder_text="Simulation Name").place(x=125, y=150)
+        #tk.CTkButton(self.window3, text="Save", font=("Arial", 16), command=lambda: self.logic_instance.save_simulation().place(x=75, y=100)# Add right command
         self.window3.mainloop()
 
     def error_window(self):
         tk2.messagebox.showerror("Error", "Please enter a number between 1 and 20")
+
+    def get_path(self):
+        self.path = tk2.filedialog.askdirectory(initialdir="/", title="Select Path")
 
 
 class logik:
     def __init__(self):
         pass
 
-    def save_simulation(self, file_path, count, Distance_list, ERDATE, AUTOR):
+    def save_simulation(self, file_path, file_name, count, Distance_list, ERDATE, AUTOR):
         POINTS = count  # POINTS -> Anzahl der Punkte
         ERDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
         BEDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
         EDIT = 1 # EDIT -> wie oft bearbeitet
-        self.save_path = file_path
+        self.save_path = file_path + file_name + "/simulation.txt"
         with open(file_path, "w") as file:
             file.write(str(POINTS) + "\n")
             file.write(str(ERDATE) + "\n")
