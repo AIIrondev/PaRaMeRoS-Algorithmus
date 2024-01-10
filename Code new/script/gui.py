@@ -77,6 +77,7 @@ class main:
             widget.destroy()
             
     def render(self):
+        logik.save_simulation(self, int(self.combobox_var.get()), "dijkstra", "A*", "simulation.txt")
         self.active_task = "saving"  # file ausgelesern werden
         self.running_done = 50  # Set the initial value (you can change this)
         self.window2 = tk.CTk()
@@ -84,7 +85,7 @@ class main:
         self.window2.geometry("600x420")
         self.window2.resizable(True, True)
         self.window2._set_appearance_mode("light")
-        # self.window2.iconbitmap(icon_path)  # Uncomment this line if you have the icon_path defined
+        self.window2.iconbitmap(icon_path)
 
         tk.CTkLabel(self.window2, text="Render", font=("Arial", 25)).place(x=75, y=25)
 
@@ -144,6 +145,14 @@ class main:
 
     def save_gui(self):
         pass # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
+        self.window3 = tk.CTk()
+        self.window3.title("Algorithmus _Save")
+        self.window3.geometry("600x420")
+        self.window3.resizable(True, True)
+        self.window3._set_appearance_mode("light")
+        self.window3.iconbitmap(icon_path)
+        
+        self.window3.mainloop()
 
     def error_window(self):
         tk2.messagebox.showerror("Error", "Please enter a number between 1 and 20")
