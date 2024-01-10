@@ -29,6 +29,7 @@ import customtkinter as tk
 import os
 import tkinter as tk2
 from tkinter import ttk
+import datetime
 
 # var definition
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -162,10 +163,20 @@ class logik:
     def __init__(self):
         pass
 
-    def save_simulation(self, count, option1, option2, file):
-        self.save_path = os.path.join(base_dir, "..", file)
-        with open(self.config_path, "w") as f:
-            f.write(f"{count}, {option1}, {option2}\n")
+    def save_simulation(self, file_path, count, Distance_list, ERDATE, AUTOR):
+        POINTS = count  # POINTS -> Anzahl der Punkte
+        ERDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
+        BEDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
+        EDIT = 1 # EDIT -> wie oft bearbeitet
+        self.save_path = file_path
+        with open(file_path, "w") as file:
+            file.write(str(POINTS) + "\n")
+            file.write(str(ERDATE) + "\n")
+            file.write(str(BEDATE) + "\n")
+            file.write(str(Distance_list) + "\n")
+            file.write(str(AUTOR) + "\n")
+            file.write(str(EDIT) + "\n")
+        
     
     def load_simulation(self):
         pass
