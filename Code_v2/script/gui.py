@@ -28,6 +28,7 @@ import os
 import tkinter as tk2
 from tkinter import ttk
 import datetime
+import shutil
 
 # var definition
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -221,10 +222,23 @@ class logik:
         points = get_combinations(self.combobox)
         list_combinations = points.append(distance_list)
         with open("points.txt", "w") as file:
+            file.truncate(0)
             for point1, point2, distance in distance_list:
-                file.write(str(point1) + ", " + str(point2) + ", " + str(distance) + "\n")
+                file.append(str(point1) + ", " + str(point2) + ", " + str(distance) + "\n")
         ## 2.Schritt
         os.system("python3 " + os.path.join(base_dir, "..", "script", "dijkstra.py"))
+        ## 3.Schritt
+        waiting = True
+        while waiting:
+            if os.path.exists(os.path.join(base_dir, "..", "export_folder", "shortest_path_a_star.png")):
+                waiting = False
+                gui.display_rendert_path()
+                shutil.move(os.path.join(base_dir, "..", "export_folder", "shortest_path_a_star.png"), os.path.join(base_dir, "..", "export_folder", "shortest_path.png"))
+            else:
+                pass
+                
+            
+                    
                     
 class config:
     def __init__(self):
