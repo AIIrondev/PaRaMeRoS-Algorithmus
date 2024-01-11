@@ -73,6 +73,7 @@ class main:
         tk.CTkButton(self.window, text="Select Path", font=("Arial", 16), text_color="black", command=self.get_path).place(x=75, y=75)
         tk.CTkButton(self.window, text="Back", command=self.main_menu, corner_radius=32, font=("Arial", 19)).place(x=205, y=300)
         tk.CTkButton(self.window, text="Load", command=self.logic_instance.load_simulation, corner_radius=32, font=("Arial", 19)).place(x=205, y=250)
+        tk.CTkLabel(self.window, text="this is work in Progress", font=("Arial", 16), text_color="red").place(x=250, y=200)
         def get_path(self):
             self.path_load = tk2.filedialog.askdirectory(initialdir="/", title="Select Path")
             tk.CTkLabel(self.window, text=self.path_load, font=("Arial", 16)).place(x=75, y=50)
