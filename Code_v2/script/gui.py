@@ -214,6 +214,10 @@ class logik:
         return combinations
     
     def render(self, distance_list):
+        # 1. Schritt: Alle Punkte in einer Liste speichern und in ein File speichern
+        # 2. Schritt: Dijkstra Algorithmus starten -> danach A* Algorithmus starten
+        # 3. Schritt: Finisched PAth displayen und in ein File speichern
+        
         
 
     
