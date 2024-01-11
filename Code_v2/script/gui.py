@@ -181,6 +181,17 @@ class main:
     def get_path(self):
         self.path = tk2.filedialog.askdirectory(initialdir="/", title="Select Path")
 
+    def display_rendert_path(self, result, file):
+        self.window4 = tk.CTk()
+        self.window4.title("Algorithmus _Render_result")
+        self.window4.geometry("600x420")
+        self.window4.resizable(True, True)
+        self.window4._set_appearance_mode("light")
+        self.window4.iconbitmap(icon_path)
+        tk.CTkLabel(self.window4, text="Render", font=("Arial", 25)).place(x=75, y=25)
+        tk.CTkLabel(self.window4, text="The shortest Path is: ", font=("Arial", 16)).place(x=75, y=75)
+        tk.CTkLabel(self.window4, text=result, font=("Arial", 16)).place(x=75, y=100)
+        tk2.PhotoImage(file=file, width=200, height=100).place(x=75, y=125)
 
 class logik:
     def __init__(self):
