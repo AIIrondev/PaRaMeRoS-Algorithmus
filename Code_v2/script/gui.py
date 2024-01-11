@@ -94,17 +94,8 @@ class main:
         self.window2._set_appearance_mode("light")
         self.window2.iconbitmap(icon_path)
         logik.render()
-        tk.CTkLabel(self.window2, text="Render", font=("Arial", 25)).place(x=75, y=25)
-
-        match self.active_task:
-            case "saving":
-                tk.CTkLabel(self.window2, text="saving", font=("Arial", 25)).place(x=125, y=75)
-                self.scrollbar = ttk.Progressbar(self.window2, orient='horizontal', mode='determinate', length=280, maximum=100, value=self.running_done).place(x=150, y=150)
-            case "dijkstra":
-                tk.CTkLabel(self.window2, text="dijkstra", font=("Arial", 25)).place(x=75, y=75)
-            case "A*":
-                tk.CTkLabel(self.window2, text="A*", font=("Arial", 25)).place(x=75, y=75)
-
+        tk.CTkLabel(self.window2, text="Render", font=("Arial", 25)).place(x=75, y=25) 
+        tk.CTkLabel(self.window2, text="The simulation is being rendered", font=("Arial", 16)).place(x=75, y=75)
         self.window2.mainloop()
 
     def help(self):
@@ -192,6 +183,7 @@ class main:
         tk.CTkLabel(self.window4, text="The shortest Path is: ", font=("Arial", 16)).place(x=75, y=75)
         tk.CTkLabel(self.window4, text=result, font=("Arial", 16)).place(x=75, y=100)
         tk2.PhotoImage(file=file, width=200, height=100).place(x=75, y=125)
+        tk.CTkButton(self.window4, text="Break", command=self.window4.destroy, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
 class logik:
     def __init__(self):
@@ -243,6 +235,8 @@ class logik:
         while waiting:
             if os.path.exists(os.path.join(base_dir, "..", "export_folder", "shortest_path_a_star.png")):
                 waiting = False
+                with open("shortest_path.txt", "r") as file:
+                    result = file.read()
                 gui.display_rendert_path()
                 shutil.move(os.path.join(base_dir, "..", "export_folder", "shortest_path_a_star.png"), os.path.join(base_dir, "..", "export_folder", "shortest_path.png"))
             else:

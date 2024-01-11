@@ -120,7 +120,7 @@ class Graph:
 
 # Read the graph data from the CSV file
 data = []
-with open(os.path.join(csv_folder, "dijkstra_data_1.csv"), "r") as file:
+with open(os.path.join(config_file, "Dijkstra_data.csv"), "r") as file:
     _get_status("In Progress", "25")
     #logger.info('open file')
     reader = csv.reader(file)
