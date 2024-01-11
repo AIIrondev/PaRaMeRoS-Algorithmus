@@ -255,3 +255,4 @@ save_coordinates_to_csv(coordinates_list, coordinates_filename)
 
 logging.info('Programm erfolgreich beendet')
 _get_status("Completed", "100")
+os.system("python3 " + os.path.join(base_dir, "..", "script", "A_star.py"))

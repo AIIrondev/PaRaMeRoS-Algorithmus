@@ -217,10 +217,15 @@ class logik:
         # 1. Schritt: Alle Punkte in einer Liste speichern und in ein File speichern
         # 2. Schritt: Dijkstra Algorithmus starten -> danach A* Algorithmus starten
         # 3. Schritt: Finisched PAth displayen und in ein File speichern
-        
-        
-
-    
+        ## 1.Schritt
+        points = get_combinations(self.combobox)
+        list_combinations = points.append(distance_list)
+        with open("points.txt", "w") as file:
+            for point1, point2, distance in distance_list:
+                file.write(str(point1) + ", " + str(point2) + ", " + str(distance) + "\n")
+        ## 2.Schritt
+        os.system("python3 " + os.path.join(base_dir, "..", "script", "dijkstra.py"))
+                    
 class config:
     def __init__(self):
         pass
