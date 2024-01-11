@@ -83,7 +83,7 @@ class main:
             widget.destroy()
             
     def render(self):
-        self.save_gui()
+        # self.save_gui() # Speicherfunktion muss noch eingebaut werden
         self.active_task = "saving"  # file ausgelesern werden
         self.running_done = 50  # Set the initial value (you can change this)
         self.window2 = tk.CTk()
@@ -92,7 +92,7 @@ class main:
         self.window2.resizable(True, True)
         self.window2._set_appearance_mode("light")
         self.window2.iconbitmap(icon_path)
-
+        logik.render()
         tk.CTkLabel(self.window2, text="Render", font=("Arial", 25)).place(x=75, y=25)
 
         match self.active_task:
@@ -212,6 +212,9 @@ class logik:
                     if com not in combinations and com[::-1] not in combinations:
                         combinations.append(com)
         return combinations
+    
+    def render(self, distance_list):
+        
 
     
 class config:

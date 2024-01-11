@@ -32,9 +32,12 @@ import matplotlib.pyplot as plt
 
 # Festlegung der Ordner für CSV-Dateien und Log-Dateien
 csv_folder = '../csv_files'
+config_file = '../config'
 log_folder = '../log_files'
+if not os.path.exists(config_file):
+    os.makedirs(config_file)
 data = {}  # Eine leere Datenstruktur zur Aufbewahrung von Informationen
-
+'''
 # Konfigurieren des Loggers für die Protokollierung von Informationen
 logger = logging.getLogger('A_star.py')
 logger.setLevel(logging.DEBUG)
@@ -44,7 +47,28 @@ logger.addHandler(fh)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 fh.setFormatter(formatter)
 logger.addHandler(fh)
-
+'''
+def _get_status(status, progress):
+    match status:
+        case "Not Started":
+            with open(os.path.join(config_file, "status.fll"), "w") as file:
+                file.write("Not Started")
+                file.append("\n1")
+        case "In Progress":
+            with open(os.path.join(config_file, "status.fll"), "w") as file:
+                file.write("In Progress")
+                file.append("\n{progress}")
+        case "Completed":
+            with open(os.path.join(config_file, "status.fll"), "w") as file:
+                file.write("Completed")
+                file.append("\n100")
+        case "Unknown":
+            with open(os.path.join(config_file, "status.fll"), "w") as file:
+                file.write("Unknown")
+        case "Error":
+            with open(os.path.join(config_file, "status.fll"), "w") as file:
+                file.write("Error")
+                file.append("\n000")
 
 # Die AStarGraph-Klasse definiert den Graphen und den A*-Algorithmus
 class AStarGraph:
@@ -53,19 +77,19 @@ class AStarGraph:
 
     # Diese Methode berechnet die heuristische Schätzung (H-Wert) zwischen zwei Knoten
     def heuristic(self, start, goal):
-        logger.debug('heuristic')
+        #logger.debug('heuristic')
         x1, y1 = self.data["locations"][start]
         x2, y2 = self.data["locations"][goal]
         return math.sqrt((x1 - x2) ** 2 + (y1 - y2) ** 2)
 
     # Diese Methode gibt die Nachbarn eines Knotens zurück
     def neighbors(self, node):
-        logger.debug('neighbors')
+        #logger.debug('neighbors')
         return [neighbor for neighbor in range(len(self.data["locations"])) if self.data["distances"][node][neighbor] != 0]
 
     # Diese Methode führt die A*-Suche aus
     def a_star_search(self, start, goal):
-        logger.debug('a_star_search')
+        #logger.debug('a_star_search')
         open_list = []
         closed_list = set()
         start_node = (start, 0)
@@ -100,10 +124,10 @@ class AStarGraph:
 
 
 def conf():
-    logger.debug("conf...")
+    #logger.debug("conf...")
     global csv_folder, log_folder, export_folder
 
-    with open("../A_star.config", "r") as f:
+    with open(os.path.join(config_file, "A_star.config"), "r") as f:
         lines = f.readline(1)
         lines = lines.split(" , ")
         csv_folder = lines[0].strip()
@@ -113,13 +137,13 @@ def conf():
     # Überprüfen und Erstellen der Ordner
     if not os.path.exists(csv_folder):
         os.makedirs(csv_folder)
-        logger.warning(f"Folder {csv_folder} created.")
+        #logger.warning(f"Folder {csv_folder} created.")
     if not os.path.exists(log_folder):
         os.makedirs(log_folder)
-        logger.warning(f"Folder {log_folder} created.")
+        #logger.warning(f"Folder {log_folder} created.")
     if not os.path.exists(export_folder):
         os.makedirs(export_folder)
-        logger.warning(f"Folder {export_folder} created.")
+        #logger.warning(f"Folder {export_folder} created.")
         
 
 # Diese Methode erstellt das Datenmodell aus CSV-Dateien
@@ -130,7 +154,7 @@ def create_data_model():
     data["distances"] = []  # Eine Liste zur Aufbewahrung der Entfernungen zwischen den Punkten
 
     with open(os.path.join(csv_folder, "node_coordinates.csv"), "r") as file:
-        logger.info(f'open file {csv_folder}, node_coordinates.csv')
+        #logger.info(f'open file {csv_folder}, node_coordinates.csv')
         reader = csv.reader(file)
         next(reader)  # Überspringen Sie die Header-Zeile
         for row in reader:
@@ -139,9 +163,11 @@ def create_data_model():
                     x, y = map(float, row)  # X- und Y-Koordinaten als Floats einlesen
                     data["locations"].append((x, y))
                 except (ValueError, IndexError):
-                    logger.error(f"Fehler beim Lesen der Zeile: {row}")
+                    print(f"Fehler beim Lesen der Zeile: {row}")
+                    #logger.error(f"Fehler beim Lesen der Zeile: {row}")
             else:
-                logger.error(f"Ungültige Zeile: {row}")
+                print(f"Ungültige Zeile: {row}")
+                #logger.error(f"Ungültige Zeile: {row}")
 
     # Berechnen Sie die Distanzmatrix direkt hier
     num_locations = len(data["locations"])
@@ -173,8 +199,8 @@ def print_solution(manager, routing, solution):
         route_distance += routing.GetArcCostForVehicle(previous_index, index, 0)
     print(f"Entfernung: {route_distance} Einheiten")
     print(f"Geplante Routen-Koordinaten: {plan_output}")
-    logger.info(f"Entfernung: {route_distance} Einheiten")
-    logger.info(f"Geplante Routen-Koordinaten: {plan_output}")
+    #logger.info(f"Entfernung: {route_distance} Einheiten")
+    #logger.info(f"Geplante Routen-Koordinaten: {plan_output}")
 
 
 def find_full_path(graph, start_node, end_node):
@@ -185,39 +211,42 @@ def find_full_path(graph, start_node, end_node):
 
 # Die Hauptmethode, die den A*-Algorithmus ausführt
 def main():
+    _get_status("In Progress", "10")
     data = create_data_model()
     graph = AStarGraph(data)
-
+    _get_status("In Progress", "30")
     # Start- und Zielknoten
     start_node = 0
     end_node = 14
 
     full_path = [start_node]  # Beginnen Sie mit dem Startknoten
-
+    _get_status("In Progress", "40")
     for node in range(1, end_node + 1):
         if node != start_node:
             segment = find_full_path(graph, start_node, node)
             full_path.extend(segment[:-1])  # Vermeiden der doppelten Knoten
             start_node = node
-
+    _get_status("In Progress", "60")
     print("Vollständiger Weg:", full_path)
     route_coordinates = [data["locations"][node] for node in full_path]
     print("Route Koordinaten:")
     for coordinate in route_coordinates:
         print(coordinate)
-
+    _get_status("In Progress", "70")
     # Erstellen Sie den Graphen und zeichnen Sie die Route
     G = nx.Graph()
     G.add_nodes_from(range(len(route_coordinates)))
     for i in range(len(route_coordinates) - 1):
         G.add_edge(full_path[i], full_path[i + 1])
-
+    _get_status("In Progress", "80")
     pos = {i: route_coordinates[i] for i in range(len(route_coordinates))}
     nx.draw(G, pos, with_labels=True, node_size=100)
     image_filename = os.path.join(export_folder, 'shortest_path_a_star.png')
     plt.savefig(image_filename, dpi=300)  # 300 DPI entspricht 4K-Auflösung
     plt.show()
+    _get_status("In Progress", "90")
 
 if __name__ == "__main__":
     conf()
     main()
+    _get_status("Completed", "100")
