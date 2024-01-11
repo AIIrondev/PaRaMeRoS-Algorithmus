@@ -7,7 +7,7 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 to deal in the Software without restriction, including, but not limited to, the rights to use, copy, modify, merge, publish, distribute, sublicense, 
 and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
-NOTICE: You are not a member of another FIRST LEGO LEAGUE TEAM or intend to use it for First Lego League in Germany, Austria, Swiss!
+NOTICE: IF you are a member of another FIRST LEGO LEAGUE TEAM or intent to use it for FIRST LEGO LEAGUE you are not allowed to use, copy, resell or take parts of the Software/Code!!!
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
@@ -21,6 +21,7 @@ excluding older or custom versions from third parties.
 
 For older versions, the above legal terms and conditions will remain valid from the year 2023 onwards.
 '''
+
 
 import math
 import heapq
