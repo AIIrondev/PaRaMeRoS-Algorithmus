@@ -27,6 +27,7 @@ For older versions, the above legal terms and conditions will remain valid from 
 import os
 import datetime
 import shutil
+import click as cli
 
 # var definition
 base_dir = os.path.dirname(os.path.abspath(__file__))
@@ -35,9 +36,14 @@ icon_path = os.path.join(base_dir, "..", "Bilder", "LOGO.ico")
 # class main -> main funkltion GUI class
 class main:
     def __init__(self):
-        
-        
-        
+        @cli.command()
+        @cli.option("--load", "-l", default="my_programm.fll", help="This will load a simulation that you have created before")
+        @cli.option("--create", "-c", default="my_programm.fll", help="This will create a new simulation")
+        @cli.option("--save", "-s", default="my_programm.fll", help="This will save your simulation")
+        @cli.option("--info", "-i", help="This will show you some information about the programm like version, config etc.")
+        @cli.option("--render", "-r", help="This will render your simulation")
+
+
 class logik:
     def __init__(self):
         pass
