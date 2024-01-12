@@ -49,7 +49,8 @@ class main:
         
     def main_menu(self):
         self.reset_screen()
-        tk.CTkLabel(self.window, text="Welcome to the Algorithm Path finder", font=("Arial", 25), text_color="black").place(x=75, y=25)
+        tk.CTkLabel(self.window, text="Welcome to the Algorithm Path finder ", font=("Arial", 25), text_color="black").place(x=80, y=25)
+        tk.CTkLabel(self.window, text="from the PaRaMeRoS FLL Team", font=("Arial", 25), text_color="black").place(x=110, y=54)
         tk.CTkButton(self.window, text="Create new simulation", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=180, y=100)
         tk.CTkButton(self.window, text="Load simulation", command=self.main_load, corner_radius=32, font=("Arial", 19)).place(x=205, y=150)
         tk.CTkButton(self.window, text="Exit", command=self.window.destroy, corner_radius=32, font=("Arial", 19), fg_color="red", hover_color="darkred").place(x=217, y=200)
