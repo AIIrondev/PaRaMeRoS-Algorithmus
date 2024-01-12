@@ -37,11 +37,11 @@ icon_path = os.path.join(base_dir, "..", "Bilder", "LOGO.ico")
 class main:
     def __init__(self):
         @cli.command()
-        @cli.option("--load", "-l", default="my_programm.fll", help="This will load a simulation that you have created before")
-        @cli.option("--create", "-c", default="my_programm.fll", help="This will create a new simulation")
-        @cli.option("--save", "-s", default="my_programm.fll", help="This will save your simulation")
-        @cli.option("--info", "-i", help="This will show you some information about the programm like version, config etc.")
-        @cli.option("--render", "-r", help="This will render your simulation")
+        @cli.argument("--load", "-l", default="my_programm.fll", help="This will load a simulation that you have created before")
+        @cli.argument("--create", "-c", default="10", help="This will create a new simulation")
+        @cli.argument("--save", "-s", default="my_programm.fll", help="This will save your simulation")
+        @cli.argument("--info", "-i", help="This will show you some information about the programm like version, config etc.")
+        @cli.argument("--render", "-r", help="This will render your simulation")
 
 
 class logik:
