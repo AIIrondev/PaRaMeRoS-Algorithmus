@@ -43,6 +43,34 @@ class main:
         @cli.argument("--info", "-i", help="This will show you some information about the programm like version, config etc.")
         @cli.argument("--render", "-r", help="This will render your simulation")
 
+        def main(load, create, save, info, render):
+            if load != "my_programm.fll":
+                self.load(load)
+            elif create != "10":
+                self.create(create)
+            elif save != "my_programm.fll":
+                self.save(save)
+            elif info != None:
+                self.info(info)
+            elif render != None:
+                self.render(render)
+            else:
+                self.gui()
+
+    def gui(self):
+        os.system("python3 " + os.path.join(base_dir, "..", "script", "gui.py"))
+    
+    def load(self, file):
+        pass
+    
+    def create(self, count):
+        pass
+    
+    def save(self, file):
+        pass
+    
+    def info(self, info):
+        @cli.echo("This is the info command")
 
 class logik:
     def __init__(self):
@@ -117,5 +145,4 @@ class config:
 
 # main running area -> main function
 if __name__ == "__main__":
-    window = main()
-    window.window.mainloop()
+    main()
