@@ -55,22 +55,22 @@ def _get_status(status, progress):
         case "Not Started":
             with open(os.path.join(config_file, "status.fll"), "w") as file:
                 file.write("Not Started")
-                file.append("\n1")
+                file.write("\n1")
         case "In Progress":
             with open(os.path.join(config_file, "status.fll"), "w") as file:
                 file.write("In Progress")
-                file.append("\n{progress}")
+                file.write("\n" + progress)
         case "Completed":
             with open(os.path.join(config_file, "status.fll"), "w") as file:
                 file.write("Completed")
-                file.append("\n100")
+                file.write("\n100")
         case "Unknown":
             with open(os.path.join(config_file, "status.fll"), "w") as file:
                 file.write("Unknown")
         case "Error":
             with open(os.path.join(config_file, "status.fll"), "w") as file:
                 file.write("Error")
-                file.append("\n000")
+                file.write("\n000")
 
 # Die AStarGraph-Klasse definiert den Graphen und den A*-Algorithmus
 class AStarGraph:

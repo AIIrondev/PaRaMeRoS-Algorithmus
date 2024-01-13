@@ -40,7 +40,7 @@ class main:
         @cli.argument("--load", "-l", default="my_programm.fll", help="This will load a simulation that you have created before")
         @cli.argument("--create", "-c", default="10", help="This will create a new simulation")
         @cli.argument("--save", "-s", default="my_programm.fll", help="This will save your simulation")
-        @cli.argument("--info", "-i", help="This will show you some information about the programm like version, config etc.")
+        @cli.argument("--info", "-i", help="This will show you some information about the programm like version, config, credits etc.")
         @cli.argument("--render", "-r", help="This will render your simulation")
 
         def main(load, create, save, info, render):
