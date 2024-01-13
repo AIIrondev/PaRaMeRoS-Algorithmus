@@ -1,8 +1,3 @@
-Dies ist ein auf python basierten Projekt welches beinhaltet:
-1. GUI System für ein auf Basis von dem First Lego League Plan, auf welchem mit verschiedenen Funktionen verschiedene Wege einzeichnen kann.
-2. Die eingezeichneten Wege in den Dijkstras Algeruethmus weiter gelietet und in ca. 15 sec. ausgerechnet(Ryzen 7 3800X, NVIDIA GeForce GTX 1650).
-3. Diese Daten werden ein letztes mal für weitere Berechnungen eingelesen und mit einem A* Algeruethmus den schnellsten Weg von im ersten Teil erstellten Wege berechnet, dies wird in einem .csv File ausgegeben und auch als Statistik ausgegeben.
-4. Als letztes was noch eingebaut wird, werden die Daten und Protokolle die über alle Skripts erhoben werden. Diese werden dann an die Website geschickt und dann dort in einem extra Tab dargestellt.
-5. Eine Weitere Optimierung die in Planung ist die integration einer Multi Threading Bibliotek.
-6. Dies soll alles in einen Verbund von Geräten implementiert, welcher aus zwei Server und einem Switcv besteht.
-7. Alle Daten und Statistiken werden per ftp an die Website des FLL Teams geschickt und dort dargestellt.
+## Dieses Projekt ist eine Arbeit von dem First Lego League Team PaRaMeRoS
+## Für weitere Infos -> <https://github.com/PaRaMeRoS/Algorithmus/wiki>
+###### (c) Maximilian Gründinger 2024
