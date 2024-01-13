@@ -95,7 +95,7 @@ class main:
         self.window2.resizable(True, True)
         self.window2._set_appearance_mode("light")
         self.window2.iconbitmap(icon_path)
-        logik.render()
+        logik.render(distance_list)
         tk.CTkLabel(self.window2, text="Render", font=("Arial", 25)).place(x=75, y=25) 
         tk.CTkLabel(self.window2, text="The simulation is being rendered", font=("Arial", 16)).place(x=75, y=75)
         self.window2.mainloop()
@@ -130,7 +130,7 @@ class main:
         frame.bind("<Configure>", update_scrollregion)
         scrollable_frame.config(yscrollcommand=scrollbar.set)
 
-        self.distance = []
+        distance_list = []
         for element1, element2 in fenster_liste:
             # Erstelle ein neues Frame für jede Iteration
             inner_frame = tk.CTkFrame(frame)
@@ -140,9 +140,14 @@ class main:
             tk.CTkLabel(inner_frame, text=str(element1), font=("Arial", 16), text_color="black").pack(side="left")
             tk.CTkLabel(inner_frame, text="To ", font=("Arial", 16), text_color="black").pack(side="left")
             tk.CTkLabel(inner_frame, text=str(element2), font=("Arial", 16), text_color="black").pack(side="left")
-            distance_entry = tk.CTkEntry(inner_frame, placeholder_text="Distance")
+
+            # Erstellen Sie eine StringVar, um den Wert des Entry-Widgets zu verfolgen
+            distance_var = tk.StringVar()
+            distance_entry = tk.CTkEntry(inner_frame, textvariable=distance_var, placeholder_text="Distance")
             distance_entry.pack(side="left")
-            self.distance.append(distance_entry.get())
+
+            # Fügen Sie die StringVar (nicht den Entry-Widget) zur Liste hinzu
+            distance_List.append(distance_var)
 
         frame.update_idletasks()
 
