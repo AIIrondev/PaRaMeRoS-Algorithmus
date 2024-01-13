@@ -230,7 +230,7 @@ def main():
             full_path.extend(segment[:-1])  # Vermeiden der doppelten Knoten
             start_node = node
     _get_status("In Progress", "60")
-    print("Vollständiger Weg:", full_path)
+    print("Schnellster Weg:", full_path)
     route_coordinates = [data["locations"][node] for node in full_path]
     print("Route Koordinaten:")
     for coordinate in route_coordinates:
