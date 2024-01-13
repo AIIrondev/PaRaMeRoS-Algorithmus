@@ -11,9 +11,8 @@ The Versions with an X aren't supported.
 
 | Version | Supported          |
 | ------- | ------------------ |
-| Alpha1.1| :x:                |
-| Alpha1.2| :x:                |
-| Alpha1.3| :white_check_mark: |
+| v.1| :x:                |
+| v.2| :white_check_mark: |
 
 ## Reporting a Vulnerability
 
