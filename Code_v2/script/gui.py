@@ -85,7 +85,7 @@ class main:
         for widget in self.window.winfo_children():
             widget.destroy()
             
-    def render(self):
+    def render(self, dinstance_render):
         # self.save_gui() # Speicherfunktion muss noch eingebaut werden
         self.active_task = "saving"  # file ausgelesern werden
         self.running_done = 50  # Set the initial value (you can change this)
@@ -95,7 +95,7 @@ class main:
         self.window2.resizable(True, True)
         self.window2._set_appearance_mode("light")
         self.window2.iconbitmap(icon_path)
-        logik.render(distance_list)
+        logik.render(distance_render)
         tk.CTkLabel(self.window2, text="Render", font=("Arial", 25)).place(x=75, y=25) 
         tk.CTkLabel(self.window2, text="The simulation is being rendered", font=("Arial", 16)).place(x=75, y=75)
         self.window2.mainloop()
@@ -112,7 +112,7 @@ class main:
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
         tk.CTkButton(self.window, text="Help", font=("Arial", 16), fg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
         tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=self.save_gui).place(x=225, y=100)
-        tk.CTkButton(self.window, text="Render", font=("Arial", 16), corner_radius=32, command=self.render).place(x=375, y=100)	
+        tk.CTkButton(self.window, text="Render", font=("Arial", 16), corner_radius=32, command=self.render(distance_list)).place(x=375, y=100)	
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
         scrollable_frame = tk.CTkCanvas(self.window)
