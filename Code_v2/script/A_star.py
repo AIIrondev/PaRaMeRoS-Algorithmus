@@ -132,9 +132,10 @@ def conf():
     with open(os.path.join(config_file, "A_star.config"), "r") as f:
         lines = f.readline(1)
         lines = lines.split(" , ")
-        csv_folder = lines[0].strip()
-        log_folder = lines[1].strip()
-        export_folder = lines[2].strip()
+        print(lines)
+        csv_folder = "../csv_files"
+        log_folder = "../log_files"
+        export_folder = "../render_images"
 
     # Überprüfen und Erstellen der Ordner
     if not os.path.exists(csv_folder):
