@@ -231,7 +231,7 @@ class logik:
             for point1, point2, distance in distance_list:
                 file.append(str(point1) + ", " + str(point2) + ", " + str(distance) + "\n")
         ## 2.Schritt
-        os.system("python3 " + os.path.join(base_dir, "..", "script", "dijkstra.py"))
+        os.system("python3 " + os.path.join(base_dir, "..", "script", "Dijkstra.py"))
         ## 3.Schritt
         waiting = True
         while waiting:
