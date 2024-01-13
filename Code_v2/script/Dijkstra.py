@@ -38,6 +38,7 @@ if not os.path.exists('../render_images'):
 config_file = '../config'
 csv_folder = '../csv_files'
 log_folder = '../log_files'
+base_dir = os.path.dirname(os.path.abspath(__file__))
 if not os.path.exists(csv_folder):
     os.makedirs(csv_folder)
 if not os.path.exists(log_folder):
@@ -66,11 +67,11 @@ def _get_status(status, progress):
         case "In Progress":
             with open(os.path.join(config_file, "status.fll"), "w") as file:
                 file.write("In Progress")
-                file.write("\n{progress}")
+                file.write("\n" + progress)
         case "Completed":
             with open(os.path.join(config_file, "status.fll"), "w") as file:
                 file.write("Completed")
-                filewrite("\n100")
+                file.write("\n100")
         case "Unknown":
             with open(os.path.join(config_file, "status.fll"), "w") as file:
                 file.write("Unknown")
@@ -194,7 +195,7 @@ with open(os.path.join(csv_folder, "dijkstra_results.csv"), mode='w', newline=''
         plt.title(f"Shortest Path from vertex {i}")
 
         # Speichere das Bild im Ordner "exported_images" mit dem Dateinamen "shortest_path_i.png"
-        image_filename = os.path.join('../exported_images', f'shortest_path_{i}.png')
+        image_filename = os.path.join('../render_images', f'shortest_path_{i}.png')
         plt.savefig(image_filename, dpi=300)  # 300 DPI entspricht 4K-Auflösung
 
         # Schließe die Matplotlib-Figur
