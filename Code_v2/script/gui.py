@@ -156,6 +156,8 @@ class main:
     def save_gui(self, distance_list, count):
         # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
         Distance_list = distance_list
+        authore_save = tk2.StringVar()
+        simulation_name_save = tk2.StringVar()
         self.path = ""
         self.window3 = tk.CTk()
         self.window3.title("Algorithmus _Save")
@@ -167,10 +169,10 @@ class main:
         tk.CTkButton(self.window3, text="Select Path", font=("Arial", 16), command=self.get_path).place(x=75, y=75)
         tk.CTkLabel(self.window3, text=self.path, font=("Arial", 16)).place(x=75, y=50)
         tk.CTkLabel(self.window3, text="Enter Author: ", font=("Arial", 16)).place(x=75, y=200)
-        tk.CTkEntry(self.window3, placeholder_text="Author").place(x=125, y=200)
+        tk.CTkEntry(self.window3, placeholder_text="Author", textvariable=author_save).place(x=225, y=200)
         tk.CTkLabel(self.window3, text="Enter Simulation Name: ", font=("Arial", 16)).place(x=75, y=150)
-        tk.CTkEntry(self.window3, placeholder_text="Simulation Name").place(x=125, y=150)
-        #tk.CTkButton(self.window3, text="Save", font=("Arial", 16), command=lambda: self.logic_instance.save_simulation().place(x=75, y=100)# Add right command
+        tk.CTkEntry(self.window3, placeholder_text="Simulation Name", textvariable=simulation_name_save).place(x=225, y=150)
+        tk.CTkButton(self.window3, text="Save", font=("Arial", 16), command=lambda: logik.save_simulation(self, self.path, simulation_name_save, count, distance_list)).place(x=75, y=100)# file_path, file_name, count, Distance_list
         tk.CTkButton(self.window3, text="Break", command=self.window3.destroy, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
         self.window3.mainloop()
 
@@ -197,7 +199,7 @@ class logik:
     def __init__(self):
         pass
 
-    def save_simulation(self, file_path, file_name, count, Distance_list, ERDATE, AUTOR):
+    def save_simulation(self, file_path, file_name, count, Distance_list):
         POINTS = count  # POINTS -> Anzahl der Punkte
         ERDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
         BEDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
@@ -230,7 +232,7 @@ class logik:
         # 2. Schritt: Dijkstra Algorithmus starten -> danach A* Algorithmus starten
         # 3. Schritt: Finisched PAth displayen und in ein File speichern
         ## 1.Schritt
-        points = get_combinations(count)
+        points = self.get_combinations(count)
         list_combinations = points.append(distance_render_logik)
         with open(os.path.join(base_dir, "..", "config","count.fll"), "w") as file:
             file.write(str(count))
