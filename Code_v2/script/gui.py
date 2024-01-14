@@ -85,7 +85,7 @@ class main:
         for widget in self.window.winfo_children():
             widget.destroy()
             
-    def render(self, dinstance_render, count):
+    def render(self, distance_render, count):
         # self.save_gui() # Speicherfunktion muss noch eingebaut werden
         self.active_task = "saving"  # file ausgelesern werden
         self.running_done = 50  # Set the initial value (you can change this)
@@ -95,7 +95,7 @@ class main:
         self.window2.resizable(True, True)
         self.window2._set_appearance_mode("light")
         self.window2.iconbitmap(icon_path)
-        logik.render(distance_render, count)
+        logik.render(self, distance_render, count)
         tk.CTkLabel(self.window2, text="Render", font=("Arial", 25)).place(x=75, y=25) 
         tk.CTkLabel(self.window2, text="The simulation is being rendered", font=("Arial", 16)).place(x=75, y=75)
         self.window2.mainloop()
@@ -104,15 +104,18 @@ class main:
         tk2.messagebox.showinfo("Help", "Please enter the distances between the points in the order that they are displayed. \n\nExample: \nFrom: 1 \nTo: 2 \nDistance: 5 \n\nFrom: 1 \nTo: 3 \nDistance: 4 \n\n If you have any more questions, please contact me on Github: @PaRaMeRoS/Algorithmus or via E-Mail: PaRaMeRoS@mein.gmx \n\n Have fun!")
 
     def running(self): # Scrollscreen ausbessern
+        global distance_list
+        distance_list = []
         self.reset_screen()
         self.combobox = int(self.combobox_var.get())
+        render_sd = self.combobox
         fenster_liste = self.logic_instance.get_combinations(self.combobox)
 
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="grey").place(x=75, y=25)
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
         tk.CTkButton(self.window, text="Help", font=("Arial", 16), fg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
-        tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=self.save_gui(distance_list, self.combobox)).place(x=225, y=100)
-        tk.CTkButton(self.window, text="Render", font=("Arial", 16), corner_radius=32, command=self.render(distance_list, self.combobox)).place(x=375, y=100)	
+        tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=lambda: self.save_gui(distance_list, render_sd)).place(x=225, y=100)
+        tk.CTkButton(self.window, text="Render", font=("Arial", 16), corner_radius=32, command=self.render(distance_list, render_sd)).place(x=375, y=100)	
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
         scrollable_frame = tk.CTkCanvas(self.window)
@@ -129,9 +132,7 @@ class main:
     
         frame.bind("<Configure>", update_scrollregion)
         scrollable_frame.config(yscrollcommand=scrollbar.set)
-
-        distance_list = []
-        global distance_list
+        
         for element1, element2 in fenster_liste:
             # Erstelle ein neues Frame für jede Iteration
             inner_frame = tk.CTkFrame(frame)
@@ -154,8 +155,7 @@ class main:
 
     def save_gui(self, distance_list, count):
         # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
-        count = self.combobox
-        Distance_list = self.distance
+        Distance_list = distance_list
         self.path = ""
         self.window3 = tk.CTk()
         self.window3.title("Algorithmus _Save")
