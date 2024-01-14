@@ -156,7 +156,7 @@ class main:
     def save_gui(self, distance_list, count):
         # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
         Distance_list = distance_list
-        authore_save = tk2.StringVar()
+        author_save = tk2.StringVar()
         simulation_name_save = tk2.StringVar()
         self.path = ""
         self.window3 = tk.CTk()
@@ -166,13 +166,13 @@ class main:
         self.window3._set_appearance_mode("light")
         self.window3.iconbitmap(icon_path)
         tk.CTkLabel(self.window3, text="Save", font=("Arial", 25)).place(x=75, y=25)
-        tk.CTkButton(self.window3, text="Select Path", font=("Arial", 16), command=self.get_path).place(x=75, y=75)
+        tk.CTkButton(self.window3, corner_radius=32, text="Select Path", font=("Arial", 16), command=self.get_path).place(x=75, y=75)
         tk.CTkLabel(self.window3, text=self.path, font=("Arial", 16)).place(x=75, y=50)
         tk.CTkLabel(self.window3, text="Enter Author: ", font=("Arial", 16)).place(x=75, y=200)
         tk.CTkEntry(self.window3, placeholder_text="Author", textvariable=author_save).place(x=225, y=200)
         tk.CTkLabel(self.window3, text="Enter Simulation Name: ", font=("Arial", 16)).place(x=75, y=150)
-        tk.CTkEntry(self.window3, placeholder_text="Simulation Name", textvariable=simulation_name_save).place(x=225, y=150)
-        tk.CTkButton(self.window3, text="Save", font=("Arial", 16), command=lambda: logik.save_simulation(self, self.path, simulation_name_save, count, distance_list)).place(x=75, y=100)# file_path, file_name, count, Distance_list
+        tk.CTkEntry(self.window3, placeholder_text="Simulation Name", textvariable=simulation_name_save).place(x=250, y=150)
+        tk.CTkButton(self.window3, corner_radius=32, text="Save", font=("Arial", 16), command=lambda: logik.save_simulation(self, self.path, simulation_name_save, count, distance_list)).place(x=200, y=300)# file_path, file_name, count, Distance_list
         tk.CTkButton(self.window3, text="Break", command=self.window3.destroy, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
         self.window3.mainloop()
 
@@ -204,7 +204,7 @@ class logik:
         ERDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
         BEDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
         EDIT = 1 # EDIT -> wie oft bearbeitet
-        self.save_path = file_path + file_name + "/simulation.txt"
+        self.save_path = os.path.join(file_path, f"/{filename}.txt") # Projekt files -> weiter machen
         with open(file_path, "w") as file:
             file.write(str(POINTS) + "\n")
             file.write(str(ERDATE) + "\n")
