@@ -115,7 +115,7 @@ class main:
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
         tk.CTkButton(self.window, text="Help", font=("Arial", 16), fg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
         tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=lambda: self.save_gui(distance_list, render_sd)).place(x=225, y=100)
-        tk.CTkButton(self.window, text="Render", font=("Arial", 16), corner_radius=32, command=self.render(distance_list, render_sd)).place(x=375, y=100)	
+        tk.CTkButton(self.window, text="Render", font=("Arial", 16), corner_radius=32, command=lambda: self.render(distance_list, render_sd)).place(x=375, y=100)	
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
         scrollable_frame = tk.CTkCanvas(self.window)
@@ -149,7 +149,7 @@ class main:
             distance_entry.pack(side="left")
 
             # Fügen Sie die StringVar (nicht den Entry-Widget) zur Liste hinzu
-            distance_List.append(distance_var)
+            distance_list.append(distance_var)
 
         frame.update_idletasks()
 
@@ -230,7 +230,7 @@ class logik:
         # 2. Schritt: Dijkstra Algorithmus starten -> danach A* Algorithmus starten
         # 3. Schritt: Finisched PAth displayen und in ein File speichern
         ## 1.Schritt
-        points = get_combinations(self.combobox)
+        points = get_combinations(count)
         list_combinations = points.append(distance_render_logik)
         with open(os.path.join(base_dir, "..", "config","count.fll"), "w") as file:
             file.write(str(count))
