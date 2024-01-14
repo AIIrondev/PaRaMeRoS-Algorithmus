@@ -249,19 +249,6 @@ class logik:
             else:
                 pass
                 
-            
-                    
-                    
-class config:
-    def __init__(self):
-        pass
-
-    def save_config(self, file):
-        self.config_path = os.path.join(base_dir, "..", "config", file)
-    
-    
-    def load_config(self):
-        pass
 
 # main running area -> main function
 if __name__ == "__main__":
