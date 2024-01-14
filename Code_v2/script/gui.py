@@ -224,14 +224,14 @@ class logik:
                         combinations.append(com)
         return combinations
     
-    def render(self, distance_list):
+    def render(self, distance_render_logik):
         # 1. Schritt: Alle Punkte in einer Liste speichern und in ein File speichern
         # 2. Schritt: Dijkstra Algorithmus starten -> danach A* Algorithmus starten
         # 3. Schritt: Finisched PAth displayen und in ein File speichern
         ## 1.Schritt
         points = get_combinations(self.combobox)
-        list_combinations = points.append(distance_list)
-        with open("points.txt", "w") as file:
+        list_combinations = points.append(distance_render_logik)
+        with open("points.csv", "w") as file:
             file.truncate(0)
             for point1, point2, distance in distance_list:
                 file.append(str(point1) + ", " + str(point2) + ", " + str(distance) + "\n")
@@ -242,7 +242,7 @@ class logik:
         while waiting:
             if os.path.exists(os.path.join(base_dir, "..", "export_folder", "shortest_path_a_star.png")):
                 waiting = False
-                with open("shortest_path.txt", "r") as file:
+                with open(os.path.join(base_dir, "..", "config", "shortest_path.fll"), "r") as file:
                     result = file.read()
                 gui.display_rendert_path()
                 shutil.move(os.path.join(base_dir, "..", "export_folder", "shortest_path_a_star.png"), os.path.join(base_dir, "..", "export_folder", "shortest_path.png"))

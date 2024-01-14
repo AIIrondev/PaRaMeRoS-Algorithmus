@@ -220,7 +220,7 @@ def main():
     _get_status("In Progress", "30")
     # Start- und Zielknoten
     start_node = 0
-    end_node = 14
+    end_node = 14 # get from .fll file from Gui
 
     full_path = [start_node]  # Beginnen Sie mit dem Startknoten
     _get_status("In Progress", "40")
@@ -231,6 +231,9 @@ def main():
             start_node = node
     _get_status("In Progress", "60")
     print("Schnellster Weg:", full_path)
+    with open(os.path.join(export_folder, 'shortest_path_a_star.fll'), 'w') as f:
+        writer = csv.writer(f)
+        writer.writerow(full_path)
     route_coordinates = [data["locations"][node] for node in full_path]
     print("Route Koordinaten:")
     for coordinate in route_coordinates:
