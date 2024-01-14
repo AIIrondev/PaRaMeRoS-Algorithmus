@@ -204,7 +204,7 @@ class logik:
         ERDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
         BEDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
         EDIT = 1 # EDIT -> wie oft bearbeitet
-        self.save_path = os.path.join(file_path, f"/{filename}.txt") # Projekt files -> weiter machen
+        self.save_path = os.path.join(file_path, f"/{file_name}.txt") # Projekt files -> weiter machen
         with open(file_path, "w") as file:
             file.write(str(POINTS) + "\n")
             file.write(str(ERDATE) + "\n")
