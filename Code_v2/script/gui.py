@@ -85,7 +85,7 @@ class main:
         for widget in self.window.winfo_children():
             widget.destroy()
             
-    def render(self, dinstance_render):
+    def render(self, dinstance_render, count):
         # self.save_gui() # Speicherfunktion muss noch eingebaut werden
         self.active_task = "saving"  # file ausgelesern werden
         self.running_done = 50  # Set the initial value (you can change this)
@@ -95,7 +95,7 @@ class main:
         self.window2.resizable(True, True)
         self.window2._set_appearance_mode("light")
         self.window2.iconbitmap(icon_path)
-        logik.render(distance_render)
+        logik.render(distance_render, count)
         tk.CTkLabel(self.window2, text="Render", font=("Arial", 25)).place(x=75, y=25) 
         tk.CTkLabel(self.window2, text="The simulation is being rendered", font=("Arial", 16)).place(x=75, y=75)
         self.window2.mainloop()
@@ -111,8 +111,8 @@ class main:
         tk.CTkLabel(self.window, text="Further creating", font=("Arial", 25), text_color="grey").place(x=75, y=25)
         tk.CTkLabel(self.window, text="Please enter the according Distances between the Points", font=("Arial", 16), text_color="black").place(x=75, y=75)
         tk.CTkButton(self.window, text="Help", font=("Arial", 16), fg_color="green", hover_color="darkgreen", corner_radius=32, command=self.help).place(x=75, y=100)
-        tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=self.save_gui).place(x=225, y=100)
-        tk.CTkButton(self.window, text="Render", font=("Arial", 16), corner_radius=32, command=self.render(distance_list)).place(x=375, y=100)	
+        tk.CTkButton(self.window, text="Save", font=("Arial", 16), corner_radius=32, command=self.save_gui(distance_list, self.combobox)).place(x=225, y=100)
+        tk.CTkButton(self.window, text="Render", font=("Arial", 16), corner_radius=32, command=self.render(distance_list, self.combobox)).place(x=375, y=100)	
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
         scrollable_frame = tk.CTkCanvas(self.window)
@@ -131,6 +131,7 @@ class main:
         scrollable_frame.config(yscrollcommand=scrollbar.set)
 
         distance_list = []
+        global distance_list
         for element1, element2 in fenster_liste:
             # Erstelle ein neues Frame für jede Iteration
             inner_frame = tk.CTkFrame(frame)
@@ -151,7 +152,7 @@ class main:
 
         frame.update_idletasks()
 
-    def save_gui(self):
+    def save_gui(self, distance_list, count):
         # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
         count = self.combobox
         Distance_list = self.distance
@@ -224,13 +225,15 @@ class logik:
                         combinations.append(com)
         return combinations
     
-    def render(self, distance_render_logik):
+    def render(self, distance_render_logik, count):
         # 1. Schritt: Alle Punkte in einer Liste speichern und in ein File speichern
         # 2. Schritt: Dijkstra Algorithmus starten -> danach A* Algorithmus starten
         # 3. Schritt: Finisched PAth displayen und in ein File speichern
         ## 1.Schritt
         points = get_combinations(self.combobox)
         list_combinations = points.append(distance_render_logik)
+        with open(os.path.join(base_dir, "..", "config","count.fll"), "w") as file:
+            file.write(str(count))
         with open("points.csv", "w") as file:
             file.truncate(0)
             for point1, point2, distance in distance_list:

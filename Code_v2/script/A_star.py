@@ -220,7 +220,11 @@ def main():
     _get_status("In Progress", "30")
     # Start- und Zielknoten
     start_node = 0
-    end_node = 14 # get from .fll file from Gui
+    try:
+        with open(os.path.join(base_dir, "..", "config", "count.fll"), "r") as file:
+            end_node = int(file.readline())
+    except:
+        end_node = 14
 
     full_path = [start_node]  # Beginnen Sie mit dem Startknoten
     _get_status("In Progress", "40")
