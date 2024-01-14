@@ -24,60 +24,63 @@ For older versions, the above legal terms and conditions will remain valid from 
 '''
 
 # import modules
+import customtkinter as tk
 import os
+import tkinter as tk2
+from tkinter import ttk
 import datetime
 import shutil
-import click as cli
 
 # var definition
 base_dir = os.path.dirname(os.path.abspath(__file__))
 icon_path = os.path.join(base_dir, "..", "Bilder", "LOGO.ico")
+dir0 = "/home/web/website/PaRaMeRoS-Python/directory.fll"
+in0 = "/home/web/website/PaRaMeRoS-Python/output.fll"
+out0 = "/home/web/website/PaRaMeRoS-Python/input.fll" 
+start0 = "/home/web/website/PaRaMeRoS-Python/start.fll"
+user0 = "/home/web/website/PaRaMeRoS-Python/user.fll"
 
 # class main -> main funkltion GUI class
 class main:
     def __init__(self):
         pass
-
-        def main(load, create, save, info, render):
-            if load != "my_programm.fll":
-                self.load(load)
-            elif create != "10":
-                self.create(create)
-            elif save != "my_programm.fll":
-                self.save(save)
-            elif info != None:
-                self.info(info)
-            elif render != None:
-                self.render(render)
-            else:
-                self.gui()
-
-    def gui(self):
-        os.system("python3 " + os.path.join(base_dir, "..", "script", "gui.py"))
-    
-    def load(self, file):
+        
+    def main_menu(self):
         pass
     
-    def create(self, count):
+    def main_programm(self):
         pass
     
-    def save(self, file):
+    def main_load(self):
         pass
     
-    def info(self, info):
-        @cli.echo("This is the info command")
+    def reset_screen(self):
+        pass
+            
+    def render(self, distance_render, count):
+        pass
 
+    def help(self):
+        pass
+    
+    def running(self): # Scrollscreen ausbessern
+        pass
+
+    def save_gui(self, distance_list, count):
+        pass
+
+ 
 class logik:
     def __init__(self):
         pass
 
-    def save_simulation(self, file_path, file_name, count, Distance_list, ERDATE, AUTOR):
+    def save_simulation(self, file_path, file_name, count, Distance_list):
         POINTS = count  # POINTS -> Anzahl der Punkte
         ERDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
         BEDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
         EDIT = 1 # EDIT -> wie oft bearbeitet
-        self.save_path = file_path + file_name + "/simulation.txt"
-        with open(file_path, "w") as file:
+        self.save_path = os.path.join(file_path, f"/{file_name}.txt") # Projekt files -> weiter machen
+        with open(self.save_path, "w") as file:
             file.write(str(POINTS) + "\n")
             file.write(str(ERDATE) + "\n")
             file.write(str(BEDATE) + "\n")
@@ -99,44 +102,33 @@ class logik:
                         combinations.append(com)
         return combinations
     
-    def render(self, distance_list):
+    def render(self, distance_render_logik, count):
         # 1. Schritt: Alle Punkte in einer Liste speichern und in ein File speichern
         # 2. Schritt: Dijkstra Algorithmus starten -> danach A* Algorithmus starten
         # 3. Schritt: Finisched PAth displayen und in ein File speichern
         ## 1.Schritt
-        points = get_combinations(self.combobox)
-        list_combinations = points.append(distance_list)
-        with open("points.txt", "w") as file:
+        points = self.get_combinations(count)
+        list_combinations = points.append(distance_render_logik)
+        with open(os.path.join(base_dir, "..", "config","count.fll"), "w") as file:
+            file.write(str(count))
+        with open("points.csv", "w") as file:
             file.truncate(0)
             for point1, point2, distance in distance_list:
                 file.append(str(point1) + ", " + str(point2) + ", " + str(distance) + "\n")
         ## 2.Schritt
-        os.system("python3 " + os.path.join(base_dir, "..", "script", "dijkstra.py"))
+        os.system("python3 " + os.path.join(base_dir, "..", "script", "Dijkstra.py"))
         ## 3.Schritt
         waiting = True
         while waiting:
             if os.path.exists(os.path.join(base_dir, "..", "export_folder", "shortest_path_a_star.png")):
                 waiting = False
-                with open("shortest_path.txt", "r") as file:
+                with open(os.path.join(base_dir, "..", "config", "shortest_path.fll"), "r") as file:
                     result = file.read()
                 gui.display_rendert_path()
                 shutil.move(os.path.join(base_dir, "..", "export_folder", "shortest_path_a_star.png"), os.path.join(base_dir, "..", "export_folder", "shortest_path.png"))
             else:
                 pass
                 
-            
-                    
-                    
-class config:
-    def __init__(self):
-        pass
-
-    def save_config(self, file):
-        self.config_path = os.path.join(base_dir, "..", "config", file)
-    
-    
-    def load_config(self):
-        pass
 
 # main running area -> main function
 if __name__ == "__main__":
