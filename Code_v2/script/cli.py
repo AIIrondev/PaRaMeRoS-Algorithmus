@@ -36,12 +36,7 @@ icon_path = os.path.join(base_dir, "..", "Bilder", "LOGO.ico")
 # class main -> main funkltion GUI class
 class main:
     def __init__(self):
-        @cli.command()
-        @cli.argument("--load", "-l", default="my_programm.fll", help="This will load a simulation that you have created before")
-        @cli.argument("--create", "-c", default="10", help="This will create a new simulation")
-        @cli.argument("--save", "-s", default="my_programm.fll", help="This will save your simulation")
-        @cli.argument("--info", "-i", help="This will show you some information about the programm like version, config, credits etc.")
-        @cli.argument("--render", "-r", help="This will render your simulation")
+        pass
 
         def main(load, create, save, info, render):
             if load != "my_programm.fll":
