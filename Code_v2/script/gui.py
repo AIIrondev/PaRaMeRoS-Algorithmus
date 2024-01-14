@@ -41,7 +41,7 @@ class main:
         self.window = tk.CTk()
         self.window.title("Algorithmus")
         self.window.geometry("600x420")
-        self.window.resizable(True, True)
+        self.window.resizable(False, False)
         self.window._set_appearance_mode("light")
         self.window.iconbitmap(icon_path)
         self.logic_instance = logik()
