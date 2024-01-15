@@ -91,6 +91,7 @@ class main:
         self.main_menu(together, out0, index, User, user_input)
         
     def main_menu(self, combination, file, index, User, variable_input=None):
+        file_writer(dir0, "main_menu")
         # main menu -> main menu : commands -> 
         running_main_menu = True
         while running_main_menu:
@@ -108,7 +109,6 @@ class main:
                     file_writer(file, "create")
                     self.main_programm()
                 case "info":
-                    file_writer(file, "{}".format(version))
                     self.info()
     
     def main_programm(self):
@@ -139,7 +139,7 @@ class main:
         pass
 
     def info(self):
-        pass
+        file_writer(file, f"Version: {version}\n Author: Maximilian Gründinger\n Date: 2021-08-15\n License: Custom MIT\n")
 
 
 class file_writer:
