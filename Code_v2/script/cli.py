@@ -39,6 +39,7 @@ in0 = "/home/web/website/PaRaMeRoS-Python/output.fll"
 out0 = "/home/web/website/PaRaMeRoS-Python/input.fll" 
 start0 = "/home/web/website/PaRaMeRoS-Python/start.fll"
 user0 = "/home/web/website/PaRaMeRoS-Python/user.fll"
+run0 = "/home/web/website/PaRaMeRoS-Python/run.fll"
 version = "2.2.1"
 
 # class main -> main funkltion GUI class
@@ -90,34 +91,67 @@ class main:
 
         self.main_menu(together, out0, index, User, user_input)
         
-    def main_menu(self, combination, file, index, User, variable_input=None):
+    def main_menu(self, combination, file, index, User, variable_input=None, mode=None):
         file_writer(dir0, "main_menu")
         # main menu -> main menu : commands -> 
         running_main_menu = True
-        while running_main_menu:
-            match user_input:
-                case "exit":
-                    running_main_menu = False
-                    file_writer(file, "exit")
-                    exit(Code=0)
-                case "help":
-                    help()
-                case "load":
-                    file_writer(file, "load")
-                    self.main_load()
-                case "create":
-                    file_writer(file, "create")
-                    self.main_programm()
-                case "info":
-                    self.info()
+        match mode:
+            case None:
+                match user_input:
+                    case "exit":
+                        running_main_menu = False
+                        file_writer(file, "exit")
+                        exit(Code=0)
+                    case "help":
+                        help("main")
+                    case "load":
+                        file_writer(file, "load")
+                        self.main_load()
+                    case "create":
+                        file_writer(file, "create")
+                        self.main_programm()
+                    case "info":
+                        self.info()
+            case "main_menu":
+                match user_input:
+                    case "exit":
+                        running_main_menu = False
+                        file_writer(file, "exit")
+                        exit(Code=0)
+                    case "help":
+                        help("main")
+                    case "load":
+                        file_writer(file, "load")
+                        self.main_load()
+                    case "create":
+                        file_writer(file, "create")
+                        self.main_programm()
+                    case "info":
+                        self.info()
+            case "main_programm":
+                self.main_programm()
+            case "main_load":
+                self.main_load()
+                
     
     def main_programm(self):
-        pass
-    
+        file_writer(dir0, "main_programm")
+        match user_input:
+            case int:
+                # Hier muss noch die logik eingebaut werden da die distnacen hier so 1,2,34 aufgebaut
+                pass
+            case "back":
+                file_writer(out0, "back")
+                self.main_menu()
+            case "help":
+                help("create")
+                    
     def main_load(self):
+        file_writer(dir0, "main_load")
         pass
             
     def render(self, distance_render, count):
+        file_writer(dir0, "main_render")
         pass
 
     def help(self, mode):
@@ -136,6 +170,7 @@ class main:
                 file_writer(out0, "Error")
 
     def save_gui(self, distance_list, count):
+        file_writer(dir0, "main_save_gui")
         pass
 
     def info(self):
