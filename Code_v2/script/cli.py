@@ -43,11 +43,69 @@ user0 = "/home/web/website/PaRaMeRoS-Python/user.fll"
 # class main -> main funkltion GUI class
 class main:
     def __init__(self):
-        # main schleife -> main loop
-        pass
+        # alle Dateien werden gelesen und aufbereitet für die Verarbeitung durch die Funktion command
+        with open(user0, "r") as file:
+            User = file.read().strip()
+
+        with open(dir0, "r") as file:
+            dir1 = file.read().strip()
+
+        if not any(element in dir1 for element in DIR_LIST):
+            with open(out0, "w") as f:
+                input1 = f.read().strip()
+
+        with open(in0, "r") as file:
+            input234 = file.read().strip()
+            input1 = input234
+            user_input = None
         
-    def main_menu(self):
+        try: 
+            input234 = input234.split(", ")
+            user_input = input234[1]
+            imput1 = input234[0]
+            input1 = input1.replace(", ", "")
+
+        except IndexError:
+            imput1 = input234
+            user_input = None
+        
+        if not any(element in input1 for element in ALL_LIST):
+            null = None 
+
+        index = None
+
+        for j, element in enumerate(DIR_LIST):
+            if element == dir1:
+                index = j
+
+        index1 = None
+
+        for i, element in enumerate(ALL_LIST):
+            if element == input1:
+                index1 = i
+            
+        together = (index, index1)
+        print(together)
+
+        self.main_menu(together, out0, index, User, user_input)
+        
+    def main_menu(self, combination, file, index, User, variable_input=None):
         # main menu -> main menu : commands -> 
+        running_main_menu = True
+        while running_main_menu:
+            match user_input:
+                case "exit":
+                    running_main_menu = False
+                    file_writer(file, "exit")
+                    exit(Code=0)
+                case "help":
+                    help()
+                case "load":
+                    file_writer(file, "load")
+                    self.main_load()
+                case "create":
+                    file_writer(file, "create")
+                    self.main_programm()
         
         pass
     
@@ -63,13 +121,21 @@ class main:
     def render(self, distance_render, count):
         pass
 
-    def help(self):
-        pass
-    
+    def help(self, mode):
+        match mode:
+            case "main":
+                file_writer(out0, "load -> load a project\ncreate -> create a new project\nexit -> exit the programm\nhelp -> show this help\ninfo -> show info about the programm")
+            case "load":
+                file_writer(out0, "set_name -> sets the Directory that will be loadet\nback -> goes back to the main Menu\nload -> loads the file ?is work in progress?\nhelp -> show this help")
+            case "create":
+                file_writer(out0, "set_name -> sets the name of the project\nset_count -> sets the count of the points\nset_distance -> sets the distance between the points\nback -> goes back to the main Menu\ncreate -> creates the project\nhelp -> show this help")
     def running(self): # Scrollscreen ausbessern
         pass
 
     def save_gui(self, distance_list, count):
+        pass
+
+    def info(self):
         pass
 
 
