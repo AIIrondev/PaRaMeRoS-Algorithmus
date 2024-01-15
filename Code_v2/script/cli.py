@@ -39,6 +39,7 @@ in0 = "/home/web/website/PaRaMeRoS-Python/output.fll"
 out0 = "/home/web/website/PaRaMeRoS-Python/input.fll" 
 start0 = "/home/web/website/PaRaMeRoS-Python/start.fll"
 user0 = "/home/web/website/PaRaMeRoS-Python/user.fll"
+version = "2.2.1"
 
 # class main -> main funkltion GUI class
 class main:
@@ -106,16 +107,14 @@ class main:
                 case "create":
                     file_writer(file, "create")
                     self.main_programm()
-        
-        pass
+                case "info":
+                    file_writer(file, "{}".format(version))
+                    self.info()
     
     def main_programm(self):
         pass
     
     def main_load(self):
-        pass
-    
-    def reset_screen(self):
         pass
             
     def render(self, distance_render, count):
@@ -129,8 +128,12 @@ class main:
                 file_writer(out0, "set_name -> sets the Directory that will be loadet\nback -> goes back to the main Menu\nload -> loads the file ?is work in progress?\nhelp -> show this help")
             case "create":
                 file_writer(out0, "set_name -> sets the name of the project\nset_count -> sets the count of the points\nset_distance -> sets the distance between the points\nback -> goes back to the main Menu\ncreate -> creates the project\nhelp -> show this help")
-    def running(self): # Scrollscreen ausbessern
-        pass
+            case "save_gui":
+                file_writer(out0, "set_author -> sets the Author for the saving\nset_name -> sets name for the projekt\nsave -> saves the project\nback -> goes back to the main programm\nhelp -> show this help")
+            case "render":
+                file_writer(out0, "set_name -> sets the name of the project\nset_count -> sets the count of the points\nset_distance -> sets the distance between the points\nback -> goes back to the main Menu\ncreate -> creates the project\nhelp -> show this help")
+            case None:
+                file_writer(out0, "Error")
 
     def save_gui(self, distance_list, count):
         pass
