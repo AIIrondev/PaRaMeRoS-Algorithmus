@@ -43,9 +43,12 @@ user0 = "/home/web/website/PaRaMeRoS-Python/user.fll"
 # class main -> main funkltion GUI class
 class main:
     def __init__(self):
+        # main schleife -> main loop
         pass
         
     def main_menu(self):
+        # main menu -> main menu : commands -> 
+        
         pass
     
     def main_programm(self):
@@ -68,6 +71,19 @@ class main:
 
     def save_gui(self, distance_list, count):
         pass
+
+
+class file_writer:
+    def __init__(self, file, text):
+        self.file = file
+        self.text = text
+        text.replace("\n", "<br>")
+        text.replace(" ", "&nbsp;")
+        with open(file, "w") as f:
+            f.write(text)
+        with open(start0, "w") as f:
+            f.write("Done!")
+    
 
  
 class logik:
