@@ -229,7 +229,7 @@ class logik:
         AUTOR = author_save.get() # AUTOR -> wer hat es erstellt
         EDIT = 1 # EDIT -> wie oft bearbeitet
         Distance_list_values = [distance.get() for distance in Distance_list]
-        self.save_path = os.path.join(file_path, f"/{file_name}.txt") # Projekt files -> weiter machen
+        self.save_path = os.path.join(file_path, f"/{file_name.get()}.txt") # Projekt files -> weiter machen
         with open(self.save_path, "w") as file:
             file.write(str(POINTS) + "\n")
             file.write(str(ERDATE) + "\n")
