@@ -251,7 +251,7 @@ class logik:
         # 2. Schritt: Dijkstra Algorithmus starten -> danach A* Algorithmus starten
         # 3. Schritt: Finisched PAth displayen und in ein File speichern
         ## 1.Schritt
-        points = self.get_combinations(count)
+        points = logik.get_combinations(count)
         list_combinations = points.append(distance_render_logik)
         with open(os.path.join(base_dir, "..", "config","count.fll"), "w") as file:
             file.write(str(count))
