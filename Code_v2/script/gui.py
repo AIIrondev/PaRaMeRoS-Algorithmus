@@ -177,27 +177,31 @@ class main:
         tk2.messagebox.showinfo("Licence", f"Path finding algorithm License Agreement\nThis License Agreement (the 'Agreement') is entered into by and between Maximilian Gründinger ('Licensor') and the First Lego League Team known as PaRaMeRoS ('Licensee').\n1. License Grant.\nLicensor hereby grants Licensee a non-exclusive, non-transferable license to use and modify the software program known as [Your Program Name] (the 'Program') solely for educational and non-commercial purposes. This license is granted exclusively to the members of the First Lego League Team identified as [First Lego League Team Name].\n2. Restrictions.\nLicensee shall not, and shall not permit others to:\na. Use the Program for any purpose other than educational and non-commercial activities within the First Lego League Team.\nb. Allow non-members of the First Lego League Team to use or access the Program.\nc. Commercialize or distribute the Program for financial gain.\nd. Remove or alter any copyright, trademark, or other proprietary notices contained in the Program.\n3. Security.\nLicensor makes no warranties regarding the security of the Program. Licensee acknowledges and agrees that any use of the Program is at their own risk. Licensor shall not be responsible for any security bugs or issues that may arise in connection with the Program.\n4. Term and Termination.\nThis Agreement shall remain in effect until terminated by either party. Licensor reserves the right to terminate this Agreement immediately if Licensee breaches any of its terms. Upon termination, Licensee shall cease all use of the Program and destroy all copies in their possession.\n5. Disclaimer of Warranty.\nTHE PROGRAM IS PROVIDED 'AS IS' WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. LICENSOR DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.\n6. Limitation of Liability.\nIN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.\n7. Governing Law.\nThis Agreement shall be governed by and construed in accordance with the laws of [Your Jurisdiction].\n8. Entire Agreement.\nThis Agreement constitutes the entire agreement between the parties and supersedes all prior agreements, whether oral or written, with respect to the Program.\nIN WITNESS WHEREOF, the parties hereto have executed this License Agreement as of the effective date.\nLicensor:\nMaximilian Gründinger\nLicensee:\nPaRaMeRoS\nDate: 1.1.2024")
 
     def save_gui(self, distance_list, count):
-        # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
-        Distance_list = distance_list
-        self.author_save = tk2.StringVar()
-        self.simulation_name_save = tk2.StringVar()
-        self.path = ""
-        self.window3 = tk.CTk()
-        self.window3.title("Algorithmus _Save")
-        self.window3.geometry("600x420")
-        self.window3.resizable(True, True)
-        self.window3._set_appearance_mode("light")
-        self.window3.iconbitmap(icon_path)
-        tk.CTkLabel(self.window3, text="Save", font=("Arial", 25)).place(x=75, y=25)
-        tk.CTkButton(self.window3, corner_radius=32, text="Select Path", font=("Arial", 16), command=self.get_path).place(x=75, y=75)
-        tk.CTkLabel(self.window3, text=self.path, font=("Arial", 16)).place(x=75, y=50)
-        tk.CTkLabel(self.window3, text="Enter Author: ", font=("Arial", 16)).place(x=75, y=200)
-        tk.CTkEntry(self.window3, placeholder_text="Author", textvariable=author_save).place(x=225, y=200)
-        tk.CTkLabel(self.window3, text="Enter Simulation Name: ", font=("Arial", 16)).place(x=75, y=150)
-        tk.CTkEntry(self.window3, placeholder_text="Simulation Name", textvariable=simulation_name_save).place(x=250, y=150)
-        tk.CTkButton(self.window3, corner_radius=32, text="Save", font=("Arial", 16), command=lambda: logik.save_simulation(self, self.path, self.simulation_name_save.get(), count, distance_list, self.author_save.get())).place(x=200, y=300)# file_path, file_name, count, Distance_list
-        tk.CTkButton(self.window3, text="Break", command=self.window3.destroy, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
-        self.window3.mainloop()
+        try:
+            Distance_list = distance_list
+            self.author_save = tk2.StringVar()
+            self.simulation_name_save = tk2.StringVar()
+            self.path = ""
+            self.window3 = tk.CTk()
+            self.window3.title("Algorithmus _Save")
+            self.window3.geometry("600x420")
+            self.window3.resizable(True, True)
+            self.window3._set_appearance_mode("light")
+            self.window3.iconbitmap(icon_path)
+            self.author_save.set("DefaultAuthor")
+            self.simulation_name_save.set("DefaultSimulationName")
+            tk.CTkLabel(self.window3, text="Save", font=("Arial", 25)).place(x=75, y=25)
+            tk.CTkButton(self.window3, corner_radius=32, text="Select Path", font=("Arial", 16), command=self.get_path).place(x=75, y=75)
+            tk.CTkLabel(self.window3, text=self.path, font=("Arial", 16)).place(x=75, y=50)
+            tk.CTkLabel(self.window3, text="Enter Author: ", font=("Arial", 16)).place(x=75, y=200)
+            tk.CTkEntry(self.window3, placeholder_text="Author", textvariable=self.author_save).place(x=225, y=200)
+            tk.CTkLabel(self.window3, text="Enter Simulation Name: ", font=("Arial", 16)).place(x=75, y=150)
+            tk.CTkEntry(self.window3, placeholder_text="Simulation Name", textvariable=self.simulation_name_save).place(x=250, y=150)
+            tk.CTkButton(self.window3, corner_radius=32, text="Save", font=("Arial", 16), command=lambda: self.logic_instance.save_simulation(self.path, self.simulation_name_save.get(), count, distance_list, self.author_save.get())).place(x=200, y=300)
+            tk.CTkButton(self.window3, text="Break", command=self.window3.destroy, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
+            self.window3.mainloop()
+        except Exception as e:
+            ttk.messagebox.showerror("Error", f"An error occurred: {e}")
 
     def error_window(self):
         tk2.messagebox.showerror("Error", "Please enter a number between 1 and 20")
@@ -232,7 +236,7 @@ class logik:
         print(file_name)
         print(author_save)
         Distance_list_values = [distance.get() for distance in Distance_list]
-        self.save_path = os.path.join(file_path, f"/{file_name}.fll") # Projekt files -> weiter machen
+        self.save_path = os.path.join(file_path, f"{file_name}.fll") # Projekt files -> weiter machen
         with open(self.save_path, "w") as file:
             file.write(str(POINTS) + "\n")
             file.write(str(ERDATE) + "\n")
