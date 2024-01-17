@@ -1,26 +1,45 @@
 '''
-MIT LICENSE
+Path finding algorithm License Agreement
 
-© 2023 Maximilian Gründinger
+This License Agreement (the "Agreement") is entered into by and between Maximilian Gründinger ("Licensor") and the First Lego League Team known as PaRaMeRoS ("Licensee").
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), 
-to deal in the Software without restriction, including, but not limited to, the rights to use, copy, modify, merge, publish, distribute, sublicense, 
-and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+1. License Grant.
+Licensor hereby grants Licensee a non-exclusive, non-transferable license to use and modify the software program known as [Your Program Name] (the "Program") solely for educational and non-commercial purposes. This license is granted exclusively to the members of the First Lego League Team identified as [First Lego League Team Name].
 
-NOTICE: IF you are not a member of the FIRST LEGO LEAGUE TEAM PaRaMeRoS or intend to use it for FIRST LEGO LEAGUE you are not allowed to use, copy, resell or take parts of the Software/Code!!!
-There is an exception if I (Maximilian Gründinger) give you a written permission to do so. If you want to use the Software/Code for FIRST LEGO LEAGUE, please contact me via email (maximiliangruendinger@gmail.com).
+2. Restrictions.
+Licensee shall not, and shall not permit others to:
+a. Use the Program for any purpose other than educational and non-commercial activities within the First Lego League Team.
+b. Allow non-members of the First Lego League Team to use or access the Program.
+c. Commercialize or distribute the Program for financial gain.
+d. Remove or alter any copyright, trademark, or other proprietary notices contained in the Program.
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+3. Security.
+Licensor makes no warranties regarding the security of the Program. Licensee acknowledges and agrees that any use of the Program is at their own risk. Licensor shall not be responsible for any security bugs or issues that may arise in connection with the Program.
 
-DISCLAIMER: THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, 
-FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, 
-WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+4. Term and Termination.
+This Agreement shall remain in effect until terminated by either party. Licensor reserves the right to terminate this Agreement immediately if Licensee breaches any of its terms. Upon termination, Licensee shall cease all use of the Program and destroy all copies in their possession.
 
-This license is valid only for the year 2023. After 2023, the aforementioned terms and conditions will be considered invalid. 
-Users are not authorized to copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, 
-excluding older or custom versions from third parties.
+5. Disclaimer of Warranty.
+THE PROGRAM IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. LICENSOR DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
-For older versions, the above legal terms and conditions will remain valid from the year 2023 onwards.
+6. Limitation of Liability.
+IN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+
+7. Governing Law.
+This Agreement shall be governed by and construed in accordance with the laws of [Your Jurisdiction].
+
+8. Entire Agreement.
+This Agreement constitutes the entire agreement between the parties and supersedes all prior agreements, whether oral or written, with respect to the Program.
+
+IN WITNESS WHEREOF, the parties hereto have executed this License Agreement as of the effective date.
+
+Licensor:
+Maximilian Gründinger
+
+Licensee:
+PaRaMeRoS
+
+Date: 1.1.2024
 '''
 
 
