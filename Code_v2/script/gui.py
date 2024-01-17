@@ -72,6 +72,7 @@ class main:
         tk.CTkLabel(self.window, text="from the PaRaMeRoS FLL Team", font=("Arial", 25), text_color="black").place(x=110, y=54)
         tk.CTkButton(self.window, text="Create new simulation", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=180, y=100)
         tk.CTkButton(self.window, text="Load simulation", command=self.main_load, corner_radius=32, font=("Arial", 19)).place(x=205, y=150)
+        tk.CTkButton(self.window, text="Licence", command=self.licence, corner_radius=32, font=("Arial", 19)).place(x=225, y=300)
         tk.CTkButton(self.window, text="Exit", command=self.window.destroy, corner_radius=32, font=("Arial", 19), fg_color="red", hover_color="darkred").place(x=217, y=200)
         tk.CTkLabel(self.window, text="Made by: @AIIronDev", font=("Arial", 10), text_color="black").place(x=240, y=340)
         tk.CTkLabel(self.window, text="(c) Maximilian Gründinger v.2", font=("Arial", 10), text_color="black").place(x=220, y=360)
@@ -172,6 +173,9 @@ class main:
 
         frame.update_idletasks()
 
+    def licence(self):
+        tk2.messagebox.showinfo("Licence", f"Path finding algorithm License Agreement\nThis License Agreement (the 'Agreement') is entered into by and between Maximilian Gründinger ('Licensor') and the First Lego League Team known as PaRaMeRoS ('Licensee').\n1. License Grant.\nLicensor hereby grants Licensee a non-exclusive, non-transferable license to use and modify the software program known as [Your Program Name] (the 'Program') solely for educational and non-commercial purposes. This license is granted exclusively to the members of the First Lego League Team identified as [First Lego League Team Name].\n2. Restrictions.\nLicensee shall not, and shall not permit others to:\na. Use the Program for any purpose other than educational and non-commercial activities within the First Lego League Team.\nb. Allow non-members of the First Lego League Team to use or access the Program.\nc. Commercialize or distribute the Program for financial gain.\nd. Remove or alter any copyright, trademark, or other proprietary notices contained in the Program.\n3. Security.\nLicensor makes no warranties regarding the security of the Program. Licensee acknowledges and agrees that any use of the Program is at their own risk. Licensor shall not be responsible for any security bugs or issues that may arise in connection with the Program.\n4. Term and Termination.\nThis Agreement shall remain in effect until terminated by either party. Licensor reserves the right to terminate this Agreement immediately if Licensee breaches any of its terms. Upon termination, Licensee shall cease all use of the Program and destroy all copies in their possession.\n5. Disclaimer of Warranty.\nTHE PROGRAM IS PROVIDED 'AS IS' WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED. LICENSOR DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.\n6. Limitation of Liability.\nIN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.\n7. Governing Law.\nThis Agreement shall be governed by and construed in accordance with the laws of [Your Jurisdiction].\n8. Entire Agreement.\nThis Agreement constitutes the entire agreement between the parties and supersedes all prior agreements, whether oral or written, with respect to the Program.\nIN WITNESS WHEREOF, the parties hereto have executed this License Agreement as of the effective date.\nLicensor:\nMaximilian Gründinger\nLicensee:\nPaRaMeRoS\nDate: 1.1.2024")
+
     def save_gui(self, distance_list, count):
         # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
         Distance_list = distance_list
@@ -255,10 +259,10 @@ class logik:
         processed_values = [(*point, distance) for point, distance in zip(points, distance_render_logik)]
         with open(os.path.join(base_dir, "..", "config","count.fll"), "w") as file:
             file.write(str(count))
-        with open("points.csv", "w") as file:
+        with open(os.path.join(base_dir, "..", "config", "points.csv"), "w") as file:
             file.truncate(0)
             for point1, point2, distance in processed_values:
-                file.write(str(point1) + ", " + str(point2) + ", " + str(distance) + "\n")
+                file.write(str(point1) + ", " + str(point2) + ", " + str(distance.get()) + "\n")
         ## 2.Schritt
         os.system("python3 " + os.path.join(base_dir, "..", "script", "Dijkstra.py"))
         ## 3.Schritt
