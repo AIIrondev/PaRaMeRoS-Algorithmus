@@ -179,8 +179,8 @@ class main:
     def save_gui(self, distance_list, count):
         # Hier muss noch die Speicherfunktion rein -> logik.save_simulation()
         Distance_list = distance_list
-        author_save = tk2.StringVar()
-        simulation_name_save = tk2.StringVar()
+        self.author_save = tk2.StringVar()
+        self.simulation_name_save = tk2.StringVar()
         self.path = ""
         self.window3 = tk.CTk()
         self.window3.title("Algorithmus _Save")
@@ -195,7 +195,7 @@ class main:
         tk.CTkEntry(self.window3, placeholder_text="Author", textvariable=author_save).place(x=225, y=200)
         tk.CTkLabel(self.window3, text="Enter Simulation Name: ", font=("Arial", 16)).place(x=75, y=150)
         tk.CTkEntry(self.window3, placeholder_text="Simulation Name", textvariable=simulation_name_save).place(x=250, y=150)
-        tk.CTkButton(self.window3, corner_radius=32, text="Save", font=("Arial", 16), command=lambda: logik.save_simulation(self, self.path, simulation_name_save.get(), count, distance_list, author_save.get())).place(x=200, y=300)# file_path, file_name, count, Distance_list
+        tk.CTkButton(self.window3, corner_radius=32, text="Save", font=("Arial", 16), command=lambda: logik.save_simulation(self, self.path, self.simulation_name_save.get(), count, distance_list, self.author_save.get())).place(x=200, y=300)# file_path, file_name, count, Distance_list
         tk.CTkButton(self.window3, text="Break", command=self.window3.destroy, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
         self.window3.mainloop()
 
@@ -217,6 +217,7 @@ class main:
         tk.CTkLabel(self.window4, text=result, font=("Arial", 16)).place(x=75, y=100)
         tk2.PhotoImage(file=file, width=200, height=100).place(x=75, y=125)
         tk.CTkButton(self.window4, text="Break", command=self.window4.destroy, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
+        self.window4.mainloop()
 
 class logik:
     def __init__(self):
@@ -228,7 +229,7 @@ class logik:
         BEDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
         AUTOR = author_save # AUTOR -> wer hat es erstellt
         EDIT = 1 # EDIT -> wie oft bearbeitet
-        print(file_path)
+        print(file_name)
         print(author_save)
         Distance_list_values = [distance.get() for distance in Distance_list]
         self.save_path = os.path.join(file_path, f"/{file_name}.fll") # Projekt files -> weiter machen
