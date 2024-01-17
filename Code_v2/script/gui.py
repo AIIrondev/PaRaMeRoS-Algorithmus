@@ -228,6 +228,8 @@ class logik:
         BEDATE = datetime.datetime.now()  # ERDATE -> erstellungsdatum
         AUTOR = author_save # AUTOR -> wer hat es erstellt
         EDIT = 1 # EDIT -> wie oft bearbeitet
+        print(file_path)
+        print(author_save)
         Distance_list_values = [distance.get() for distance in Distance_list]
         self.save_path = os.path.join(file_path, f"/{file_name}.fll") # Projekt files -> weiter machen
         with open(self.save_path, "w") as file:
