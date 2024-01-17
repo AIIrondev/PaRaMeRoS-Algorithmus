@@ -251,14 +251,14 @@ class logik:
         # 2. Schritt: Dijkstra Algorithmus starten -> danach A* Algorithmus starten
         # 3. Schritt: Finisched PAth displayen und in ein File speichern
         ## 1.Schritt
-        points = logik.get_combinations(count)
-        list_combinations = points.append(distance_render_logik)
+        points = logik.get_combinations(self, count)
+        processed_values = [(*point, distance) for point, distance in zip(points, distance_render_logik)]
         with open(os.path.join(base_dir, "..", "config","count.fll"), "w") as file:
             file.write(str(count))
         with open("points.csv", "w") as file:
             file.truncate(0)
-            for point1, point2, distance in distance_list:
-                file.append(str(point1) + ", " + str(point2) + ", " + str(distance) + "\n")
+            for point1, point2, distance in processed_values:
+                file.write(str(point1) + ", " + str(point2) + ", " + str(distance) + "\n")
         ## 2.Schritt
         os.system("python3 " + os.path.join(base_dir, "..", "script", "Dijkstra.py"))
         ## 3.Schritt
