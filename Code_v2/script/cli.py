@@ -4,7 +4,7 @@ Path finding algorithm License Agreement
 This License Agreement (the "Agreement") is entered into by and between Maximilian Gründinger ("Licensor") and the First Lego League Team known as PaRaMeRoS ("Licensee").
 
 1. License Grant.
-Licensor hereby grants Licensee a non-exclusive, non-transferable license to use and modify the software program known as [Your Program Name] (the "Program") solely for educational and non-commercial purposes. This license is granted exclusively to the members of the First Lego League Team identified as [First Lego League Team Name].
+Licensor hereby grants Licensee a non-exclusive, non-transferable license to use and modify the software program known as Path finding Algorithm (the "Program") solely for educational and non-commercial purposes. This license is granted exclusively to the members of the First Lego League Team identified as PaRaMeRoS.
 
 2. Restrictions.
 Licensee shall not, and shall not permit others to:
@@ -26,7 +26,7 @@ THE PROGRAM IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED
 IN NO EVENT SHALL LICENSOR BE LIABLE FOR ANY SPECIAL, INCIDENTAL, INDIRECT, OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM, EVEN IF LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
 
 7. Governing Law.
-This Agreement shall be governed by and construed in accordance with the laws of [Your Jurisdiction].
+This Agreement shall be governed by and construed in accordance with the laws of Germany Bavaria.
 
 8. Entire Agreement.
 This Agreement constitutes the entire agreement between the parties and supersedes all prior agreements, whether oral or written, with respect to the Program.
