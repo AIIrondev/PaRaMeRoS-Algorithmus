@@ -61,7 +61,7 @@ class main:
         self.window.title("Algorithmus")
         self.window.geometry("600x420")
         self.window.resizable(False, False)
-        self.window._set_appearance_mode("light")
+        self.window._set_appearance_mode("system")
         self.window.iconbitmap(icon_path)
         self.logic_instance = logik()
         self.main_menu()
@@ -127,7 +127,11 @@ class main:
         global distance_list
         distance_list = []
         self.reset_screen()
-        self.combobox = int(self.combobox_var.get())
+        try:
+            self.combobox = int(self.combobox_var.get())
+        except:
+            self.error_window()
+            self.main_programm()
         render_sd = self.combobox
         fenster_liste = self.logic_instance.get_combinations(self.combobox)
 
