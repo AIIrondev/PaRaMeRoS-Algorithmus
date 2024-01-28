@@ -143,13 +143,13 @@ class main:
         tk.CTkButton(self.window, text="Back", command=self.main_programm, corner_radius=32, font=("Arial", 19)).place(x=280, y=25)
 
         scrollable_frame = tk.CTkCanvas(self.window)
-        scrollable_frame.place(x=0, y=150, relwidth=3, relheight=1)
+        scrollable_frame.place(x=0, y=200, relwidth=3, relheight=1)
 
         frame = tk.CTkFrame(scrollable_frame)
         frame_id = scrollable_frame.create_window((0, 0), window=frame, anchor="nw")
 
         scrollbar = ttk.Scrollbar(self.window, orient="vertical", command=scrollable_frame.yview)
-        scrollbar.place(x=self.window.winfo_width() - scrollbar.winfo_reqwidth(), y=150, height=scrollable_frame.winfo_reqheight())
+        scrollbar.place(x=self.window.winfo_width() - scrollbar.winfo_reqwidth(), y=200, height=scrollable_frame.winfo_reqheight())
 
         def update_scrollregion(event):
             scrollable_frame.config(scrollregion=scrollable_frame.bbox("all"))
